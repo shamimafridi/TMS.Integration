@@ -1,0 +1,1889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TMSModelStoreContainer" CdmEntityContainer="TMSEntities">
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="TMSModel.Branch">
+        <MappingFragment StoreEntitySet="Branches">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchDescription" ColumnName="BranchDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="TMSModel.City">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="City1" ColumnName="City" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COAControls">
+      <EntityTypeMapping TypeName="TMSModel.COAControl">
+        <MappingFragment StoreEntitySet="COAControls">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="FSFGLCode" ColumnName="FSFGLCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COAGenerals">
+      <EntityTypeMapping TypeName="TMSModel.COAGeneral">
+        <MappingFragment StoreEntitySet="COAGenerals">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="FSFGLCode" ColumnName="FSFGLCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COASubsidiaries">
+      <EntityTypeMapping TypeName="TMSModel.COASubsidiary">
+        <MappingFragment StoreEntitySet="COASubsidiaries">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
+          <ScalarProperty Name="SubsidiaryDescription" ColumnName="SubsidiaryDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="FSFGLCode" ColumnName="FSFGLCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COASubSubsidiaries">
+      <EntityTypeMapping TypeName="TMSModel.COASubSubsidiary">
+        <MappingFragment StoreEntitySet="COASubSubsidiaries">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
+          <ScalarProperty Name="SubSubsidiaryCode" ColumnName="SubSubsidiaryCode" />
+          <ScalarProperty Name="SubSubsidiaryDescription" ColumnName="SubSubsidiaryDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="FSFGLCode" ColumnName="FSFGLCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerBillDetails">
+      <EntityTypeMapping TypeName="TMSModel.CustomerBillDetail">
+        <MappingFragment StoreEntitySet="CustomerBillDetails">
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Shortage" ColumnName="Shortage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerBills">
+      <EntityTypeMapping TypeName="TMSModel.CustomerBill">
+        <MappingFragment StoreEntitySet="CustomerBills">
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="IsReceipt" ColumnName="IsReceipt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="TMSModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="ShortageGLCode" ColumnName="ShortageGLCode" />
+          <ScalarProperty Name="WHTaxGLCode" ColumnName="WHTaxGLCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="SalesTaxNumber" ColumnName="SalesTaxNumber" />
+          <ScalarProperty Name="NationalTaxNumber" ColumnName="NationalTaxNumber" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DestinationPoints">
+      <EntityTypeMapping TypeName="TMSModel.DestinationPoint">
+        <MappingFragment StoreEntitySet="DestinationPoints">
+          <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
+          <ScalarProperty Name="DestinationPointName" ColumnName="DestinationPointName" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="PointNo" ColumnName="PointNo" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Divisions">
+      <EntityTypeMapping TypeName="TMSModel.Division">
+        <MappingFragment StoreEntitySet="Divisions">
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="Division1" ColumnName="Division" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="TMSModel.dtproperty">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoryTransactionAudits">
+      <EntityTypeMapping TypeName="TMSModel.HistoryTransactionAudit">
+        <MappingFragment StoreEntitySet="HistoryTransactionAudit">
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ComputerID" ColumnName="ComputerID" />
+          <ScalarProperty Name="ProcessDateTime" ColumnName="ProcessDateTime" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="DocumentNature" ColumnName="DocumentNature" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="PartyCode" ColumnName="PartyCode" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="AvailableQuantity" ColumnName="AvailableQuantity" />
+          <ScalarProperty Name="BalanceQuantity" ColumnName="BalanceQuantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="TMSModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoices">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="CustomerReference" ColumnName="CustomerReference" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PartyCode" ColumnName="PartyCode" />
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
+          <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="TripAdvanceReference" ColumnName="TripAdvanceReference" />
+          <ScalarProperty Name="TripAdvance" ColumnName="TripAdvance" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="CommissionRate" ColumnName="CommissionRate" />
+          <ScalarProperty Name="ShortageQuantity" ColumnName="ShortageQuantity" />
+          <ScalarProperty Name="QuantityValue" ColumnName="QuantityValue" />
+          <ScalarProperty Name="Shortage" ColumnName="Shortage" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="IsTripCanceled" ColumnName="IsTripCanceled" />
+          <ScalarProperty Name="IsBilled" ColumnName="IsBilled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="TMSModel.Item">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="Item1" ColumnName="Item" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="ItemValue" ColumnName="ItemValue" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Options">
+      <EntityTypeMapping TypeName="TMSModel.Option">
+        <MappingFragment StoreEntitySet="Options">
+          <ScalarProperty Name="OptionID" ColumnName="OptionID" />
+          <ScalarProperty Name="OptionName" ColumnName="OptionName" />
+          <ScalarProperty Name="OptionValue" ColumnName="OptionValue" />
+          <ScalarProperty Name="OptionDescription" ColumnName="OptionDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayableAccounts">
+      <EntityTypeMapping TypeName="TMSModel.PayableAccount">
+        <MappingFragment StoreEntitySet="PayableAccounts">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="DocumentNature" ColumnName="DocumentNature" />
+          <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PartyCode" ColumnName="PartyCode" />
+          <ScalarProperty Name="MiscPartyName" ColumnName="MiscPartyName" />
+          <ScalarProperty Name="PartyReference" ColumnName="PartyReference" />
+          <ScalarProperty Name="PartyReferenceDate" ColumnName="PartyReferenceDate" />
+          <ScalarProperty Name="InternalReference" ColumnName="InternalReference" />
+          <ScalarProperty Name="InternalReferenceDate" ColumnName="InternalReferenceDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreditDays" ColumnName="CreditDays" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductRates">
+      <EntityTypeMapping TypeName="TMSModel.ProductRate">
+        <MappingFragment StoreEntitySet="ProductRates">
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
+          <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
+          <ScalarProperty Name="TripAdvanceAmount" ColumnName="TripAdvanceAmount" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="TMSModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductValues">
+      <EntityTypeMapping TypeName="TMSModel.ProductValue">
+        <MappingFragment StoreEntitySet="ProductValues">
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="QuantityValue" ColumnName="QuantityValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Receipts">
+      <EntityTypeMapping TypeName="TMSModel.Receipt">
+        <MappingFragment StoreEntitySet="Receipts">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Shortage" ColumnName="Shortage" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="SaleTaxValue" ColumnName="SaleTaxValue" />
+          <ScalarProperty Name="AmountIncSaleTax" ColumnName="AmountIncSaleTax" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="TMSModel.Region">
+        <MappingFragment StoreEntitySet="Regions">
+          <ScalarProperty Name="RegionCode" ColumnName="RegionCode" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StationPoints">
+      <EntityTypeMapping TypeName="TMSModel.StationPoint">
+        <MappingFragment StoreEntitySet="StationPoints">
+          <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
+          <ScalarProperty Name="StationPointName" ColumnName="StationPointName" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="PointNo" ColumnName="PointNo" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="TMSModel.Supplier">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="SalesTaxNumber" ColumnName="SalesTaxNumber" />
+          <ScalarProperty Name="NationalTaxNumber" ColumnName="NationalTaxNumber" />
+          <ScalarProperty Name="TaxCircle" ColumnName="TaxCircle" />
+          <ScalarProperty Name="TaxZone" ColumnName="TaxZone" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransactionActivities">
+      <EntityTypeMapping TypeName="TMSModel.TransactionActivity">
+        <MappingFragment StoreEntitySet="TransactionActivities">
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="ParentGUID" ColumnName="ParentGUID" />
+          <ScalarProperty Name="FormTypeCode" ColumnName="FormTypeCode" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="TransactionTime" ColumnName="TransactionTime" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ComputerID" ColumnName="ComputerID" />
+          <ScalarProperty Name="ActionPerformed" ColumnName="ActionPerformed" />
+          <ScalarProperty Name="ReferenceText" ColumnName="ReferenceText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransactionNatures">
+      <EntityTypeMapping TypeName="TMSModel.TransactionNature">
+        <MappingFragment StoreEntitySet="TransactionNatures">
+          <ScalarProperty Name="NatureCode" ColumnName="NatureCode" />
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="System" ColumnName="System" />
+          <ScalarProperty Name="IsPaymentVoucher" ColumnName="IsPaymentVoucher" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransactionTypes">
+      <EntityTypeMapping TypeName="TMSModel.TransactionType">
+        <MappingFragment StoreEntitySet="TransactionTypes">
+          <ScalarProperty Name="TransactionTypeCode" ColumnName="TransactionTypeCode" />
+          <ScalarProperty Name="TransactionType1" ColumnName="TransactionType" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSecurities">
+      <EntityTypeMapping TypeName="TMSModel.UserSecurity">
+        <MappingFragment StoreEntitySet="UserSecurities">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="IsLoggedIn" ColumnName="IsLoggedIn" />
+          <ScalarProperty Name="IsAdministrator" ColumnName="IsAdministrator" />
+          <ScalarProperty Name="NormalShutDown" ColumnName="NormalShutDown" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="S_Account" ColumnName="S_Account" />
+          <ScalarProperty Name="T_Order" ColumnName="T_Order" />
+          <ScalarProperty Name="R_RecVoucher" ColumnName="R_RecVoucher" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleAdjustmentDetails">
+      <EntityTypeMapping TypeName="TMSModel.VehicleAdjustmentDetail">
+        <MappingFragment StoreEntitySet="VehicleAdjustmentDetails">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="VehicleAdjustmentNature" ColumnName="VehicleAdjustmentNature" />
+          <ScalarProperty Name="VehicleAdjustmentNo" ColumnName="VehicleAdjustmentNo" />
+          <ScalarProperty Name="TransactionTypeCode" ColumnName="TransactionTypeCode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UrduDescription" ColumnName="UrduDescription" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="InvoiceRefNo" ColumnName="InvoiceRefNo" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleAdjustments">
+      <EntityTypeMapping TypeName="TMSModel.VehicleAdjustment">
+        <MappingFragment StoreEntitySet="VehicleAdjustments">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="VehicleAdjustmentNature" ColumnName="VehicleAdjustmentNature" />
+          <ScalarProperty Name="VehicleAdjustmentNo" ColumnName="VehicleAdjustmentNo" />
+          <ScalarProperty Name="VehicleAdjustmentDate" ColumnName="VehicleAdjustmentDate" />
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="CreditDays" ColumnName="CreditDays" />
+          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleOwners">
+      <EntityTypeMapping TypeName="TMSModel.VehicleOwner">
+        <MappingFragment StoreEntitySet="VehicleOwners">
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles_">
+      <EntityTypeMapping TypeName="TMSModel.Vehicles_">
+        <MappingFragment StoreEntitySet="Vehicles ">
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="VehicleDescription" ColumnName="VehicleDescription" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="InstallmentGLCode" ColumnName="InstallmentGLCode" />
+          <ScalarProperty Name="FreightGLCode" ColumnName="FreightGLCode" />
+          <ScalarProperty Name="LoanGLCode" ColumnName="LoanGLCode" />
+          <ScalarProperty Name="CommissionGLCode" ColumnName="CommissionGLCode" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vouchers">
+      <EntityTypeMapping TypeName="TMSModel.Voucher">
+        <MappingFragment StoreEntitySet="Vouchers">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="IsAutoGenerated" ColumnName="IsAutoGenerated" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="CreditDays" ColumnName="CreditDays" />
+          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FSFControls">
+      <EntityTypeMapping TypeName="TMSModel.FSFControl">
+        <MappingFragment StoreEntitySet="FSFControls">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="ReportTitle" ColumnName="ReportTitle" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FSFGenerals">
+      <EntityTypeMapping TypeName="TMSModel.FSFGeneral">
+        <MappingFragment StoreEntitySet="FSFGenerals">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="ReportTitle" ColumnName="ReportTitle" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FSFSubsidiaries">
+      <EntityTypeMapping TypeName="TMSModel.FSFSubsidiary">
+        <MappingFragment StoreEntitySet="FSFSubsidiaries">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
+          <ScalarProperty Name="SubsidiaryDescription" ColumnName="SubsidiaryDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="ReportTitle" ColumnName="ReportTitle" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FSFSubSubsidiaries">
+      <EntityTypeMapping TypeName="TMSModel.FSFSubSubsidiary">
+        <MappingFragment StoreEntitySet="FSFSubSubsidiaries">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
+          <ScalarProperty Name="SubSubsidiaryCode" ColumnName="SubSubsidiaryCode" />
+          <ScalarProperty Name="SubSubsidiaryDescription" ColumnName="SubSubsidiaryDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="ReportTitle" ColumnName="ReportTitle" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GeneratedReferences">
+      <EntityTypeMapping TypeName="TMSModel.GeneratedReference">
+        <MappingFragment StoreEntitySet="GeneratedReferences">
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="GenFrom" ColumnName="GenFrom" />
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+          <ScalarProperty Name="FromBranchCode" ColumnName="FromBranchCode" />
+          <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="DocumentNature" ColumnName="DocumentNature" />
+          <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GL_DetailPaymentVoucherTAB">
+      <EntityTypeMapping TypeName="TMSModel.GL_DetailPaymentVoucherTAB">
+        <MappingFragment StoreEntitySet="GL_DetailPaymentVoucherTAB">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
+          <ScalarProperty Name="DocumentNature" ColumnName="DocumentNature" />
+          <ScalarProperty Name="APVNo" ColumnName="APVNo" />
+          <ScalarProperty Name="APVNatureCode" ColumnName="APVNatureCode" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="SupplierBillNo" ColumnName="SupplierBillNo" />
+          <ScalarProperty Name="APVAmount" ColumnName="APVAmount" />
+          <ScalarProperty Name="PaymentTypeCode" ColumnName="PaymentTypeCode" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="TaxValue" ColumnName="TaxValue" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GL_MasterPaymentVoucherTAB">
+      <EntityTypeMapping TypeName="TMSModel.GL_MasterPaymentVoucherTAB">
+        <MappingFragment StoreEntitySet="GL_MasterPaymentVoucherTAB">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
+          <ScalarProperty Name="DocumentNature" ColumnName="DocumentNature" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="TransactionTypeCode" ColumnName="TransactionTypeCode" />
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="MiscPartyName" ColumnName="MiscPartyName" />
+          <ScalarProperty Name="CreditAccountCode" ColumnName="CreditAccountCode" />
+          <ScalarProperty Name="CreditAccountReference" ColumnName="CreditAccountReference" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="PaymentBankCode" ColumnName="PaymentBankCode" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+          <ScalarProperty Name="TaxChallanNo" ColumnName="TaxChallanNo" />
+          <ScalarProperty Name="DepositDate" ColumnName="DepositDate" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
+          <ScalarProperty Name="RecordCreator" ColumnName="RecordCreator" />
+          <ScalarProperty Name="RecordOwner" ColumnName="RecordOwner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OpeningBalances">
+      <EntityTypeMapping TypeName="TMSModel.OpeningBalance">
+        <MappingFragment StoreEntitySet="OpeningBalances">
+          <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="DebitBalance" ColumnName="DebitBalance" />
+          <ScalarProperty Name="CreditBalance" ColumnName="CreditBalance" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentVoucherDetails">
+      <EntityTypeMapping TypeName="TMSModel.PaymentVoucherDetail">
+        <MappingFragment StoreEntitySet="PaymentVoucherDetails">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
+          <ScalarProperty Name="APVNo" ColumnName="APVNo" />
+          <ScalarProperty Name="APVNatureCode" ColumnName="APVNatureCode" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="SupplierBillNo" ColumnName="SupplierBillNo" />
+          <ScalarProperty Name="APVAmount" ColumnName="APVAmount" />
+          <ScalarProperty Name="PaymentTypeCode" ColumnName="PaymentTypeCode" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="TaxValue" ColumnName="TaxValue" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentVouchers">
+      <EntityTypeMapping TypeName="TMSModel.PaymentVoucher">
+        <MappingFragment StoreEntitySet="PaymentVouchers">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="TransactionTypeCode" ColumnName="TransactionTypeCode" />
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="MiscPartyName" ColumnName="MiscPartyName" />
+          <ScalarProperty Name="CreditAccountCode" ColumnName="CreditAccountCode" />
+          <ScalarProperty Name="CreditAccountReference" ColumnName="CreditAccountReference" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="PaymentBankCode" ColumnName="PaymentBankCode" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+          <ScalarProperty Name="TaxChallanNo" ColumnName="TaxChallanNo" />
+          <ScalarProperty Name="DepositDate" ColumnName="DepositDate" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
+          <ScalarProperty Name="RecordCreator" ColumnName="RecordCreator" />
+          <ScalarProperty Name="RecordOwner" ColumnName="RecordOwner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectNodesSetups">
+      <EntityTypeMapping TypeName="TMSModel.ProjectNodesSetup">
+        <MappingFragment StoreEntitySet="ProjectNodesSetup">
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="NodeName" ColumnName="NodeName" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="TableNature" ColumnName="TableNature" />
+          <ScalarProperty Name="NodeType" ColumnName="NodeType" />
+          <ScalarProperty Name="ShowNode" ColumnName="ShowNode" />
+          <ScalarProperty Name="ImageIndex" ColumnName="ImageIndex" />
+          <ScalarProperty Name="SortingOrder" ColumnName="SortingOrder" />
+          <ScalarProperty Name="SystemType" ColumnName="SystemType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SetupTables">
+      <EntityTypeMapping TypeName="TMSModel.SetupTable">
+        <MappingFragment StoreEntitySet="SetupTables">
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="AlternateTable" ColumnName="AlternateTable" />
+          <ScalarProperty Name="TableNature" ColumnName="TableNature" />
+          <ScalarProperty Name="TableType" ColumnName="TableType" />
+          <ScalarProperty Name="ShowTable" ColumnName="ShowTable" />
+          <ScalarProperty Name="ss" ColumnName="ss" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempTransDetailCFs">
+      <EntityTypeMapping TypeName="TMSModel.TempTransDetailCF">
+        <MappingFragment StoreEntitySet="TempTransDetailCF">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchRptTitle" ColumnName="BranchRptTitle" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="DivisionRptTitle" ColumnName="DivisionRptTitle" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLRptTitle" ColumnName="GLRptTitle" />
+          <ScalarProperty Name="NatureCode" ColumnName="NatureCode" />
+          <ScalarProperty Name="NatureRptTitle" ColumnName="NatureRptTitle" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="NarrationMain" ColumnName="NarrationMain" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlRptTitle" ColumnName="ControlRptTitle" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralRptTitle" ColumnName="GeneralRptTitle" />
+          <ScalarProperty Name="SubSidiaryCode" ColumnName="SubSidiaryCode" />
+          <ScalarProperty Name="SubsidiaryRptTitle" ColumnName="SubsidiaryRptTitle" />
+          <ScalarProperty Name="SubsubCode" ColumnName="SubsubCode" />
+          <ScalarProperty Name="SubSubRptTitle" ColumnName="SubSubRptTitle" />
+          <ScalarProperty Name="ApplyGrouping" ColumnName="ApplyGrouping" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="DetailRecordNo" ColumnName="DetailRecordNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempTransDetailLedgers">
+      <EntityTypeMapping TypeName="TMSModel.TempTransDetailLedger">
+        <MappingFragment StoreEntitySet="TempTransDetailLedger">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchRptTitle" ColumnName="BranchRptTitle" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="DivisionRptTitle" ColumnName="DivisionRptTitle" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLRptTitle" ColumnName="GLRptTitle" />
+          <ScalarProperty Name="NatureCode" ColumnName="NatureCode" />
+          <ScalarProperty Name="NatureRptTitle" ColumnName="NatureRptTitle" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="NarrationMain" ColumnName="NarrationMain" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlRptTitle" ColumnName="ControlRptTitle" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralRptTitle" ColumnName="GeneralRptTitle" />
+          <ScalarProperty Name="SubSidiaryCode" ColumnName="SubSidiaryCode" />
+          <ScalarProperty Name="SubsidiaryRptTitle" ColumnName="SubsidiaryRptTitle" />
+          <ScalarProperty Name="SubsubCode" ColumnName="SubsubCode" />
+          <ScalarProperty Name="SubSubRptTitle" ColumnName="SubSubRptTitle" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="DetailRecordNo" ColumnName="DetailRecordNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempTransDetailLedgerTrials">
+      <EntityTypeMapping TypeName="TMSModel.TempTransDetailLedgerTrial">
+        <MappingFragment StoreEntitySet="TempTransDetailLedgerTrial">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchRptTitle" ColumnName="BranchRptTitle" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="DivisionRptTitle" ColumnName="DivisionRptTitle" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLRptTitle" ColumnName="GLRptTitle" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlRptTitle" ColumnName="ControlRptTitle" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralRptTitle" ColumnName="GeneralRptTitle" />
+          <ScalarProperty Name="SubSidiaryCode" ColumnName="SubSidiaryCode" />
+          <ScalarProperty Name="SubsidiaryRptTitle" ColumnName="SubsidiaryRptTitle" />
+          <ScalarProperty Name="SubsubCode" ColumnName="SubsubCode" />
+          <ScalarProperty Name="SubSubRptTitle" ColumnName="SubSubRptTitle" />
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="DebitBalance" ColumnName="DebitBalance" />
+          <ScalarProperty Name="CreditBalance" ColumnName="CreditBalance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempTransDetailTrialFSFs">
+      <EntityTypeMapping TypeName="TMSModel.TempTransDetailTrialFSF">
+        <MappingFragment StoreEntitySet="TempTransDetailTrialFSF">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchRptTitle" ColumnName="BranchRptTitle" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="DivisionRptTitle" ColumnName="DivisionRptTitle" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLRptTitle" ColumnName="GLRptTitle" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlRptTitle" ColumnName="ControlRptTitle" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralRptTitle" ColumnName="GeneralRptTitle" />
+          <ScalarProperty Name="SubSidiaryCode" ColumnName="SubSidiaryCode" />
+          <ScalarProperty Name="SubsidiaryRptTitle" ColumnName="SubsidiaryRptTitle" />
+          <ScalarProperty Name="SubsubCode" ColumnName="SubsubCode" />
+          <ScalarProperty Name="SubSubRptTitle" ColumnName="SubSubRptTitle" />
+          <ScalarProperty Name="FSFGLCode" ColumnName="FSFGLCode" />
+          <ScalarProperty Name="FSFGLRptTitle" ColumnName="FSFGLRptTitle" />
+          <ScalarProperty Name="FSFControlCode" ColumnName="FSFControlCode" />
+          <ScalarProperty Name="FSFControlRptTitle" ColumnName="FSFControlRptTitle" />
+          <ScalarProperty Name="FSFGeneralCode" ColumnName="FSFGeneralCode" />
+          <ScalarProperty Name="FSFGeneralRptTitle" ColumnName="FSFGeneralRptTitle" />
+          <ScalarProperty Name="FSFSubSidiaryCode" ColumnName="FSFSubSidiaryCode" />
+          <ScalarProperty Name="FSFSubsidiaryRptTitle" ColumnName="FSFSubsidiaryRptTitle" />
+          <ScalarProperty Name="FSFSubsubCode" ColumnName="FSFSubsubCode" />
+          <ScalarProperty Name="FSFSubSubRptTitle" ColumnName="FSFSubSubRptTitle" />
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="DebitBalance" ColumnName="DebitBalance" />
+          <ScalarProperty Name="CreditBalance" ColumnName="CreditBalance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempTransDetailVBills">
+      <EntityTypeMapping TypeName="TMSModel.TempTransDetailVBill">
+        <MappingFragment StoreEntitySet="TempTransDetailVBill">
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="CustomerReference" ColumnName="CustomerReference" />
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
+          <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="ShortageQuantity" ColumnName="ShortageQuantity" />
+          <ScalarProperty Name="Shortage" ColumnName="Shortage" />
+          <ScalarProperty Name="QuantityValue" ColumnName="QuantityValue" />
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="UrduOwnerName" ColumnName="UrduOwnerName" />
+          <ScalarProperty Name="ProductUrdu" ColumnName="ProductUrdu" />
+          <ScalarProperty Name="StationPointName" ColumnName="StationPointName" />
+          <ScalarProperty Name="StationPointUrdu" ColumnName="StationPointUrdu" />
+          <ScalarProperty Name="DestinationPointName" ColumnName="DestinationPointName" />
+          <ScalarProperty Name="DestinationPointUrdu" ColumnName="DestinationPointUrdu" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="UrduCustomerName" ColumnName="UrduCustomerName" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="TripAdvance" ColumnName="TripAdvance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ttts">
+      <EntityTypeMapping TypeName="TMSModel.ttt">
+        <MappingFragment StoreEntitySet="ttt">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="IsAutoGenerated" ColumnName="IsAutoGenerated" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="CreditDays" ColumnName="CreditDays" />
+          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsedTransactionsDetails">
+      <EntityTypeMapping TypeName="TMSModel.UsedTransactionsDetail">
+        <MappingFragment StoreEntitySet="UsedTransactionsDetail">
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="RefVoucherNature" ColumnName="RefVoucherNature" />
+          <ScalarProperty Name="RefVoucherNo" ColumnName="RefVoucherNo" />
+          <ScalarProperty Name="RefVoucherDate" ColumnName="RefVoucherDate" />
+          <ScalarProperty Name="RefBillNo" ColumnName="RefBillNo" />
+          <ScalarProperty Name="AmountUsed" ColumnName="AmountUsed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VoucherDetails">
+      <EntityTypeMapping TypeName="TMSModel.VoucherDetail">
+        <MappingFragment StoreEntitySet="VoucherDetails">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditDebitNotEquals">
+      <EntityTypeMapping TypeName="TMSModel.CreditDebitNotEqual">
+        <MappingFragment StoreEntitySet="CreditDebitNotEqual">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GL_GetCOACombineLedTBRptVW">
+      <EntityTypeMapping TypeName="TMSModel.GL_GetCOACombineLedTBRptVW">
+        <MappingFragment StoreEntitySet="GL_GetCOACombineLedTBRptVW">
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLRptTitle" ColumnName="GLRptTitle" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlRptTitle" ColumnName="ControlRptTitle" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralRptTitle" ColumnName="GeneralRptTitle" />
+          <ScalarProperty Name="SubSidiaryCode" ColumnName="SubSidiaryCode" />
+          <ScalarProperty Name="SubsidiaryRptTitle" ColumnName="SubsidiaryRptTitle" />
+          <ScalarProperty Name="SubsubCode" ColumnName="SubsubCode" />
+          <ScalarProperty Name="SubSubRptTitle" ColumnName="SubSubRptTitle" />
+          <ScalarProperty Name="SysFSFGLCode" ColumnName="SysFSFGLCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GL_GetCOACombineTransactionVW">
+      <EntityTypeMapping TypeName="TMSModel.GL_GetCOACombineTransactionVW">
+        <MappingFragment StoreEntitySet="GL_GetCOACombineTransactionVW">
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="FSFGLCode" ColumnName="FSFGLCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GL_GetCOACombineVW">
+      <EntityTypeMapping TypeName="TMSModel.GL_GetCOACombineVW">
+        <MappingFragment StoreEntitySet="GL_GetCOACombineVW">
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="SysFSFGLCode" ColumnName="SysFSFGLCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GL_GetFSFCombineLedTBRptVW">
+      <EntityTypeMapping TypeName="TMSModel.GL_GetFSFCombineLedTBRptVW">
+        <MappingFragment StoreEntitySet="GL_GetFSFCombineLedTBRptVW">
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLRptTitle" ColumnName="GLRptTitle" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlRptTitle" ColumnName="ControlRptTitle" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralRptTitle" ColumnName="GeneralRptTitle" />
+          <ScalarProperty Name="SubSidiaryCode" ColumnName="SubSidiaryCode" />
+          <ScalarProperty Name="SubsidiaryRptTitle" ColumnName="SubsidiaryRptTitle" />
+          <ScalarProperty Name="SubsubCode" ColumnName="SubsubCode" />
+          <ScalarProperty Name="SubSubRptTitle" ColumnName="SubSubRptTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GL_GetFSFCombineTransactionVW">
+      <EntityTypeMapping TypeName="TMSModel.GL_GetFSFCombineTransactionVW">
+        <MappingFragment StoreEntitySet="GL_GetFSFCombineTransactionVW">
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GL_GetFSFCombineVW">
+      <EntityTypeMapping TypeName="TMSModel.GL_GetFSFCombineVW">
+        <MappingFragment StoreEntitySet="GL_GetFSFCombineVW">
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QryOtherAmountExcInvoices">
+      <EntityTypeMapping TypeName="TMSModel.QryOtherAmountExcInvoice">
+        <MappingFragment StoreEntitySet="QryOtherAmountExcInvoice">
+          <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VIEW1">
+      <EntityTypeMapping TypeName="TMSModel.VIEW1">
+        <MappingFragment StoreEntitySet="VIEW1">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="PartyCode" ColumnName="PartyCode" />
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VIEW2">
+      <EntityTypeMapping TypeName="TMSModel.VIEW2">
+        <MappingFragment StoreEntitySet="VIEW2">
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />
+          <ScalarProperty Name="SubsidiaryDescription" ColumnName="SubsidiaryDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VIEW3">
+      <EntityTypeMapping TypeName="TMSModel.VIEW3">
+        <MappingFragment StoreEntitySet="VIEW3">
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="VehicleDescription" ColumnName="VehicleDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="InstallmentGLCode" ColumnName="InstallmentGLCode" />
+          <ScalarProperty Name="InstallmentGLDescription" ColumnName="InstallmentGLDescription" />
+          <ScalarProperty Name="FreightGLCode" ColumnName="FreightGLCode" />
+          <ScalarProperty Name="FreightGLDescription" ColumnName="FreightGLDescription" />
+          <ScalarProperty Name="LoanGLCode" ColumnName="LoanGLCode" />
+          <ScalarProperty Name="LoanGLDescription" ColumnName="LoanGLDescription" />
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="CommissionGLCode" ColumnName="CommissionGLCode" />
+          <ScalarProperty Name="CommissionGLDescription" ColumnName="CommissionGLDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="TMSModel.Store.GetTransactionNatures" FunctionImportName="GetTransactionNatures">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.GetTransactionNatures_Result">
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="NatureCode" ColumnName="NatureCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BackupDatabase" FunctionName="TMSModel.Store.BackupDatabase" />
+    <FunctionImportMapping FunctionImportName="DeleteBranches" FunctionName="TMSModel.Store.DeleteBranches" />
+    <FunctionImportMapping FunctionImportName="DeleteCities" FunctionName="TMSModel.Store.DeleteCities" />
+    <FunctionImportMapping FunctionImportName="DeleteCOAControls" FunctionName="TMSModel.Store.DeleteCOAControls" />
+    <FunctionImportMapping FunctionImportName="DeleteCOAGenerals" FunctionName="TMSModel.Store.DeleteCOAGenerals" />
+    <FunctionImportMapping FunctionImportName="DeleteCOASubsidiaries" FunctionName="TMSModel.Store.DeleteCOASubsidiaries" />
+    <FunctionImportMapping FunctionImportName="DeleteCOASubSubsidiaries" FunctionName="TMSModel.Store.DeleteCOASubSubsidiaries" />
+    <FunctionImportMapping FunctionImportName="DeleteCustomerBills" FunctionName="TMSModel.Store.DeleteCustomerBills" />
+    <FunctionImportMapping FunctionImportName="DeleteCustomerBillsDetails" FunctionName="TMSModel.Store.DeleteCustomerBillsDetails" />
+    <FunctionImportMapping FunctionImportName="DeleteCustomers" FunctionName="TMSModel.Store.DeleteCustomers" />
+    <FunctionImportMapping FunctionImportName="DeleteDestinationPoints" FunctionName="TMSModel.Store.DeleteDestinationPoints" />
+    <FunctionImportMapping FunctionImportName="DeleteDivisions" FunctionName="TMSModel.Store.DeleteDivisions" />
+    <FunctionImportMapping FunctionImportName="DeleteFSFControls" FunctionName="TMSModel.Store.DeleteFSFControls" />
+    <FunctionImportMapping FunctionImportName="DeleteFSFGenerals" FunctionName="TMSModel.Store.DeleteFSFGenerals" />
+    <FunctionImportMapping FunctionImportName="DeleteFSFSubsidiaries" FunctionName="TMSModel.Store.DeleteFSFSubsidiaries" />
+    <FunctionImportMapping FunctionImportName="DeleteFSFSubSubsidiaries" FunctionName="TMSModel.Store.DeleteFSFSubSubsidiaries" />
+    <FunctionImportMapping FunctionImportName="DeleteGeneratedReferences" FunctionName="TMSModel.Store.DeleteGeneratedReferences" />
+    <FunctionImportMapping FunctionImportName="DeleteHistoryTransactionAudit" FunctionName="TMSModel.Store.DeleteHistoryTransactionAudit" />
+    <FunctionImportMapping FunctionImportName="DeleteInvoices" FunctionName="TMSModel.Store.DeleteInvoices" />
+    <FunctionImportMapping FunctionImportName="DeleteOrdersDetails" FunctionName="TMSModel.Store.DeleteOrdersDetails" />
+    <FunctionImportMapping FunctionImportName="DeleteProductRates" FunctionName="TMSModel.Store.DeleteProductRates" />
+    <FunctionImportMapping FunctionImportName="DeleteProducts" FunctionName="TMSModel.Store.DeleteProducts" />
+    <FunctionImportMapping FunctionImportName="DeleteProductValues" FunctionName="TMSModel.Store.DeleteProductValues" />
+    <FunctionImportMapping FunctionImportName="DeleteReceipts" FunctionName="TMSModel.Store.DeleteReceipts" />
+    <FunctionImportMapping FunctionImportName="DeleteRegions" FunctionName="TMSModel.Store.DeleteRegions" />
+    <FunctionImportMapping FunctionImportName="DeleteStationPoints" FunctionName="TMSModel.Store.DeleteStationPoints" />
+    <FunctionImportMapping FunctionImportName="DeleteSuppliers" FunctionName="TMSModel.Store.DeleteSuppliers" />
+    <FunctionImportMapping FunctionImportName="DeleteSuppliersDetails" FunctionName="TMSModel.Store.DeleteSuppliersDetails" />
+    <FunctionImportMapping FunctionImportName="DeleteTransactionsDetails" FunctionName="TMSModel.Store.DeleteTransactionsDetails" />
+    <FunctionImportMapping FunctionImportName="DeleteTransactionTypes" FunctionName="TMSModel.Store.DeleteTransactionTypes" />
+    <FunctionImportMapping FunctionImportName="DeleteUserSecurities" FunctionName="TMSModel.Store.DeleteUserSecurities" />
+    <FunctionImportMapping FunctionImportName="DeleteVehicleAdjustments" FunctionName="TMSModel.Store.DeleteVehicleAdjustments" />
+    <FunctionImportMapping FunctionImportName="DeleteVehicleAdjustmentsDetails" FunctionName="TMSModel.Store.DeleteVehicleAdjustmentsDetails" />
+    <FunctionImportMapping FunctionImportName="DeleteVehicleOwners" FunctionName="TMSModel.Store.DeleteVehicleOwners" />
+    <FunctionImportMapping FunctionImportName="DeleteVehicles" FunctionName="TMSModel.Store.DeleteVehicles" />
+    <FunctionImportMapping FunctionImportName="DeleteVihicles" FunctionName="TMSModel.Store.DeleteVihicles" />
+    <FunctionImportMapping FunctionImportName="DeleteVouchers" FunctionName="TMSModel.Store.DeleteVouchers" />
+    <FunctionImportMapping FunctionImportName="DeleteVouchersDetails" FunctionName="TMSModel.Store.DeleteVouchersDetails" />
+    <FunctionImportMapping FunctionImportName="dt_addtosourcecontrol" FunctionName="TMSModel.Store.dt_addtosourcecontrol" />
+    <FunctionImportMapping FunctionImportName="dt_addtosourcecontrol_u" FunctionName="TMSModel.Store.dt_addtosourcecontrol_u" />
+    <FunctionImportMapping FunctionImportName="dt_adduserobject" FunctionName="TMSModel.Store.dt_adduserobject" />
+    <FunctionImportMapping FunctionImportName="dt_adduserobject_vcs" FunctionName="TMSModel.Store.dt_adduserobject_vcs" />
+    <FunctionImportMapping FunctionImportName="dt_checkinobject" FunctionName="TMSModel.Store.dt_checkinobject" />
+    <FunctionImportMapping FunctionImportName="dt_checkinobject_u" FunctionName="TMSModel.Store.dt_checkinobject_u" />
+    <FunctionImportMapping FunctionImportName="dt_checkoutobject" FunctionName="TMSModel.Store.dt_checkoutobject" />
+    <FunctionImportMapping FunctionImportName="dt_checkoutobject_u" FunctionName="TMSModel.Store.dt_checkoutobject_u" />
+    <FunctionImportMapping FunctionImportName="dt_displayoaerror" FunctionName="TMSModel.Store.dt_displayoaerror" />
+    <FunctionImportMapping FunctionImportName="dt_displayoaerror_u" FunctionName="TMSModel.Store.dt_displayoaerror_u" />
+    <FunctionImportMapping FunctionImportName="dt_droppropertiesbyid" FunctionName="TMSModel.Store.dt_droppropertiesbyid" />
+    <FunctionImportMapping FunctionImportName="dt_dropuserobjectbyid" FunctionName="TMSModel.Store.dt_dropuserobjectbyid" />
+    <FunctionImportMapping FunctionImportName="dt_generateansiname" FunctionName="TMSModel.Store.dt_generateansiname" />
+    <FunctionImportMapping FunctionImportName="dt_getobjwithprop" FunctionName="TMSModel.Store.dt_getobjwithprop" />
+    <FunctionImportMapping FunctionImportName="dt_getobjwithprop_u" FunctionName="TMSModel.Store.dt_getobjwithprop_u" />
+    <FunctionImportMapping FunctionImportName="dt_getpropertiesbyid" FunctionName="TMSModel.Store.dt_getpropertiesbyid">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.dt_getpropertiesbyid_Result">
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="dt_getpropertiesbyid_u" FunctionName="TMSModel.Store.dt_getpropertiesbyid_u">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.dt_getpropertiesbyid_u_Result">
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="dt_getpropertiesbyid_vcs" FunctionName="TMSModel.Store.dt_getpropertiesbyid_vcs" />
+    <FunctionImportMapping FunctionImportName="dt_getpropertiesbyid_vcs_u" FunctionName="TMSModel.Store.dt_getpropertiesbyid_vcs_u" />
+    <FunctionImportMapping FunctionImportName="dt_isundersourcecontrol" FunctionName="TMSModel.Store.dt_isundersourcecontrol" />
+    <FunctionImportMapping FunctionImportName="dt_isundersourcecontrol_u" FunctionName="TMSModel.Store.dt_isundersourcecontrol_u" />
+    <FunctionImportMapping FunctionImportName="dt_removefromsourcecontrol" FunctionName="TMSModel.Store.dt_removefromsourcecontrol" />
+    <FunctionImportMapping FunctionImportName="dt_setpropertybyid" FunctionName="TMSModel.Store.dt_setpropertybyid" />
+    <FunctionImportMapping FunctionImportName="dt_setpropertybyid_u" FunctionName="TMSModel.Store.dt_setpropertybyid_u" />
+    <FunctionImportMapping FunctionImportName="dt_validateloginparams" FunctionName="TMSModel.Store.dt_validateloginparams" />
+    <FunctionImportMapping FunctionImportName="dt_validateloginparams_u" FunctionName="TMSModel.Store.dt_validateloginparams_u" />
+    <FunctionImportMapping FunctionImportName="dt_vcsenabled" FunctionName="TMSModel.Store.dt_vcsenabled" />
+    <FunctionImportMapping FunctionImportName="dt_verstamp006" FunctionName="TMSModel.Store.dt_verstamp006" />
+    <FunctionImportMapping FunctionImportName="dt_verstamp007" FunctionName="TMSModel.Store.dt_verstamp007" />
+    <FunctionImportMapping FunctionImportName="dt_whocheckedout" FunctionName="TMSModel.Store.dt_whocheckedout" />
+    <FunctionImportMapping FunctionImportName="dt_whocheckedout_u" FunctionName="TMSModel.Store.dt_whocheckedout_u" />
+    <FunctionImportMapping FunctionImportName="InsertItemCategory" FunctionName="TMSModel.Store.InsertItemCategory" />
+    <FunctionImportMapping FunctionImportName="InsertUpdateItemCategory" FunctionName="TMSModel.Store.InsertUpdateItemCategory" />
+    <FunctionImportMapping FunctionImportName="RestoreDatabase" FunctionName="TMSModel.Store.RestoreDatabase" />
+    <FunctionImportMapping FunctionImportName="SelectBranches" FunctionName="TMSModel.Store.SelectBranches">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectBranches_Result">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Branchname" ColumnName="Branchname" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCashFlowStatementReports" FunctionName="TMSModel.Store.SelectCashFlowStatementReports" />
+    <FunctionImportMapping FunctionImportName="SelectChartOfAccounts" FunctionName="TMSModel.Store.SelectChartOfAccounts" />
+    <FunctionImportMapping FunctionImportName="SelectCities" FunctionName="TMSModel.Store.SelectCities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectCities_Result">
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCOACombine" FunctionName="TMSModel.Store.SelectCOACombine">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectCOACombine_Result">
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="FSFGLCode" ColumnName="FSFGLCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCOAControls" FunctionName="TMSModel.Store.SelectCOAControls">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectCOAControls_Result">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="FSFGLCode" ColumnName="FSFGLCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCOAGenerals" FunctionName="TMSModel.Store.SelectCOAGenerals">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectCOAGenerals_Result">
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="FSFGLCode" ColumnName="FSFGLCode" />
+          <ScalarProperty Name="FSFGLDescription" ColumnName="FSFGLDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCOAListReports" FunctionName="TMSModel.Store.SelectCOAListReports">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectCOAListReports_Result">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />
+          <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
+          <ScalarProperty Name="SubsidiaryDescription" ColumnName="SubsidiaryDescription" />
+          <ScalarProperty Name="SubSubCode" ColumnName="SubSubCode" />
+          <ScalarProperty Name="SubSubDescription" ColumnName="SubSubDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCOASubsidiaries" FunctionName="TMSModel.Store.SelectCOASubsidiaries">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectCOASubsidiaries_Result">
+          <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
+          <ScalarProperty Name="SubsidiaryDescription" ColumnName="SubsidiaryDescription" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="FSFGLCode" ColumnName="FSFGLCode" />
+          <ScalarProperty Name="FSFGLDescription" ColumnName="FSFGLDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCOASubSubSidiaries" FunctionName="TMSModel.Store.SelectCOASubSubSidiaries">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectCOASubSubSidiaries_Result">
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />
+          <ScalarProperty Name="SubsidiaryCode1" ColumnName="SubsidiaryCode1" />
+          <ScalarProperty Name="SubsidiaryDescription" ColumnName="SubsidiaryDescription" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="SubSubsidiaryCode" ColumnName="SubSubsidiaryCode" />
+          <ScalarProperty Name="SubSubsidiaryDescription" ColumnName="SubSubsidiaryDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
+          <ScalarProperty Name="fsfglcode" ColumnName="fsfglcode" />
+          <ScalarProperty Name="fsfGLDescription" ColumnName="fsfGLDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCOAValidation" FunctionName="TMSModel.Store.SelectCOAValidation" />
+    <FunctionImportMapping FunctionImportName="SelectCustomerBills" FunctionName="TMSModel.Store.SelectCustomerBills">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectCustomerBills_Result">
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCustomerBillsDetails" FunctionName="TMSModel.Store.SelectCustomerBillsDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectCustomerBillsDetails_Result">
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="BranchDescription" ColumnName="BranchDescription" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Shortage" ColumnName="Shortage" />
+          <ScalarProperty Name="TokenNo" ColumnName="TokenNo" />
+          <ScalarProperty Name="StationPoint" ColumnName="StationPoint" />
+          <ScalarProperty Name="DestinationPoint" ColumnName="DestinationPoint" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCustomers" FunctionName="TMSModel.Store.SelectCustomers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectCustomers_Result">
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="SalesTaxNumber" ColumnName="SalesTaxNumber" />
+          <ScalarProperty Name="NationalTaxNumber" ColumnName="NationalTaxNumber" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ShortageGLCode" ColumnName="ShortageGLCode" />
+          <ScalarProperty Name="ShortageGLDescription" ColumnName="ShortageGLDescription" />
+          <ScalarProperty Name="WHTaxGLCode" ColumnName="WHTaxGLCode" />
+          <ScalarProperty Name="WHTaxGLDescription" ColumnName="WHTaxGLDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectDestinationPoints" FunctionName="TMSModel.Store.SelectDestinationPoints">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectDestinationPoints_Result">
+          <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
+          <ScalarProperty Name="DestinationPointName" ColumnName="DestinationPointName" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="PointNo" ColumnName="PointNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectDivisions" FunctionName="TMSModel.Store.SelectDivisions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectDivisions_Result">
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectFinancialStatementReports" FunctionName="TMSModel.Store.SelectFinancialStatementReports" />
+    <FunctionImportMapping FunctionImportName="SelectFSFCombine" FunctionName="TMSModel.Store.SelectFSFCombine">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectFSFCombine_Result">
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectFSFControls" FunctionName="TMSModel.Store.SelectFSFControls">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectFSFControls_Result">
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="ReportTitle" ColumnName="ReportTitle" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectFSFGenerals" FunctionName="TMSModel.Store.SelectFSFGenerals">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectFSFGenerals_Result">
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectFSFSubsidiaries" FunctionName="TMSModel.Store.SelectFSFSubsidiaries">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectFSFSubsidiaries_Result">
+          <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
+          <ScalarProperty Name="SubsidiaryDescription" ColumnName="SubsidiaryDescription" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectFSFSubSubSidiaries" FunctionName="TMSModel.Store.SelectFSFSubSubSidiaries">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectFSFSubSubSidiaries_Result">
+          <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
+          <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />
+          <ScalarProperty Name="SubsidiaryCode1" ColumnName="SubsidiaryCode1" />
+          <ScalarProperty Name="SubsidiaryDescription" ColumnName="SubsidiaryDescription" />
+          <ScalarProperty Name="SubsidiaryDescription1" ColumnName="SubsidiaryDescription1" />
+          <ScalarProperty Name="SubSubsidiaryCode" ColumnName="SubSubsidiaryCode" />
+          <ScalarProperty Name="SubSubsidiaryDescription" ColumnName="SubSubsidiaryDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectGeneralLedgerReports" FunctionName="TMSModel.Store.SelectGeneralLedgerReports" />
+    <FunctionImportMapping FunctionImportName="SelectGeneratedReferences" FunctionName="TMSModel.Store.SelectGeneratedReferences">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectGeneratedReferences_Result">
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="GenFrom" ColumnName="GenFrom" />
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+          <ScalarProperty Name="FromBranchCode" ColumnName="FromBranchCode" />
+          <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="DocumentNature" ColumnName="DocumentNature" />
+          <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
+          <ScalarProperty Name="BranchCode1" ColumnName="BranchCode1" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectInvoices" FunctionName="TMSModel.Store.SelectInvoices">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectInvoices_Result">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="CustomerReference" ColumnName="CustomerReference" />
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="VehicleDescription" ColumnName="VehicleDescription" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
+          <ScalarProperty Name="StationPointName" ColumnName="StationPointName" />
+          <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
+          <ScalarProperty Name="DestinationPointName" ColumnName="DestinationPointName" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="IsTripCanceled" ColumnName="IsTripCanceled" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="CommissionRate" ColumnName="CommissionRate" />
+          <ScalarProperty Name="Shortage" ColumnName="Shortage" />
+          <ScalarProperty Name="ShortageQuantity" ColumnName="ShortageQuantity" />
+          <ScalarProperty Name="QuantityValue" ColumnName="QuantityValue" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TripAdvanceReference" ColumnName="TripAdvanceReference" />
+          <ScalarProperty Name="TripAdvance" ColumnName="TripAdvance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectListReports" FunctionName="TMSModel.Store.SelectListReports">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectListReports_Result">
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="VehicleDescription" ColumnName="VehicleDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="InstallmentGLCode" ColumnName="InstallmentGLCode" />
+          <ScalarProperty Name="InstallmentGLDescription" ColumnName="InstallmentGLDescription" />
+          <ScalarProperty Name="FreightGLCode" ColumnName="FreightGLCode" />
+          <ScalarProperty Name="FreightGLDescription" ColumnName="FreightGLDescription" />
+          <ScalarProperty Name="LoanGLCode" ColumnName="LoanGLCode" />
+          <ScalarProperty Name="LoanGLDescription" ColumnName="LoanGLDescription" />
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="CommissionGLCode" ColumnName="CommissionGLCode" />
+          <ScalarProperty Name="CommissionGLDescription" ColumnName="CommissionGLDescription" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectOpeningBalances" FunctionName="TMSModel.Store.SelectOpeningBalances">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectOpeningBalances_Result">
+          <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchDescription" ColumnName="BranchDescription" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="BalanceAmount" ColumnName="BalanceAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectPosting" FunctionName="TMSModel.Store.SelectPosting" />
+    <FunctionImportMapping FunctionImportName="SelectProductRates" FunctionName="TMSModel.Store.SelectProductRates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectProductRates_Result">
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
+          <ScalarProperty Name="StationPointDescription" ColumnName="StationPointDescription" />
+          <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
+          <ScalarProperty Name="DestinationPointDescription" ColumnName="DestinationPointDescription" />
+          <ScalarProperty Name="TripAdvanceAmount" ColumnName="TripAdvanceAmount" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectProducts" FunctionName="TMSModel.Store.SelectProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectProducts_Result">
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectProductValues" FunctionName="TMSModel.Store.SelectProductValues">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectProductValues_Result">
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="QuantityValue" ColumnName="QuantityValue" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectReceipts" FunctionName="TMSModel.Store.SelectReceipts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectReceipts_Result">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Shortage" ColumnName="Shortage" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="SaleTaxValue" ColumnName="SaleTaxValue" />
+          <ScalarProperty Name="AmountIncSaleTax" ColumnName="AmountIncSaleTax" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectRegions" FunctionName="TMSModel.Store.SelectRegions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectRegions_Result">
+          <ScalarProperty Name="RegionCode" ColumnName="RegionCode" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectStationPoints" FunctionName="TMSModel.Store.SelectStationPoints">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectStationPoints_Result">
+          <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
+          <ScalarProperty Name="StationPointName" ColumnName="StationPointName" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="PointNo" ColumnName="PointNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectSuppliers" FunctionName="TMSModel.Store.SelectSuppliers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectSuppliers_Result">
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="SalesTaxNumber" ColumnName="SalesTaxNumber" />
+          <ScalarProperty Name="NationalTaxNumber" ColumnName="NationalTaxNumber" />
+          <ScalarProperty Name="TaxCircle" ColumnName="TaxCircle" />
+          <ScalarProperty Name="TaxZone" ColumnName="TaxZone" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="CityCode1" ColumnName="CityCode1" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="UrduTitle1" ColumnName="UrduTitle1" />
+          <ScalarProperty Name="DefinitionDate1" ColumnName="DefinitionDate1" />
+          <ScalarProperty Name="GUID1" ColumnName="GUID1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectTransactionDocumentReports" FunctionName="TMSModel.Store.SelectTransactionDocumentReports" />
+    <FunctionImportMapping FunctionImportName="SelectTransactionListReports" FunctionName="TMSModel.Store.SelectTransactionListReports">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectTransactionListReports_Result">
+          <ScalarProperty Name="NatureCode" ColumnName="NatureCode" />
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="VehicleDescription" ColumnName="VehicleDescription" />
+          <ScalarProperty Name="TransactionTypeCode" ColumnName="TransactionTypeCode" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLRptTitle" ColumnName="GLRptTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectTransactionNatures" FunctionName="TMSModel.Store.SelectTransactionNatures">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectTransactionNatures_Result">
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="NatureCode" ColumnName="NatureCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectTransactionsDetails" FunctionName="TMSModel.Store.SelectTransactionsDetails" />
+    <FunctionImportMapping FunctionImportName="SelectTransactionTypes" FunctionName="TMSModel.Store.SelectTransactionTypes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectTransactionTypes_Result">
+          <ScalarProperty Name="TransactionTypeCode" ColumnName="TransactionTypeCode" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="NatureCode" ColumnName="NatureCode" />
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectUserSecurities" FunctionName="TMSModel.Store.SelectUserSecurities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectUserSecurities_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="IsLoggedIn" ColumnName="IsLoggedIn" />
+          <ScalarProperty Name="IsAdministrator" ColumnName="IsAdministrator" />
+          <ScalarProperty Name="NormalShutDown" ColumnName="NormalShutDown" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="S_Account" ColumnName="S_Account" />
+          <ScalarProperty Name="T_Order" ColumnName="T_Order" />
+          <ScalarProperty Name="R_RecVoucher" ColumnName="R_RecVoucher" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectVehicleAdjustments" FunctionName="TMSModel.Store.SelectVehicleAdjustments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectVehicleAdjustments_Result">
+          <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="VehicleDescription" ColumnName="VehicleDescription" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectVehicleAdjustmentsDetails" FunctionName="TMSModel.Store.SelectVehicleAdjustmentsDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectVehicleAdjustmentsDetails_Result">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UrduDescription" ColumnName="UrduDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectVehicleBillsReports" FunctionName="TMSModel.Store.SelectVehicleBillsReports" />
+    <FunctionImportMapping FunctionImportName="SelectVehicleBillsReportsWGL" FunctionName="TMSModel.Store.SelectVehicleBillsReportsWGL" />
+    <FunctionImportMapping FunctionImportName="SelectVehicleFreightStatementsReports" FunctionName="TMSModel.Store.SelectVehicleFreightStatementsReports">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectVehicleFreightStatementsReports_Result">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="TokenNo" ColumnName="TokenNo" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
+          <ScalarProperty Name="DestinationPointName" ColumnName="DestinationPointName" />
+          <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
+          <ScalarProperty Name="StationPointName" ColumnName="StationPointName" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="ShortageQuantity" ColumnName="ShortageQuantity" />
+          <ScalarProperty Name="QuantityValue" ColumnName="QuantityValue" />
+          <ScalarProperty Name="Shortage" ColumnName="Shortage" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="IsBilled" ColumnName="IsBilled" />
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="VehicleDescription" ColumnName="VehicleDescription" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectVehicleLedgerReports" FunctionName="TMSModel.Store.SelectVehicleLedgerReports" />
+    <FunctionImportMapping FunctionImportName="SelectVehicleOwners" FunctionName="TMSModel.Store.SelectVehicleOwners">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectVehicleOwners_Result">
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="CityCode1" ColumnName="CityCode1" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="UrduTitle1" ColumnName="UrduTitle1" />
+          <ScalarProperty Name="DefinitionDate1" ColumnName="DefinitionDate1" />
+          <ScalarProperty Name="GUID1" ColumnName="GUID1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectVehicles" FunctionName="TMSModel.Store.SelectVehicles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectVehicles_Result">
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="VehicleDescription" ColumnName="VehicleDescription" />
+          <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
+          <ScalarProperty Name="InstallmentGLCode" ColumnName="InstallmentGLCode" />
+          <ScalarProperty Name="InstallmentGLDescription" ColumnName="InstallmentGLDescription" />
+          <ScalarProperty Name="FreightGLCode" ColumnName="FreightGLCode" />
+          <ScalarProperty Name="FreightGLDescription" ColumnName="FreightGLDescription" />
+          <ScalarProperty Name="LoanGLCode" ColumnName="LoanGLCode" />
+          <ScalarProperty Name="LoanGLDescription" ColumnName="LoanGLDescription" />
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="CommissionGLCode" ColumnName="CommissionGLCode" />
+          <ScalarProperty Name="CommissionGLDescription" ColumnName="CommissionGLDescription" />
+          <ScalarProperty Name="CommissionGLDescription1" ColumnName="CommissionGLDescription1" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectVoucherDocumentReports" FunctionName="TMSModel.Store.SelectVoucherDocumentReports">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectVoucherDocumentReports_Result">
+          <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchDescription" ColumnName="BranchDescription" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectVoucherListReports" FunctionName="TMSModel.Store.SelectVoucherListReports">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectVoucherListReports_Result">
+          <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchDescription" ColumnName="BranchDescription" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="IsAutoGenerated" ColumnName="IsAutoGenerated" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectVouchers" FunctionName="TMSModel.Store.SelectVouchers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectVouchers_Result">
+          <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UrduTitle" ColumnName="UrduTitle" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="IsAutoGenerated" ColumnName="IsAutoGenerated" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectVouchersDetails" FunctionName="TMSModel.Store.SelectVouchersDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TMSModel.SelectVouchersDetails_Result">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateBranches" FunctionName="TMSModel.Store.UpdateBranches" />
+    <FunctionImportMapping FunctionImportName="UpdateCities" FunctionName="TMSModel.Store.UpdateCities" />
+    <FunctionImportMapping FunctionImportName="UpdateCOAControls" FunctionName="TMSModel.Store.UpdateCOAControls" />
+    <FunctionImportMapping FunctionImportName="UpdateCOAGenerals" FunctionName="TMSModel.Store.UpdateCOAGenerals" />
+    <FunctionImportMapping FunctionImportName="UpdateCOASubsidiaries" FunctionName="TMSModel.Store.UpdateCOASubsidiaries" />
+    <FunctionImportMapping FunctionImportName="UpdateCOASubSubsidiaries" FunctionName="TMSModel.Store.UpdateCOASubSubsidiaries" />
+    <FunctionImportMapping FunctionImportName="UpdateCountries" FunctionName="TMSModel.Store.UpdateCountries" />
+    <FunctionImportMapping FunctionImportName="UpdateCustomerBills" FunctionName="TMSModel.Store.UpdateCustomerBills" />
+    <FunctionImportMapping FunctionImportName="UpdateCustomerBillsDetails" FunctionName="TMSModel.Store.UpdateCustomerBillsDetails" />
+    <FunctionImportMapping FunctionImportName="UpdateCustomers" FunctionName="TMSModel.Store.UpdateCustomers" />
+    <FunctionImportMapping FunctionImportName="UpdateDestinationPoints" FunctionName="TMSModel.Store.UpdateDestinationPoints" />
+    <FunctionImportMapping FunctionImportName="UpdateDetailHistoryTransactionAudit" FunctionName="TMSModel.Store.UpdateDetailHistoryTransactionAudit" />
+    <FunctionImportMapping FunctionImportName="UpdateDivisions" FunctionName="TMSModel.Store.UpdateDivisions" />
+    <FunctionImportMapping FunctionImportName="UpdateFSFControls" FunctionName="TMSModel.Store.UpdateFSFControls" />
+    <FunctionImportMapping FunctionImportName="UpdateFSFGenerals" FunctionName="TMSModel.Store.UpdateFSFGenerals" />
+    <FunctionImportMapping FunctionImportName="UpdateFSFSubsidiaries" FunctionName="TMSModel.Store.UpdateFSFSubsidiaries" />
+    <FunctionImportMapping FunctionImportName="UpdateFSFSubSubsidiaries" FunctionName="TMSModel.Store.UpdateFSFSubSubsidiaries" />
+    <FunctionImportMapping FunctionImportName="UpdateGeneratedReferences" FunctionName="TMSModel.Store.UpdateGeneratedReferences" />
+    <FunctionImportMapping FunctionImportName="UpdateInvoices" FunctionName="TMSModel.Store.UpdateInvoices" />
+    <FunctionImportMapping FunctionImportName="UpdateOrdersDetails" FunctionName="TMSModel.Store.UpdateOrdersDetails" />
+    <FunctionImportMapping FunctionImportName="UpdatePacking" FunctionName="TMSModel.Store.UpdatePacking" />
+    <FunctionImportMapping FunctionImportName="UpdatePosting" FunctionName="TMSModel.Store.UpdatePosting" />
+    <FunctionImportMapping FunctionImportName="UpdateProductRates" FunctionName="TMSModel.Store.UpdateProductRates" />
+    <FunctionImportMapping FunctionImportName="UpdateProducts" FunctionName="TMSModel.Store.UpdateProducts" />
+    <FunctionImportMapping FunctionImportName="UpdateProductValues" FunctionName="TMSModel.Store.UpdateProductValues" />
+    <FunctionImportMapping FunctionImportName="UpdateReceipts" FunctionName="TMSModel.Store.UpdateReceipts" />
+    <FunctionImportMapping FunctionImportName="UpdateRegions" FunctionName="TMSModel.Store.UpdateRegions" />
+    <FunctionImportMapping FunctionImportName="UpdateStationPoints" FunctionName="TMSModel.Store.UpdateStationPoints" />
+    <FunctionImportMapping FunctionImportName="UpdateSuppliers" FunctionName="TMSModel.Store.UpdateSuppliers" />
+    <FunctionImportMapping FunctionImportName="UpdateTransactionsDetails" FunctionName="TMSModel.Store.UpdateTransactionsDetails" />
+    <FunctionImportMapping FunctionImportName="UpdateTransactionTypes" FunctionName="TMSModel.Store.UpdateTransactionTypes" />
+    <FunctionImportMapping FunctionImportName="UpdateUserSecurities" FunctionName="TMSModel.Store.UpdateUserSecurities" />
+    <FunctionImportMapping FunctionImportName="UpdateVehicleAdjustments" FunctionName="TMSModel.Store.UpdateVehicleAdjustments" />
+    <FunctionImportMapping FunctionImportName="UpdateVehicleAdjustmentsDetails" FunctionName="TMSModel.Store.UpdateVehicleAdjustmentsDetails" />
+    <FunctionImportMapping FunctionImportName="UpdateVehicleOwners" FunctionName="TMSModel.Store.UpdateVehicleOwners" />
+    <FunctionImportMapping FunctionImportName="UpdateVehicles" FunctionName="TMSModel.Store.UpdateVehicles" />
+    <FunctionImportMapping FunctionImportName="UpdateVouchers" FunctionName="TMSModel.Store.UpdateVouchers" />
+    <FunctionImportMapping FunctionImportName="UpdateVouchersDetails" FunctionName="TMSModel.Store.UpdateVouchersDetails" />
+  </EntityContainerMapping>
+</Mapping>
