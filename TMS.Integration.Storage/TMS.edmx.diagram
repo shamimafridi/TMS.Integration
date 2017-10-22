@@ -21,7 +21,6 @@
         <EntityTypeShape EntityType="TMSModel.Invoice" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.Item" Width="1.5" PointX="11.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.Option" Width="1.5" PointX="11.75" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.PayableAccount" Width="1.5" PointX="13.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.ProductRate" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.Product" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.ProductValue" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
@@ -54,7 +53,6 @@
         <EntityTypeShape EntityType="TMSModel.TempTransDetailLedger" Width="1.5" PointX="19.75" PointY="17.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.TempTransDetailLedgerTrial" Width="1.5" PointX="5.75" PointY="22.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.TempTransDetailTrialFSF" Width="1.5" PointX="7.75" PointY="22.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.TempTransDetailVBill" Width="1.5" PointX="15.75" PointY="22.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.ttt" Width="1.5" PointX="21.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.UsedTransactionsDetail" Width="1.5" PointX="21.75" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.VoucherDetail" Width="1.5" PointX="9.75" PointY="23.625" IsExpanded="true" />
@@ -101,6 +99,8 @@
         <AssociationConnector Association="TMSModel.FK_VehicleAdjustmentDetails_VehicleAdjustments" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_VehicleAdjustments_Vehicles_" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_Vehicles__VehicleOwners" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TMSModel.TempCOAOpeningLedger" Width="1.5" PointX="24.375" PointY="22.75" />
+        <EntityTypeShape EntityType="TMSModel.TempTransDetailVBill" Width="1.5" PointX="20.375" PointY="25.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

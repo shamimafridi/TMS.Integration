@@ -26,6 +26,8 @@
     <EntitySetMapping Name="COAControls">
       <EntityTypeMapping TypeName="TMSModel.COAControl">
         <MappingFragment StoreEntitySet="COAControls">
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="Ref_No" ColumnName="Ref_No" />
           <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
           <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
           <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
@@ -62,6 +64,7 @@
     <EntitySetMapping Name="COASubSubsidiaries">
       <EntityTypeMapping TypeName="TMSModel.COASubSubsidiary">
         <MappingFragment StoreEntitySet="COASubSubsidiaries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
           <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
           <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
@@ -224,29 +227,6 @@
           <ScalarProperty Name="OptionName" ColumnName="OptionName" />
           <ScalarProperty Name="OptionValue" ColumnName="OptionValue" />
           <ScalarProperty Name="OptionDescription" ColumnName="OptionDescription" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PayableAccounts">
-      <EntityTypeMapping TypeName="TMSModel.PayableAccount">
-        <MappingFragment StoreEntitySet="PayableAccounts">
-          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
-          <ScalarProperty Name="DocumentNature" ColumnName="DocumentNature" />
-          <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
-          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
-          <ScalarProperty Name="PartyCode" ColumnName="PartyCode" />
-          <ScalarProperty Name="MiscPartyName" ColumnName="MiscPartyName" />
-          <ScalarProperty Name="PartyReference" ColumnName="PartyReference" />
-          <ScalarProperty Name="PartyReferenceDate" ColumnName="PartyReferenceDate" />
-          <ScalarProperty Name="InternalReference" ColumnName="InternalReference" />
-          <ScalarProperty Name="InternalReferenceDate" ColumnName="InternalReferenceDate" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="CreditDays" ColumnName="CreditDays" />
-          <ScalarProperty Name="Locked" ColumnName="Locked" />
-          <ScalarProperty Name="Posted" ColumnName="Posted" />
-          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
-          <ScalarProperty Name="GUID" ColumnName="GUID" />
-          <ScalarProperty Name="OldRef" ColumnName="OldRef" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -817,45 +797,6 @@
           <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
           <ScalarProperty Name="DebitBalance" ColumnName="DebitBalance" />
           <ScalarProperty Name="CreditBalance" ColumnName="CreditBalance" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TempTransDetailVBills">
-      <EntityTypeMapping TypeName="TMSModel.TempTransDetailVBill">
-        <MappingFragment StoreEntitySet="TempTransDetailVBill">
-          <ScalarProperty Name="MODE" ColumnName="MODE" />
-          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
-          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
-          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
-          <ScalarProperty Name="CustomerReference" ColumnName="CustomerReference" />
-          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
-          <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
-          <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
-          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Rate" ColumnName="Rate" />
-          <ScalarProperty Name="Debit" ColumnName="Debit" />
-          <ScalarProperty Name="Credit" ColumnName="Credit" />
-          <ScalarProperty Name="Commission" ColumnName="Commission" />
-          <ScalarProperty Name="ShortageQuantity" ColumnName="ShortageQuantity" />
-          <ScalarProperty Name="Shortage" ColumnName="Shortage" />
-          <ScalarProperty Name="QuantityValue" ColumnName="QuantityValue" />
-          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
-          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
-          <ScalarProperty Name="UrduOwnerName" ColumnName="UrduOwnerName" />
-          <ScalarProperty Name="ProductUrdu" ColumnName="ProductUrdu" />
-          <ScalarProperty Name="StationPointName" ColumnName="StationPointName" />
-          <ScalarProperty Name="StationPointUrdu" ColumnName="StationPointUrdu" />
-          <ScalarProperty Name="DestinationPointName" ColumnName="DestinationPointName" />
-          <ScalarProperty Name="DestinationPointUrdu" ColumnName="DestinationPointUrdu" />
-          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
-          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
-          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
-          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-          <ScalarProperty Name="UrduCustomerName" ColumnName="UrduCustomerName" />
-          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
-          <ScalarProperty Name="Narration" ColumnName="Narration" />
-          <ScalarProperty Name="TripAdvance" ColumnName="TripAdvance" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1885,5 +1826,64 @@
     <FunctionImportMapping FunctionImportName="UpdateVehicles" FunctionName="TMSModel.Store.UpdateVehicles" />
     <FunctionImportMapping FunctionImportName="UpdateVouchers" FunctionName="TMSModel.Store.UpdateVouchers" />
     <FunctionImportMapping FunctionImportName="UpdateVouchersDetails" FunctionName="TMSModel.Store.UpdateVouchersDetails" />
+    <EntitySetMapping Name="TempCOAOpeningLedgers">
+      <EntityTypeMapping TypeName="TMSModel.TempCOAOpeningLedger">
+        <MappingFragment StoreEntitySet="TempCOAOpeningLedger">
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="SubSubRptTitle" ColumnName="SubSubRptTitle" />
+          <ScalarProperty Name="SubsubCode" ColumnName="SubsubCode" />
+          <ScalarProperty Name="SubsidiaryRptTitle" ColumnName="SubsidiaryRptTitle" />
+          <ScalarProperty Name="SubSidiaryCode" ColumnName="SubSidiaryCode" />
+          <ScalarProperty Name="GeneralRptTitle" ColumnName="GeneralRptTitle" />
+          <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+          <ScalarProperty Name="ControlRptTitle" ColumnName="ControlRptTitle" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="GLRptTitle" ColumnName="GLRptTitle" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="DivisionRptTitle" ColumnName="DivisionRptTitle" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="BranchRptTitle" ColumnName="BranchRptTitle" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempTransDetailVBills">
+      <EntityTypeMapping TypeName="TMSModel.TempTransDetailVBill">
+        <MappingFragment StoreEntitySet="TempTransDetailVBill">
+          <ScalarProperty Name="UrduCustomerName" ColumnName="UrduCustomerName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="GLDescriptionINV" ColumnName="GLDescriptionINV" />
+          <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="DestinationPointUrdu" ColumnName="DestinationPointUrdu" />
+          <ScalarProperty Name="DestinationPointName" ColumnName="DestinationPointName" />
+          <ScalarProperty Name="StationPointUrdu" ColumnName="StationPointUrdu" />
+          <ScalarProperty Name="StationPointName" ColumnName="StationPointName" />
+          <ScalarProperty Name="ProductUrdu" ColumnName="ProductUrdu" />
+          <ScalarProperty Name="UrduOwnerName" ColumnName="UrduOwnerName" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="QuantityValue" ColumnName="QuantityValue" />
+          <ScalarProperty Name="Shortage" ColumnName="Shortage" />
+          <ScalarProperty Name="ShortageQuantity" ColumnName="ShortageQuantity" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
+          <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
+          <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+          <ScalarProperty Name="CustomerReference" ColumnName="CustomerReference" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
+          <ScalarProperty Name="MODE" ColumnName="MODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

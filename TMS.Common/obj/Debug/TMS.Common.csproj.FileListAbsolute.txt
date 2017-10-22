@@ -1,0 +1,6 @@
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Common\bin\Debug\TMS.Common.dll
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Common\bin\Debug\TMS.Common.pdb
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Common\obj\Debug\TMS.Common.csprojResolveAssemblyReference.cache
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Common\obj\Debug\TMS.Common.csproj.CoreCompileInputs.cache
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Common\obj\Debug\TMS.Common.dll
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Common\obj\Debug\TMS.Common.pdb

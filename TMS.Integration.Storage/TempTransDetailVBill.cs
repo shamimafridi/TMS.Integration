@@ -15,6 +15,7 @@ namespace TMS.Integration.Storage
     public partial class TempTransDetailVBill
     {
         public string MODE { get; set; }
+        public string TransactionNature { get; set; }
         public string TransactionNo { get; set; }
         public System.DateTime TransactionDate { get; set; }
         public long RecordNo { get; set; }
@@ -41,11 +42,9 @@ namespace TMS.Integration.Storage
         public string DestinationPointUrdu { get; set; }
         public string GLCode { get; set; }
         public string GLDescription { get; set; }
+        public string GLDescriptionINV { get; set; }
         public string CustomerCode { get; set; }
         public string CustomerName { get; set; }
         public string UrduCustomerName { get; set; }
-        public string Capacity { get; set; }
-        public string Narration { get; set; }
-        public Nullable<decimal> TripAdvance { get; set; }
     }
 }

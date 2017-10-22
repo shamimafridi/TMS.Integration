@@ -151,9 +151,6 @@
     <Compile Include="Option.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="PayableAccount.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="PaymentVoucher.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
@@ -315,6 +312,9 @@
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Supplier.cs">
+      <DependentUpon>TMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCOAOpeningLedger.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="TempTransDetailCF.cs">

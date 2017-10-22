@@ -105,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Settings\appSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -113,12 +116,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configs\UnityConfig.cs" />
     <Compile Include="Configs\WebApiConfig.cs" />
+    <Compile Include="Controllers\CoaController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Helper\BasicAuthuntication.cs" />
     <Compile Include="Helper\UnityResolver.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="OwinStartup.cs" />

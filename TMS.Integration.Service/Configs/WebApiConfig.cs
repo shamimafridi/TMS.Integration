@@ -11,10 +11,11 @@ namespace TMS.Integration.Api.Configs
     {
         public static void Register(HttpConfiguration config)
         {
+            config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
-            name: "AllCustomers",
-            routeTemplate: "customers",
-            defaults: new { controller = "Customers", action = "Get" }           );
+            name: "defaultRoute",
+            routeTemplate: "api/{controller}/{id}",
+            defaults: new { id = RouteParameter.Optional });
             // config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/json"));
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             UnityConfig.Register(config);

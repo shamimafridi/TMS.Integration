@@ -9,3 +9,14 @@ C:\My Files\Dev\Azam Technologies\TMS.Integration.Service\TMS.Integration.Storag
 C:\My Files\Dev\Azam Technologies\TMS.Integration.Service\TMS.Integration.Storage\obj\Debug\TMS.Integration.Storage.csproj.CoreCompileInputs.cache
 C:\My Files\Dev\Azam Technologies\TMS.Integration.Service\TMS.Integration.Storage\obj\Debug\TMS.Integration.Storage.dll
 C:\My Files\Dev\Azam Technologies\TMS.Integration.Service\TMS.Integration.Storage\obj\Debug\TMS.Integration.Storage.pdb
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\bin\Debug\TMS.Integration.Storage.dll.config
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\bin\Debug\TMS.Integration.Storage.dll
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\bin\Debug\TMS.Integration.Storage.pdb
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\bin\Debug\EntityFramework.dll
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\bin\Debug\EntityFramework.SqlServer.dll
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\bin\Debug\EntityFramework.xml
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\bin\Debug\EntityFramework.SqlServer.xml
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\obj\Debug\TMS.Integration.Storage.csprojResolveAssemblyReference.cache
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\obj\Debug\TMS.Integration.Storage.csproj.CoreCompileInputs.cache
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\obj\Debug\TMS.Integration.Storage.dll
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Storage\obj\Debug\TMS.Integration.Storage.pdb

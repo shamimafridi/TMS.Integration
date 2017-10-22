@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Branches">
           <Key>
             <PropertyRef Name="BranchCode" />
@@ -34,6 +34,8 @@
           <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
           <Property Name="GUID" Type="bigint" Nullable="false" />
           <Property Name="FSFGLCode" Type="char" MaxLength="10" />
+          <Property Name="Ref_No" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedOn" Type="datetime" />
         </EntityType>
         <EntityType Name="COAGenerals">
           <Key>
@@ -68,6 +70,7 @@
             <PropertyRef Name="SubsidiaryCode" />
             <PropertyRef Name="SubSubsidiaryCode" />
           </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ControlCode" Type="char" MaxLength="2" Nullable="false" />
           <Property Name="GeneralCode" Type="char" MaxLength="2" Nullable="false" />
           <Property Name="SubsidiaryCode" Type="char" MaxLength="4" Nullable="false" />
@@ -412,30 +415,6 @@ warning 6002: The table/view 'TMS.dbo.OpeningBalances' does not have a primary k
           <Property Name="OptionValue" Type="varchar" MaxLength="50" />
           <Property Name="OptionDescription" Type="varchar" MaxLength="200" />
         </EntityType>
-        <EntityType Name="PayableAccounts">
-          <Key>
-            <PropertyRef Name="BranchCode" />
-            <PropertyRef Name="DocumentNature" />
-            <PropertyRef Name="DocumentNo" />
-          </Key>
-          <Property Name="BranchCode" Type="bigint" Nullable="false" />
-          <Property Name="DocumentNature" Type="bigint" Nullable="false" />
-          <Property Name="DocumentNo" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="DocumentDate" Type="datetime" Nullable="false" />
-          <Property Name="PartyCode" Type="bigint" Nullable="false" />
-          <Property Name="MiscPartyName" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="PartyReference" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="PartyReferenceDate" Type="datetime" />
-          <Property Name="InternalReference" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="InternalReferenceDate" Type="datetime" />
-          <Property Name="Description" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="CreditDays" Type="int" Nullable="false" />
-          <Property Name="Locked" Type="bit" Nullable="false" />
-          <Property Name="Posted" Type="bit" Nullable="false" />
-          <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="GUID" Type="bigint" Nullable="false" />
-          <Property Name="OldRef" Type="varchar" MaxLength="50" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'TMS.dbo.PaymentVoucherDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PaymentVoucherDetails">
@@ -647,6 +626,32 @@ warning 6002: The table/view 'TMS.dbo.SetupTables' does not have a primary key d
           <Property Name="GUID" Type="bigint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'TMS.dbo.TempCOAOpeningLedger' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TempCOAOpeningLedger">
+          <Key>
+            <PropertyRef Name="BranchCode" />
+            <PropertyRef Name="DivisionCode" />
+            <PropertyRef Name="GLCode" />
+            <PropertyRef Name="GLRptTitle" />
+            <PropertyRef Name="SubSubRptTitle" />
+          </Key>
+          <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="BranchRptTitle" Type="varchar" MaxLength="100" />
+          <Property Name="DivisionCode" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="DivisionRptTitle" Type="varchar" MaxLength="100" />
+          <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="GLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ControlCode" Type="char" MaxLength="2" />
+          <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
+          <Property Name="GeneralCode" Type="char" MaxLength="4" />
+          <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
+          <Property Name="SubSidiaryCode" Type="char" MaxLength="8" />
+          <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
+          <Property Name="SubsubCode" Type="char" MaxLength="12" />
+          <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="OpeningBalance" Type="numeric" Precision="38" Scale="5" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'TMS.dbo.TempTransDetailCF' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TempTransDetailCF">
           <Key>
@@ -813,6 +818,7 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailVBill' does not have a prim
         <EntityType Name="TempTransDetailVBill">
           <Key>
             <PropertyRef Name="MODE" />
+            <PropertyRef Name="TransactionNature" />
             <PropertyRef Name="TransactionNo" />
             <PropertyRef Name="TransactionDate" />
             <PropertyRef Name="RecordNo" />
@@ -820,6 +826,7 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailVBill' does not have a prim
             <PropertyRef Name="DestinationPointName" />
           </Key>
           <Property Name="MODE" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="TransactionNature" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="TransactionNo" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="TransactionDate" Type="datetime" Nullable="false" />
           <Property Name="RecordNo" Type="bigint" Nullable="false" />
@@ -845,13 +852,11 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailVBill' does not have a prim
           <Property Name="DestinationPointName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="DestinationPointUrdu" Type="nvarchar" MaxLength="200" />
           <Property Name="GLCode" Type="char" MaxLength="12" />
-          <Property Name="GLDescription" Type="nvarchar" MaxLength="2000" />
+          <Property Name="GLDescription" Type="varchar" MaxLength="100" />
+          <Property Name="GLDescriptionINV" Type="nvarchar" MaxLength="2000" />
           <Property Name="CustomerCode" Type="char" MaxLength="5" />
           <Property Name="CustomerName" Type="varchar" MaxLength="100" />
           <Property Name="UrduCustomerName" Type="nvarchar" MaxLength="200" />
-          <Property Name="Capacity" Type="varchar" MaxLength="50" />
-          <Property Name="Narration" Type="varchar" MaxLength="100" />
-          <Property Name="TripAdvance" Type="decimal" Precision="20" Scale="5" />
         </EntityType>
         <EntityType Name="TransactionActivities">
           <Key>
@@ -2937,7 +2942,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Options" EntityType="Self.Options" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PayableAccounts" EntityType="Self.PayableAccounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductRates" EntityType="Self.ProductRates" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductValues" EntityType="Self.ProductValues" Schema="dbo" store:Type="Tables" />
@@ -3131,6 +3135,25 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
     [SetupTables].[ss] AS [ss]
     FROM [dbo].[SetupTables] AS [SetupTables]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="TempCOAOpeningLedger" EntityType="Self.TempCOAOpeningLedger" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TempCOAOpeningLedger].[BranchCode] AS [BranchCode], 
+    [TempCOAOpeningLedger].[BranchRptTitle] AS [BranchRptTitle], 
+    [TempCOAOpeningLedger].[DivisionCode] AS [DivisionCode], 
+    [TempCOAOpeningLedger].[DivisionRptTitle] AS [DivisionRptTitle], 
+    [TempCOAOpeningLedger].[GLCode] AS [GLCode], 
+    [TempCOAOpeningLedger].[GLRptTitle] AS [GLRptTitle], 
+    [TempCOAOpeningLedger].[ControlCode] AS [ControlCode], 
+    [TempCOAOpeningLedger].[ControlRptTitle] AS [ControlRptTitle], 
+    [TempCOAOpeningLedger].[GeneralCode] AS [GeneralCode], 
+    [TempCOAOpeningLedger].[GeneralRptTitle] AS [GeneralRptTitle], 
+    [TempCOAOpeningLedger].[SubSidiaryCode] AS [SubSidiaryCode], 
+    [TempCOAOpeningLedger].[SubsidiaryRptTitle] AS [SubsidiaryRptTitle], 
+    [TempCOAOpeningLedger].[SubsubCode] AS [SubsubCode], 
+    [TempCOAOpeningLedger].[SubSubRptTitle] AS [SubSubRptTitle], 
+    [TempCOAOpeningLedger].[OpeningBalance] AS [OpeningBalance]
+    FROM [dbo].[TempCOAOpeningLedger] AS [TempCOAOpeningLedger]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="TempTransDetailCF" EntityType="Self.TempTransDetailCF" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [TempTransDetailCF].[BranchCode] AS [BranchCode], 
@@ -3251,6 +3274,7 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <EntitySet Name="TempTransDetailVBill" EntityType="Self.TempTransDetailVBill" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [TempTransDetailVBill].[MODE] AS [MODE], 
+    [TempTransDetailVBill].[TransactionNature] AS [TransactionNature], 
     [TempTransDetailVBill].[TransactionNo] AS [TransactionNo], 
     [TempTransDetailVBill].[TransactionDate] AS [TransactionDate], 
     [TempTransDetailVBill].[RecordNo] AS [RecordNo], 
@@ -3277,12 +3301,10 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
     [TempTransDetailVBill].[DestinationPointUrdu] AS [DestinationPointUrdu], 
     [TempTransDetailVBill].[GLCode] AS [GLCode], 
     [TempTransDetailVBill].[GLDescription] AS [GLDescription], 
+    [TempTransDetailVBill].[GLDescriptionINV] AS [GLDescriptionINV], 
     [TempTransDetailVBill].[CustomerCode] AS [CustomerCode], 
     [TempTransDetailVBill].[CustomerName] AS [CustomerName], 
-    [TempTransDetailVBill].[UrduCustomerName] AS [UrduCustomerName], 
-    [TempTransDetailVBill].[Capacity] AS [Capacity], 
-    [TempTransDetailVBill].[Narration] AS [Narration], 
-    [TempTransDetailVBill].[TripAdvance] AS [TripAdvance]
+    [TempTransDetailVBill].[UrduCustomerName] AS [UrduCustomerName]
     FROM [dbo].[TempTransDetailVBill] AS [TempTransDetailVBill]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ttt" EntityType="Self.ttt" store:Type="Tables" store:Schema="dbo">
@@ -3569,8 +3591,7 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
             <End Role="Vouchers" EntitySet="Vouchers" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3616,6 +3637,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <Property Name="GUID" Type="Int64" Nullable="false" />
           <Property Name="FSFGLCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="COAGenerals" Relationship="Self.COAControls_COAGenerals_FK1" FromRole="COAControls" ToRole="COAGenerals" />
+          <Property Name="Ref_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="COAGeneral">
           <Key>
@@ -3663,6 +3686,7 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <Property Name="GUID" Type="Int64" Nullable="false" />
           <Property Name="FSFGLCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="COASubsidiary" Relationship="Self.FK_COASubSubsidiaries_COASubsidiaries1" FromRole="COASubSubsidiaries" ToRole="COASubsidiaries" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="CustomerBillDetail">
           <Key>
@@ -3831,30 +3855,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <Property Name="OptionName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="OptionValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="OptionDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="PayableAccount">
-          <Key>
-            <PropertyRef Name="BranchCode" />
-            <PropertyRef Name="DocumentNature" />
-            <PropertyRef Name="DocumentNo" />
-          </Key>
-          <Property Name="BranchCode" Type="Int64" Nullable="false" />
-          <Property Name="DocumentNature" Type="Int64" Nullable="false" />
-          <Property Name="DocumentNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DocumentDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="PartyCode" Type="Int64" Nullable="false" />
-          <Property Name="MiscPartyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PartyReference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PartyReferenceDate" Type="DateTime" Precision="3" />
-          <Property Name="InternalReference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="InternalReferenceDate" Type="DateTime" Precision="3" />
-          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CreditDays" Type="Int32" Nullable="false" />
-          <Property Name="Locked" Type="Boolean" Nullable="false" />
-          <Property Name="Posted" Type="Boolean" Nullable="false" />
-          <Property Name="RecordNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GUID" Type="Int64" Nullable="false" />
-          <Property Name="OldRef" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ProductRate">
           <Key>
@@ -4556,49 +4556,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <Property Name="DebitBalance" Type="Decimal" Precision="38" Scale="5" />
           <Property Name="CreditBalance" Type="Decimal" Precision="38" Scale="5" />
         </EntityType>
-        <EntityType Name="TempTransDetailVBill">
-          <Key>
-            <PropertyRef Name="MODE" />
-            <PropertyRef Name="TransactionNo" />
-            <PropertyRef Name="TransactionDate" />
-            <PropertyRef Name="RecordNo" />
-            <PropertyRef Name="StationPointName" />
-            <PropertyRef Name="DestinationPointName" />
-          </Key>
-          <Property Name="MODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TransactionNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="RecordNo" Type="Int64" Nullable="false" />
-          <Property Name="CustomerReference" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="VehicleCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="StationPointCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="DestinationPointCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="ProductCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="Quantity" Type="Decimal" Precision="20" Scale="5" />
-          <Property Name="Rate" Type="Decimal" Precision="20" Scale="5" />
-          <Property Name="Debit" Type="Decimal" Precision="20" Scale="5" />
-          <Property Name="Credit" Type="Decimal" Precision="20" Scale="5" />
-          <Property Name="Commission" Type="Decimal" Precision="20" Scale="5" />
-          <Property Name="ShortageQuantity" Type="Decimal" Precision="20" Scale="5" />
-          <Property Name="Shortage" Type="Decimal" Precision="20" Scale="5" />
-          <Property Name="QuantityValue" Type="Decimal" Precision="20" Scale="5" />
-          <Property Name="OwnerCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-          <Property Name="OwnerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="UrduOwnerName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="ProductUrdu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="StationPointName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="StationPointUrdu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="DestinationPointName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DestinationPointUrdu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="GLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-          <Property Name="GLDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-          <Property Name="CustomerCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-          <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="UrduCustomerName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Capacity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Narration" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="TripAdvance" Type="Decimal" Precision="20" Scale="5" />
-        </EntityType>
         <EntityType Name="ttt">
           <Key>
             <PropertyRef Name="BranchCode" />
@@ -5218,7 +5175,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <EntitySet Name="Invoices" EntityType="Self.Invoice" />
           <EntitySet Name="Items" EntityType="Self.Item" />
           <EntitySet Name="Options" EntityType="Self.Option" />
-          <EntitySet Name="PayableAccounts" EntityType="Self.PayableAccount" />
           <EntitySet Name="ProductRates" EntityType="Self.ProductRate" />
           <EntitySet Name="Products" EntityType="Self.Product" />
           <EntitySet Name="ProductValues" EntityType="Self.ProductValue" />
@@ -5251,7 +5207,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <EntitySet Name="TempTransDetailLedgers" EntityType="Self.TempTransDetailLedger" />
           <EntitySet Name="TempTransDetailLedgerTrials" EntityType="Self.TempTransDetailLedgerTrial" />
           <EntitySet Name="TempTransDetailTrialFSFs" EntityType="Self.TempTransDetailTrialFSF" />
-          <EntitySet Name="TempTransDetailVBills" EntityType="Self.TempTransDetailVBill" />
           <EntitySet Name="ttts" EntityType="Self.ttt" />
           <EntitySet Name="UsedTransactionsDetails" EntityType="Self.UsedTransactionsDetail" />
           <EntitySet Name="VoucherDetails" EntityType="Self.VoucherDetail" />
@@ -5404,13 +5359,13 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
             <Parameter Name="database" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteBranches">
-            <Parameter Name="BranchCode" Mode="In" Type="String" />
+          <Parameter Name="BranchCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteCities">
-            <Parameter Name="CityCode" Mode="In" Type="String" />
+          <Parameter Name="CityCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteCOAControls">
-            <Parameter Name="ControlCode" Mode="In" Type="String" />
+          <Parameter Name="ControlCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteCOAGenerals">
             <Parameter Name="ControlCode" Mode="In" Type="String" />
@@ -5439,16 +5394,16 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
             <Parameter Name="BranchCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteCustomers">
-            <Parameter Name="CustomerCode" Mode="In" Type="String" />
+          <Parameter Name="CustomerCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteDestinationPoints">
-            <Parameter Name="DestinationPointCode" Mode="In" Type="String" />
+          <Parameter Name="DestinationPointCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteDivisions">
-            <Parameter Name="DivisionCode" Mode="In" Type="String" />
+          <Parameter Name="DivisionCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteFSFControls">
-            <Parameter Name="ControlCode" Mode="In" Type="String" />
+          <Parameter Name="ControlCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteFSFGenerals">
             <Parameter Name="ControlCode" Mode="In" Type="String" />
@@ -5513,7 +5468,7 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
             <Parameter Name="EffectiveDate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="DeleteProducts">
-            <Parameter Name="ProductCode" Mode="In" Type="String" />
+          <Parameter Name="ProductCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteProductValues">
             <Parameter Name="ProductCode" Mode="In" Type="String" />
@@ -5526,13 +5481,13 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
             <Parameter Name="BillNo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteRegions">
-            <Parameter Name="RegionCode" Mode="In" Type="String" />
+          <Parameter Name="RegionCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteStationPoints">
-            <Parameter Name="StationPointCode" Mode="In" Type="String" />
+          <Parameter Name="StationPointCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteSuppliers">
-            <Parameter Name="SupplierCode" Mode="In" Type="String" />
+          <Parameter Name="SupplierCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteSuppliersDetails">
             <Parameter Name="Option" Mode="In" Type="String" />
@@ -5550,7 +5505,7 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
             <Parameter Name="TransactionTypeCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteUserSecurities">
-            <Parameter Name="UserID" Mode="In" Type="String" />
+          <Parameter Name="UserID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteVehicleAdjustments">
             <Parameter Name="Option" Mode="In" Type="String" />
@@ -5565,13 +5520,13 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
             <Parameter Name="TransactionNature" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteVehicleOwners">
-            <Parameter Name="OwnerCode" Mode="In" Type="String" />
+          <Parameter Name="OwnerCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteVehicles">
-            <Parameter Name="VehicleCode" Mode="In" Type="String" />
+          <Parameter Name="VehicleCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteVihicles">
-            <Parameter Name="VihicleCode" Mode="In" Type="String" />
+          <Parameter Name="VihicleCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteVouchers">
             <Parameter Name="Option" Mode="In" Type="String" />
@@ -5601,7 +5556,7 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           </FunctionImport>
           <FunctionImport Name="dt_adduserobject" />
           <FunctionImport Name="dt_adduserobject_vcs">
-            <Parameter Name="vchProperty" Mode="In" Type="String" />
+          <Parameter Name="vchProperty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="dt_checkinobject">
             <Parameter Name="chObjectType" Mode="In" Type="String" />
@@ -5658,10 +5613,10 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
             <Parameter Name="property" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="dt_dropuserobjectbyid">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="dt_generateansiname">
-            <Parameter Name="name" Mode="InOut" Type="String" />
+          <Parameter Name="name" Mode="InOut" Type="String" />
           </FunctionImport>
           <FunctionImport Name="dt_getobjwithprop" ReturnType="Collection(Int32)">
             <Parameter Name="property" Mode="In" Type="String" />
@@ -6666,6 +6621,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
             <Parameter Name="Reference" Mode="In" Type="String" />
             <Parameter Name="NewRecord" Mode="In" Type="Int64" />
           </FunctionImport>
+          <EntitySet Name="TempCOAOpeningLedgers" EntityType="TMSModel.TempCOAOpeningLedger" />
+          <EntitySet Name="TempTransDetailVBills" EntityType="TMSModel.TempTransDetailVBill" />
         </EntityContainer>
         <ComplexType Name="dt_getpropertiesbyid_Result">
           <Property Type="String" Name="property" Nullable="false" MaxLength="64" />
@@ -7206,6 +7163,73 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <Property Type="String" Name="DivisionCode" Nullable="false" MaxLength="3" />
           <Property Type="String" Name="Division" Nullable="true" MaxLength="100" />
         </ComplexType>
+        <EntityType Name="TempCOAOpeningLedger">
+          <Key>
+            <PropertyRef Name="BranchCode" />
+            <PropertyRef Name="DivisionCode" />
+            <PropertyRef Name="GLCode" />
+            <PropertyRef Name="GLRptTitle" />
+            <PropertyRef Name="SubSubRptTitle" />
+          </Key>
+          <Property Name="BranchCode" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="BranchRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DivisionCode" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="DivisionRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GLCode" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="GLRptTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ControlCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="ControlRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GeneralCode" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="GeneralRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SubSidiaryCode" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="SubsidiaryRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SubsubCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="SubSubRptTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OpeningBalance" Type="Decimal" Precision="38" Scale="5" />
+        </EntityType>
+        <EntityType Name="TempTransDetailVBill">
+          <Key>
+            <PropertyRef Name="MODE" />
+            <PropertyRef Name="TransactionNature" />
+            <PropertyRef Name="TransactionNo" />
+            <PropertyRef Name="TransactionDate" />
+            <PropertyRef Name="RecordNo" />
+            <PropertyRef Name="StationPointName" />
+            <PropertyRef Name="DestinationPointName" />
+          </Key>
+          <Property Name="MODE" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionNature" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TransactionNo" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RecordNo" Type="Int64" Nullable="false" />
+          <Property Name="CustomerReference" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="VehicleCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="StationPointCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="DestinationPointCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="20" Scale="5" />
+          <Property Name="Rate" Type="Decimal" Precision="20" Scale="5" />
+          <Property Name="Debit" Type="Decimal" Precision="20" Scale="5" />
+          <Property Name="Credit" Type="Decimal" Precision="20" Scale="5" />
+          <Property Name="Commission" Type="Decimal" Precision="20" Scale="5" />
+          <Property Name="ShortageQuantity" Type="Decimal" Precision="20" Scale="5" />
+          <Property Name="Shortage" Type="Decimal" Precision="20" Scale="5" />
+          <Property Name="QuantityValue" Type="Decimal" Precision="20" Scale="5" />
+          <Property Name="OwnerCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="OwnerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UrduOwnerName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ProductUrdu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="StationPointName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StationPointUrdu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DestinationPointName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DestinationPointUrdu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="GLDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GLDescriptionINV" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UrduCustomerName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -7237,6 +7261,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <EntitySetMapping Name="COAControls">
             <EntityTypeMapping TypeName="TMSModel.COAControl">
               <MappingFragment StoreEntitySet="COAControls">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Ref_No" ColumnName="Ref_No" />
                 <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
                 <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
                 <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
@@ -7273,6 +7299,7 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <EntitySetMapping Name="COASubSubsidiaries">
             <EntityTypeMapping TypeName="TMSModel.COASubSubsidiary">
               <MappingFragment StoreEntitySet="COASubSubsidiaries">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
                 <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
                 <ScalarProperty Name="SubsidiaryCode" ColumnName="SubsidiaryCode" />
@@ -7435,29 +7462,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
                 <ScalarProperty Name="OptionName" ColumnName="OptionName" />
                 <ScalarProperty Name="OptionValue" ColumnName="OptionValue" />
                 <ScalarProperty Name="OptionDescription" ColumnName="OptionDescription" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PayableAccounts">
-            <EntityTypeMapping TypeName="TMSModel.PayableAccount">
-              <MappingFragment StoreEntitySet="PayableAccounts">
-                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
-                <ScalarProperty Name="DocumentNature" ColumnName="DocumentNature" />
-                <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
-                <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
-                <ScalarProperty Name="PartyCode" ColumnName="PartyCode" />
-                <ScalarProperty Name="MiscPartyName" ColumnName="MiscPartyName" />
-                <ScalarProperty Name="PartyReference" ColumnName="PartyReference" />
-                <ScalarProperty Name="PartyReferenceDate" ColumnName="PartyReferenceDate" />
-                <ScalarProperty Name="InternalReference" ColumnName="InternalReference" />
-                <ScalarProperty Name="InternalReferenceDate" ColumnName="InternalReferenceDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="CreditDays" ColumnName="CreditDays" />
-                <ScalarProperty Name="Locked" ColumnName="Locked" />
-                <ScalarProperty Name="Posted" ColumnName="Posted" />
-                <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
-                <ScalarProperty Name="GUID" ColumnName="GUID" />
-                <ScalarProperty Name="OldRef" ColumnName="OldRef" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -8028,45 +8032,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
                 <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
                 <ScalarProperty Name="DebitBalance" ColumnName="DebitBalance" />
                 <ScalarProperty Name="CreditBalance" ColumnName="CreditBalance" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TempTransDetailVBills">
-            <EntityTypeMapping TypeName="TMSModel.TempTransDetailVBill">
-              <MappingFragment StoreEntitySet="TempTransDetailVBill">
-                <ScalarProperty Name="MODE" ColumnName="MODE" />
-                <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
-                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
-                <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
-                <ScalarProperty Name="CustomerReference" ColumnName="CustomerReference" />
-                <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
-                <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
-                <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
-                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="Rate" ColumnName="Rate" />
-                <ScalarProperty Name="Debit" ColumnName="Debit" />
-                <ScalarProperty Name="Credit" ColumnName="Credit" />
-                <ScalarProperty Name="Commission" ColumnName="Commission" />
-                <ScalarProperty Name="ShortageQuantity" ColumnName="ShortageQuantity" />
-                <ScalarProperty Name="Shortage" ColumnName="Shortage" />
-                <ScalarProperty Name="QuantityValue" ColumnName="QuantityValue" />
-                <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
-                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
-                <ScalarProperty Name="UrduOwnerName" ColumnName="UrduOwnerName" />
-                <ScalarProperty Name="ProductUrdu" ColumnName="ProductUrdu" />
-                <ScalarProperty Name="StationPointName" ColumnName="StationPointName" />
-                <ScalarProperty Name="StationPointUrdu" ColumnName="StationPointUrdu" />
-                <ScalarProperty Name="DestinationPointName" ColumnName="DestinationPointName" />
-                <ScalarProperty Name="DestinationPointUrdu" ColumnName="DestinationPointUrdu" />
-                <ScalarProperty Name="GLCode" ColumnName="GLCode" />
-                <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
-                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="UrduCustomerName" ColumnName="UrduCustomerName" />
-                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
-                <ScalarProperty Name="Narration" ColumnName="Narration" />
-                <ScalarProperty Name="TripAdvance" ColumnName="TripAdvance" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -9096,6 +9061,65 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <FunctionImportMapping FunctionImportName="UpdateVehicles" FunctionName="TMSModel.Store.UpdateVehicles" />
           <FunctionImportMapping FunctionImportName="UpdateVouchers" FunctionName="TMSModel.Store.UpdateVouchers" />
           <FunctionImportMapping FunctionImportName="UpdateVouchersDetails" FunctionName="TMSModel.Store.UpdateVouchersDetails" />
+          <EntitySetMapping Name="TempCOAOpeningLedgers">
+            <EntityTypeMapping TypeName="TMSModel.TempCOAOpeningLedger">
+              <MappingFragment StoreEntitySet="TempCOAOpeningLedger">
+                <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+                <ScalarProperty Name="SubSubRptTitle" ColumnName="SubSubRptTitle" />
+                <ScalarProperty Name="SubsubCode" ColumnName="SubsubCode" />
+                <ScalarProperty Name="SubsidiaryRptTitle" ColumnName="SubsidiaryRptTitle" />
+                <ScalarProperty Name="SubSidiaryCode" ColumnName="SubSidiaryCode" />
+                <ScalarProperty Name="GeneralRptTitle" ColumnName="GeneralRptTitle" />
+                <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
+                <ScalarProperty Name="ControlRptTitle" ColumnName="ControlRptTitle" />
+                <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+                <ScalarProperty Name="GLRptTitle" ColumnName="GLRptTitle" />
+                <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+                <ScalarProperty Name="DivisionRptTitle" ColumnName="DivisionRptTitle" />
+                <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+                <ScalarProperty Name="BranchRptTitle" ColumnName="BranchRptTitle" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempTransDetailVBills">
+            <EntityTypeMapping TypeName="TMSModel.TempTransDetailVBill">
+              <MappingFragment StoreEntitySet="TempTransDetailVBill">
+                <ScalarProperty Name="UrduCustomerName" ColumnName="UrduCustomerName" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="GLDescriptionINV" ColumnName="GLDescriptionINV" />
+                <ScalarProperty Name="GLDescription" ColumnName="GLDescription" />
+                <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+                <ScalarProperty Name="DestinationPointUrdu" ColumnName="DestinationPointUrdu" />
+                <ScalarProperty Name="DestinationPointName" ColumnName="DestinationPointName" />
+                <ScalarProperty Name="StationPointUrdu" ColumnName="StationPointUrdu" />
+                <ScalarProperty Name="StationPointName" ColumnName="StationPointName" />
+                <ScalarProperty Name="ProductUrdu" ColumnName="ProductUrdu" />
+                <ScalarProperty Name="UrduOwnerName" ColumnName="UrduOwnerName" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+                <ScalarProperty Name="QuantityValue" ColumnName="QuantityValue" />
+                <ScalarProperty Name="Shortage" ColumnName="Shortage" />
+                <ScalarProperty Name="ShortageQuantity" ColumnName="ShortageQuantity" />
+                <ScalarProperty Name="Commission" ColumnName="Commission" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="DestinationPointCode" ColumnName="DestinationPointCode" />
+                <ScalarProperty Name="StationPointCode" ColumnName="StationPointCode" />
+                <ScalarProperty Name="VehicleCode" ColumnName="VehicleCode" />
+                <ScalarProperty Name="CustomerReference" ColumnName="CustomerReference" />
+                <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+                <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
+                <ScalarProperty Name="MODE" ColumnName="MODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
