@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Web.Http;
 using System.Web.Routing;
+using TMS.Common.ServicePattren;
+using TMS.Integration.Api.Helper;
 using TMS.Integration.Services.COAService;
 
 namespace TMS.Integration.Api.Controllers
@@ -12,16 +15,19 @@ namespace TMS.Integration.Api.Controllers
     public class CoaController : ApiController
     {
         // GET: api/COAs
-        private ICoaService _service;
-        public CoaController(ICoaService service)
+        private readonly CoaPostService _service;
+        public CoaController(CoaPostService service)
         {
             _service = service;
         }
 
         // GET: api/COAs/5
+        [BasicAuthenticator("token")]
         public IHttpActionResult Get()
         {
-            var response = _service.AsyncSetter();
+           // ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
+           //var  claim= principal.Claims.ToList();
+            var response = _service.AsyncSetter(User.Identity.AuthenticationType);
             return Ok(response.Result);
         }
 

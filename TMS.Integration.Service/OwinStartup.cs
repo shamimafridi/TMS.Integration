@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Owin;
 using Owin;
 using System.Web.Http;
+using NLog.Owin.Logging;
 using TMS.Integration.Api.Configs;
 
 [assembly: OwinStartup(typeof(TMS.Integration.Api.OwinStartup))]
@@ -16,7 +17,7 @@ namespace TMS.Integration.Api
             HttpConfiguration httpConfiguration = new HttpConfiguration();
             WebApiConfig.Register(httpConfiguration);
             app.UseWebApi(httpConfiguration);
-            
+            app.UseNLog();
 
             // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
         }

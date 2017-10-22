@@ -77,9 +77,11 @@ namespace TMS.Integration.Api.Helper
                     {
                         new Claim(ClaimTypes.Name, "token"),new Claim(ClaimTypes.Name,"Id")
                     };
-                    var id = new ClaimsIdentity(claims, "Basic");
+                   // var id = new ClaimsIdentity(claims, "Basic");
                     var token = new ClaimsIdentity(claims, contents.Result.token);
-                    var principal = new ClaimsPrincipal(new[] { token,id });
+                    var principal = new ClaimsPrincipal(new[] { token });
+                    
+                    //principal.Identity = token;
                     context.Principal = principal;
                 }
             }

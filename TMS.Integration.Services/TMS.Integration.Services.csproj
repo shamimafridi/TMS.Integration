@@ -68,6 +68,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TMS.Common\TMS.Common.csproj">
+      <Project>{ED58D486-89FF-4882-BEB2-00E9CA4BFE3F}</Project>
+      <Name>TMS.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TMS.Integration.Storage\TMS.Integration.Storage.csproj">
       <Project>{1e293721-139d-42aa-879d-6b29bc55c7c8}</Project>
       <Name>TMS.Integration.Storage</Name>

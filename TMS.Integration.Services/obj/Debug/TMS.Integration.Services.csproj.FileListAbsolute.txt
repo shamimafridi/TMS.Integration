@@ -34,3 +34,5 @@ C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Services\obj\D
 C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Services\obj\Debug\TMS.Integration.Services.csproj.CoreCompileInputs.cache
 C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Services\obj\Debug\TMS.Integration.Services.dll
 C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Services\obj\Debug\TMS.Integration.Services.pdb
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Services\bin\Debug\TMS.Common.dll
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Services\bin\Debug\TMS.Common.pdb

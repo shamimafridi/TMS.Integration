@@ -171,3 +171,9 @@ C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Service\bin\En
 C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Service\bin\TMS.Integration.Storage.pdb
 C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Service\bin\TMS.Integration.Storage.dll.config
 C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Service\bin\EntityFramework.xml
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Service\bin\NLog.dll
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Service\bin\NLog.Owin.Logging.dll
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Service\bin\NLog.xml
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Service\bin\NLog.Owin.Logging.xml
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Service\bin\TMS.Common.dll
+C:\My Files\Dev\Azam Technologies\TMS.Integration\TMS.Integration.Service\bin\TMS.Common.pdb
