@@ -42,8 +42,8 @@
     <Property Name="GUID" Type="Int64" Nullable="false" />
     <Property Name="FSFGLCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <NavigationProperty Name="COAGenerals" Relationship="Self.COAControls_COAGenerals_FK1" FromRole="COAControls" ToRole="COAGenerals" />
-    <Property Name="Ref_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="COAGeneral">
     <Key>
@@ -58,6 +58,8 @@
     <Property Name="FSFGLCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <NavigationProperty Name="COAControl" Relationship="Self.COAControls_COAGenerals_FK1" FromRole="COAGenerals" ToRole="COAControls" />
     <NavigationProperty Name="COASubsidiaries" Relationship="Self.COAGenerals_COASubsidiaries_FK1" FromRole="COAGenerals" ToRole="COASubsidiaries" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="COASubsidiary">
     <Key>
@@ -2583,6 +2585,8 @@
       <Parameter Name="FSFGLCode" Mode="In" Type="String" />
       <Parameter Name="FSFGLDescription" Mode="In" Type="String" />
       <Parameter Name="GUID" Mode="In" Type="Int64" />
+      <Parameter Name="RefNo" Mode="In" Type="String" />
+      <Parameter Name="UpdatedOn" Mode="In" Type="DateTime" />
       <Parameter Name="NewRecord" Mode="In" Type="Int64" />
     </FunctionImport>
     <FunctionImport Name="UpdateCOASubsidiaries">

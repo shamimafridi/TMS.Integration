@@ -26,8 +26,8 @@
     <EntitySetMapping Name="COAControls">
       <EntityTypeMapping TypeName="TMSModel.COAControl">
         <MappingFragment StoreEntitySet="COAControls">
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
           <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
-          <ScalarProperty Name="Ref_No" ColumnName="Ref_No" />
           <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
           <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
           <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
@@ -39,6 +39,8 @@
     <EntitySetMapping Name="COAGenerals">
       <EntityTypeMapping TypeName="TMSModel.COAGeneral">
         <MappingFragment StoreEntitySet="COAGenerals">
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
           <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
           <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
           <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />

@@ -34,7 +34,7 @@
           <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
           <Property Name="GUID" Type="bigint" Nullable="false" />
           <Property Name="FSFGLCode" Type="char" MaxLength="10" />
-          <Property Name="Ref_No" Type="varchar" MaxLength="50" />
+          <Property Name="RefNo" Type="varchar" MaxLength="50" />
           <Property Name="UpdatedOn" Type="datetime" />
         </EntityType>
         <EntityType Name="COAGenerals">
@@ -46,6 +46,8 @@
           <Property Name="GeneralCode" Type="char" MaxLength="2" Nullable="false" />
           <Property Name="GeneralDescription" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
+          <Property Name="RefNo" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedOn" Type="datetime" />
           <Property Name="GUID" Type="bigint" Nullable="false" />
           <Property Name="FSFGLCode" Type="char" MaxLength="10" />
         </EntityType>
@@ -2482,6 +2484,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <Parameter Name="FSFGLCode" Type="char" Mode="In" />
           <Parameter Name="FSFGLDescription" Type="char" Mode="In" />
           <Parameter Name="GUID" Type="bigint" Mode="In" />
+          <Parameter Name="RefNo" Type="varchar" Mode="In" />
+          <Parameter Name="UpdatedOn" Type="datetime" Mode="In" />
           <Parameter Name="NewRecord" Type="bigint" Mode="In" />
         </Function>
         <Function Name="UpdateCOASubsidiaries" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -3637,8 +3641,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <Property Name="GUID" Type="Int64" Nullable="false" />
           <Property Name="FSFGLCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="COAGenerals" Relationship="Self.COAControls_COAGenerals_FK1" FromRole="COAControls" ToRole="COAGenerals" />
-          <Property Name="Ref_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="COAGeneral">
           <Key>
@@ -3653,6 +3657,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <Property Name="FSFGLCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="COAControl" Relationship="Self.COAControls_COAGenerals_FK1" FromRole="COAGenerals" ToRole="COAControls" />
           <NavigationProperty Name="COASubsidiaries" Relationship="Self.COAGenerals_COASubsidiaries_FK1" FromRole="COAGenerals" ToRole="COASubsidiaries" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="COASubsidiary">
           <Key>
@@ -6178,6 +6184,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
             <Parameter Name="FSFGLCode" Mode="In" Type="String" />
             <Parameter Name="FSFGLDescription" Mode="In" Type="String" />
             <Parameter Name="GUID" Mode="In" Type="Int64" />
+            <Parameter Name="RefNo" Mode="In" Type="String" />
+            <Parameter Name="UpdatedOn" Mode="In" Type="DateTime" />
             <Parameter Name="NewRecord" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="UpdateCOASubsidiaries">
@@ -7261,8 +7269,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <EntitySetMapping Name="COAControls">
             <EntityTypeMapping TypeName="TMSModel.COAControl">
               <MappingFragment StoreEntitySet="COAControls">
+                <ScalarProperty Name="RefNo" ColumnName="RefNo" />
                 <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
-                <ScalarProperty Name="Ref_No" ColumnName="Ref_No" />
                 <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
                 <ScalarProperty Name="ControlDescription" ColumnName="ControlDescription" />
                 <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
@@ -7274,6 +7282,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <EntitySetMapping Name="COAGenerals">
             <EntityTypeMapping TypeName="TMSModel.COAGeneral">
               <MappingFragment StoreEntitySet="COAGenerals">
+                <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
                 <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
                 <ScalarProperty Name="GeneralCode" ColumnName="GeneralCode" />
                 <ScalarProperty Name="GeneralDescription" ColumnName="GeneralDescription" />

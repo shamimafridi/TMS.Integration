@@ -6,9 +6,9 @@ using Microsoft.Practices.Unity;
 
 using System.Web.Http;
 using TMS.Integration.Api.Helper;
-using TMS.Integration.Services.COAService;
-using TMS.Integration.Services.CustomerService;
 using TMS.Common.ServicePattren;
+using TMS.Integration.Services.CoaControlService;
+using TMS.Integration.Services.CoaGeneralService;
 
 namespace TMS.Integration.Api.Configs
 {
@@ -17,11 +17,11 @@ namespace TMS.Integration.Api.Configs
         public static void Register(HttpConfiguration config)
         {
             var container = new UnityContainer();
-            //container.RegisterType<ICustomerService, CustomerService>(new HierarchicalLifetimeManager());
             container.RegisterType(typeof(IPostServiceHandler<>),typeof( PostServiceHandler<>),new HierarchicalLifetimeManager());
 
-            container.RegisterType(typeof(CoaPostService));
-            container.RegisterType<ICustomerService, CustomerService>(new HierarchicalLifetimeManager());
+            container.RegisterType(typeof(CoaControlPostService));
+
+            container.RegisterType(typeof(CoaGeneralPostService));
             config.DependencyResolver = new UnityResolver(container);
 
         }

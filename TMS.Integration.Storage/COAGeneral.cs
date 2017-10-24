@@ -26,6 +26,8 @@ namespace TMS.Integration.Storage
         public System.DateTime DefinitionDate { get; set; }
         public long GUID { get; set; }
         public string FSFGLCode { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
+        public string RefNo { get; set; }
     
         public virtual COAControl COAControl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

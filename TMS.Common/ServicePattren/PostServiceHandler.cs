@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using TMS.Common.Enum;
 
 namespace TMS.Common.ServicePattren
 {
@@ -30,8 +31,11 @@ namespace TMS.Common.ServicePattren
 
 
     }
-    public class PostResponse
+    public  class PostResponse
     {
+        public int NoOfRecordEffected { set; get; }
+        public string Status { set; get; }
 
     }
+
 }

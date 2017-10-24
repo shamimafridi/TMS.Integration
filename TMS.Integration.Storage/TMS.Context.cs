@@ -2994,7 +2994,7 @@ namespace TMS.Integration.Storage
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCOAControls", controlCodeParameter, controlDescriptionParameter, definitionDateParameter, gUIDParameter, newRecordParameter);
         }
     
-        public virtual int UpdateCOAGenerals(string controlCode, string controlDescription, string generalCode, string generalDescription, Nullable<System.DateTime> definitionDate, string fSFGLCode, string fSFGLDescription, Nullable<long> gUID, Nullable<long> newRecord)
+        public virtual int UpdateCOAGenerals(string controlCode, string controlDescription, string generalCode, string generalDescription, Nullable<System.DateTime> definitionDate, string fSFGLCode, string fSFGLDescription, Nullable<long> gUID, string refNo, Nullable<System.DateTime> updatedOn, Nullable<long> newRecord)
         {
             var controlCodeParameter = controlCode != null ?
                 new ObjectParameter("ControlCode", controlCode) :
@@ -3028,11 +3028,19 @@ namespace TMS.Integration.Storage
                 new ObjectParameter("GUID", gUID) :
                 new ObjectParameter("GUID", typeof(long));
     
+            var refNoParameter = refNo != null ?
+                new ObjectParameter("RefNo", refNo) :
+                new ObjectParameter("RefNo", typeof(string));
+    
+            var updatedOnParameter = updatedOn.HasValue ?
+                new ObjectParameter("UpdatedOn", updatedOn) :
+                new ObjectParameter("UpdatedOn", typeof(System.DateTime));
+    
             var newRecordParameter = newRecord.HasValue ?
                 new ObjectParameter("NewRecord", newRecord) :
                 new ObjectParameter("NewRecord", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCOAGenerals", controlCodeParameter, controlDescriptionParameter, generalCodeParameter, generalDescriptionParameter, definitionDateParameter, fSFGLCodeParameter, fSFGLDescriptionParameter, gUIDParameter, newRecordParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCOAGenerals", controlCodeParameter, controlDescriptionParameter, generalCodeParameter, generalDescriptionParameter, definitionDateParameter, fSFGLCodeParameter, fSFGLDescriptionParameter, gUIDParameter, refNoParameter, updatedOnParameter, newRecordParameter);
         }
     
         public virtual int UpdateCOASubsidiaries(string controlCode, string generalCode, string generalDescription, string subsidiaryCode, string controlDescription, string subsidiaryDescription, string fSFGLCode, string fSFGLDescription, Nullable<System.DateTime> definitionDate, Nullable<long> gUID, Nullable<long> newRecord)

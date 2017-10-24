@@ -55,12 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoaService\CoaService.cs" />
-    <Compile Include="CoaService\Dto\CoaPostRequestBody.cs" />
-    <Compile Include="CoaService\Dto\CoaPostResponse.cs" />
-    <Compile Include="CoaService\ICoaService.cs" />
-    <Compile Include="CustomerService\CustomerService.cs" />
-    <Compile Include="CustomerService\ICustomerService.cs" />
+    <Compile Include="CoaGeneralService\CoaGeneralService.cs" />
+    <Compile Include="CoaGeneralService\Dto\CoaGeneralPostRequestBody.cs" />
+    <Compile Include="CoaGeneralService\Dto\CoaGeneralPostResponse.cs" />
+    <Compile Include="CoaControlService\CoaControlService.cs" />
+    <Compile Include="CoaControlService\Dto\CoaControlPostRequestBody.cs" />
+    <Compile Include="CoaControlService\Dto\CoaControlPostResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

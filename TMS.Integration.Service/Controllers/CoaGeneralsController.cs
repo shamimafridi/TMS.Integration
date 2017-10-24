@@ -8,15 +8,15 @@ using System.Web.Http;
 using System.Web.Routing;
 using TMS.Common.ServicePattren;
 using TMS.Integration.Api.Helper;
-using TMS.Integration.Services.COAService;
+using TMS.Integration.Services.CoaGeneralService;
 
 namespace TMS.Integration.Api.Controllers
 {
-    public class CoaController : ApiController
+    public class CoaGeneralsController : ApiController
     {
         // GET: api/COAs
-        private readonly CoaPostService _service;
-        public CoaController(CoaPostService service)
+        private readonly CoaGeneralPostService _service;
+        public CoaGeneralsController(CoaGeneralPostService service)
         {
             _service = service;
         }
@@ -25,8 +25,6 @@ namespace TMS.Integration.Api.Controllers
         [BasicAuthenticator("token")]
         public IHttpActionResult Get()
         {
-           // ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
-           //var  claim= principal.Claims.ToList();
             var response = _service.AsyncSetter(User.Identity.AuthenticationType);
             return Ok(response.Result);
         }
