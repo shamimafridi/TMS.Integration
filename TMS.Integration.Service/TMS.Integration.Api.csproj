@@ -129,6 +129,7 @@
   <ItemGroup>
     <Compile Include="Configs\UnityConfig.cs" />
     <Compile Include="Configs\WebApiConfig.cs" />
+    <Compile Include="Controllers\CoaSubSubsidiariesController.cs" />
     <Compile Include="Controllers\CoaSubsidiariesController.cs" />
     <Compile Include="Controllers\CoaGeneralsController.cs" />
     <Compile Include="Controllers\CoaControlsController.cs" />

@@ -1,8 +1,8 @@
 ﻿using TMS.Common.ServicePattren;
 
-namespace TMS.Integration.Services.CoaSubsidiaryService.Dto
+namespace TMS.Integration.Services.CoaSubSubsidiaryService.Dto
 {
-    public class CoaSubsidiaryPostResponse:PostResponse
+    public class CoaSubSubsidiaryPostResponse:PostResponse
     {
         public string _id { get; set; }
         public string name { get; set; }
