@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoaSubsidiaryService\CoaSubsidiaryService.cs" />
+    <Compile Include="CoaSubsidiaryService\Dto\CoaSubsidiaryPostRequestBody.cs" />
+    <Compile Include="CoaSubsidiaryService\Dto\CoaSubsidiariesPostResponse.cs" />
     <Compile Include="CoaGeneralService\CoaGeneralService.cs" />
     <Compile Include="CoaGeneralService\Dto\CoaGeneralPostRequestBody.cs" />
     <Compile Include="CoaGeneralService\Dto\CoaGeneralPostResponse.cs" />

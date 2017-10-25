@@ -23,6 +23,8 @@ namespace TMS.Integration.Storage
         public long GUID { get; set; }
         public string FSFGLCode { get; set; }
         public long Id { get; set; }
+        public string RefNo { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual COASubsidiary COASubsidiary { get; set; }
     }

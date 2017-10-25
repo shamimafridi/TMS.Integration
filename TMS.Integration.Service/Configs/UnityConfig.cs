@@ -9,6 +9,7 @@ using TMS.Integration.Api.Helper;
 using TMS.Common.ServicePattren;
 using TMS.Integration.Services.CoaControlService;
 using TMS.Integration.Services.CoaGeneralService;
+using TMS.Integration.Services.CoaSubsidiaryService;
 
 namespace TMS.Integration.Api.Configs
 {
@@ -20,8 +21,9 @@ namespace TMS.Integration.Api.Configs
             container.RegisterType(typeof(IPostServiceHandler<>),typeof( PostServiceHandler<>),new HierarchicalLifetimeManager());
 
             container.RegisterType(typeof(CoaControlPostService));
-
             container.RegisterType(typeof(CoaGeneralPostService));
+
+            container.RegisterType(typeof(CoaSubsidiaryPostService));
             config.DependencyResolver = new UnityResolver(container);
 
         }

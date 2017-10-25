@@ -57,6 +57,8 @@
     <Property Name="SubsidiaryCode" Type="char" MaxLength="4" Nullable="false" />
     <Property Name="SubsidiaryDescription" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
     <Property Name="FSFGLCode" Type="char" MaxLength="10" />
   </EntityType>
@@ -74,6 +76,8 @@
     <Property Name="SubSubsidiaryCode" Type="char" MaxLength="4" Nullable="false" />
     <Property Name="SubSubsidiaryDescription" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
     <Property Name="FSFGLCode" Type="char" MaxLength="10" />
   </EntityType>

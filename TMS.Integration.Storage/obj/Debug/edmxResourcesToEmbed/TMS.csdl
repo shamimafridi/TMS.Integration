@@ -76,6 +76,8 @@
     <Property Name="FSFGLCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <NavigationProperty Name="COAGeneral" Relationship="Self.COAGenerals_COASubsidiaries_FK1" FromRole="COASubsidiaries" ToRole="COAGenerals" />
     <NavigationProperty Name="COASubSubsidiaries" Relationship="Self.FK_COASubSubsidiaries_COASubsidiaries1" FromRole="COASubsidiaries" ToRole="COASubSubsidiaries" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="COASubSubsidiary">
     <Key>
@@ -94,6 +96,8 @@
     <Property Name="FSFGLCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <NavigationProperty Name="COASubsidiary" Relationship="Self.FK_COASubSubsidiaries_COASubsidiaries1" FromRole="COASubSubsidiaries" ToRole="COASubsidiaries" />
     <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="CustomerBillDetail">
     <Key>
