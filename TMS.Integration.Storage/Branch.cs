@@ -28,6 +28,8 @@ namespace TMS.Integration.Storage
         public System.DateTime DefinitionDate { get; set; }
         public string GLCode { get; set; }
         public Nullable<long> GUID { get; set; }
+        public string RefNo { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Receipt> Receipts { get; set; }

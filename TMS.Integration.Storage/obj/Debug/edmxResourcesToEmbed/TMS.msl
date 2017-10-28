@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Branches">
       <EntityTypeMapping TypeName="TMSModel.Branch">
         <MappingFragment StoreEntitySet="Branches">
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
           <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
           <ScalarProperty Name="BranchDescription" ColumnName="BranchDescription" />
           <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
@@ -464,6 +466,8 @@
     <EntitySetMapping Name="Vouchers">
       <EntityTypeMapping TypeName="TMSModel.Voucher">
         <MappingFragment StoreEntitySet="Vouchers">
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
           <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
           <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
           <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />

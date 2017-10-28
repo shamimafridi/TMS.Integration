@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BranchService\BranchService.cs" />
+    <Compile Include="BranchService\Dto\BranchPostRequestBody.cs" />
+    <Compile Include="BranchService\Dto\BranchPostResponse.cs" />
     <Compile Include="CoaSubSubsidiaryService\CoaSubSubsidiaryService.cs" />
     <Compile Include="CoaSubSubsidiaryService\Dto\CoaSubSubsidiariesPostResponse.cs" />
     <Compile Include="CoaSubSubsidiaryService\Dto\CoaSubSubsidiaryPostRequestBody.cs" />

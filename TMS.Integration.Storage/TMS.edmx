@@ -12,6 +12,8 @@
           <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
           <Property Name="BranchDescription" Type="varchar" MaxLength="100" />
           <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
+          <Property Name="RefNo" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedOn" Type="datetime" />
           <Property Name="GLCode" Type="char" MaxLength="14" />
           <Property Name="GUID" Type="bigint" />
         </EntityType>
@@ -1079,6 +1081,8 @@ warning 6002: The table/view 'TMS.dbo.VoucherDetails' does not have a primary ke
           <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CreditDays" Type="bigint" />
           <Property Name="OldRef" Type="char" MaxLength="12" />
+          <Property Name="RefNo" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedOn" Type="datetime" />
           <Property Name="UrduTitle" Type="nvarchar" MaxLength="2000" />
           <Property Name="GUID" Type="int" Nullable="false" />
         </EntityType>
@@ -3621,6 +3625,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <NavigationProperty Name="Invoices" Relationship="Self.FK_Receivables_Branches" FromRole="Branches" ToRole="Invoices" />
           <NavigationProperty Name="VehicleAdjustments" Relationship="Self.FK_VehicleAdjustments_Branches" FromRole="Branches" ToRole="VehicleAdjustments" />
           <NavigationProperty Name="Vouchers" Relationship="Self.FK_Vouchers_Branches" FromRole="Branches" ToRole="Vouchers" />
+          <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -4141,6 +4147,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <Property Name="UrduTitle" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="GUID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Branch" Relationship="Self.FK_Vouchers_Branches" FromRole="Vouchers" ToRole="Branches" />
+          <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="FSFControl">
           <Key>
@@ -7255,6 +7263,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <EntitySetMapping Name="Branches">
             <EntityTypeMapping TypeName="TMSModel.Branch">
               <MappingFragment StoreEntitySet="Branches">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="RefNo" ColumnName="RefNo" />
                 <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
                 <ScalarProperty Name="BranchDescription" ColumnName="BranchDescription" />
                 <ScalarProperty Name="DefinitionDate" ColumnName="DefinitionDate" />
@@ -7715,6 +7725,8 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
           <EntitySetMapping Name="Vouchers">
             <EntityTypeMapping TypeName="TMSModel.Voucher">
               <MappingFragment StoreEntitySet="Vouchers">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="RefNo" ColumnName="RefNo" />
                 <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
                 <ScalarProperty Name="VoucherNature" ColumnName="VoucherNature" />
                 <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />

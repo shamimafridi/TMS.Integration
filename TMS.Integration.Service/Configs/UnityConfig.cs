@@ -7,6 +7,7 @@ using Microsoft.Practices.Unity;
 using System.Web.Http;
 using TMS.Integration.Api.Helper;
 using TMS.Common.ServicePattren;
+using TMS.Integration.Services.BranchService;
 using TMS.Integration.Services.CoaControlService;
 using TMS.Integration.Services.CoaGeneralService;
 using TMS.Integration.Services.CoaSubsidiaryService;
@@ -23,6 +24,7 @@ namespace TMS.Integration.Api.Configs
 
             container.RegisterType(typeof(CoaControlPostService));
             container.RegisterType(typeof(CoaGeneralPostService));
+            container.RegisterType(typeof(BranchPostService));
 
             container.RegisterType(typeof(CoaSubsidiaryPostService));
             container.RegisterType(typeof(CoaSubSubsidiaryPostService));

@@ -27,6 +27,8 @@ namespace TMS.Integration.Storage
         public string OldRef { get; set; }
         public string UrduTitle { get; set; }
         public int GUID { get; set; }
+        public string RefNo { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual Branch Branch { get; set; }
     }

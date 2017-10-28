@@ -7,6 +7,8 @@
     <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="BranchDescription" Type="varchar" MaxLength="100" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="GLCode" Type="char" MaxLength="14" />
     <Property Name="GUID" Type="bigint" />
   </EntityType>
@@ -1074,6 +1076,8 @@ warning 6002: The table/view 'TMS.dbo.VoucherDetails' does not have a primary ke
     <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CreditDays" Type="bigint" />
     <Property Name="OldRef" Type="char" MaxLength="12" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="UrduTitle" Type="nvarchar" MaxLength="2000" />
     <Property Name="GUID" Type="int" Nullable="false" />
   </EntityType>
