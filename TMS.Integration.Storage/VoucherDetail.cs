@@ -24,5 +24,7 @@ namespace TMS.Integration.Storage
         public Nullable<decimal> Credit { get; set; }
         public string Narration { get; set; }
         public long RecordNo { get; set; }
+    
+        public virtual Voucher Voucher { get; set; }
     }
 }

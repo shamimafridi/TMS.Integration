@@ -71,26 +71,17 @@ namespace TMS.Integration.Storage
         public virtual DbSet<PaymentVoucher> PaymentVouchers { get; set; }
         public virtual DbSet<ProjectNodesSetup> ProjectNodesSetups { get; set; }
         public virtual DbSet<SetupTable> SetupTables { get; set; }
-        public virtual DbSet<TempTransDetailCF> TempTransDetailCFs { get; set; }
-        public virtual DbSet<TempTransDetailLedger> TempTransDetailLedgers { get; set; }
         public virtual DbSet<TempTransDetailLedgerTrial> TempTransDetailLedgerTrials { get; set; }
         public virtual DbSet<TempTransDetailTrialFSF> TempTransDetailTrialFSFs { get; set; }
-        public virtual DbSet<ttt> ttts { get; set; }
         public virtual DbSet<UsedTransactionsDetail> UsedTransactionsDetails { get; set; }
         public virtual DbSet<VoucherDetail> VoucherDetails { get; set; }
         public virtual DbSet<CreditDebitNotEqual> CreditDebitNotEquals { get; set; }
         public virtual DbSet<GL_GetCOACombineLedTBRptVW> GL_GetCOACombineLedTBRptVW { get; set; }
         public virtual DbSet<GL_GetCOACombineTransactionVW> GL_GetCOACombineTransactionVW { get; set; }
         public virtual DbSet<GL_GetCOACombineVW> GL_GetCOACombineVW { get; set; }
-        public virtual DbSet<GL_GetFSFCombineLedTBRptVW> GL_GetFSFCombineLedTBRptVW { get; set; }
         public virtual DbSet<GL_GetFSFCombineTransactionVW> GL_GetFSFCombineTransactionVW { get; set; }
         public virtual DbSet<GL_GetFSFCombineVW> GL_GetFSFCombineVW { get; set; }
         public virtual DbSet<QryOtherAmountExcInvoice> QryOtherAmountExcInvoices { get; set; }
-        public virtual DbSet<VIEW1> VIEW1 { get; set; }
-        public virtual DbSet<VIEW2> VIEW2 { get; set; }
-        public virtual DbSet<VIEW3> VIEW3 { get; set; }
-        public virtual DbSet<TempCOAOpeningLedger> TempCOAOpeningLedgers { get; set; }
-        public virtual DbSet<TempTransDetailVBill> TempTransDetailVBills { get; set; }
     
         [DbFunction("TMSEntities", "GetTransactionNatures")]
         public virtual IQueryable<GetTransactionNatures_Result> GetTransactionNatures(string natureCode, string system)

@@ -14,6 +14,12 @@ namespace TMS.Integration.Storage
     
     public partial class Voucher
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Voucher()
+        {
+            this.VoucherDetails = new HashSet<VoucherDetail>();
+        }
+    
         public string BranchCode { get; set; }
         public string VoucherNature { get; set; }
         public string VoucherNo { get; set; }
@@ -31,5 +37,7 @@ namespace TMS.Integration.Storage
         public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual Branch Branch { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VoucherDetail> VoucherDetails { get; set; }
     }
 }

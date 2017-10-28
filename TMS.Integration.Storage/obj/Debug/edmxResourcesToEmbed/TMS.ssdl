@@ -629,124 +629,6 @@ warning 6002: The table/view 'TMS.dbo.SetupTables' does not have a primary key d
     <Property Name="GUID" Type="bigint" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.TempCOAOpeningLedger' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="TempCOAOpeningLedger">
-    <Key>
-      <PropertyRef Name="BranchCode" />
-      <PropertyRef Name="DivisionCode" />
-      <PropertyRef Name="GLCode" />
-      <PropertyRef Name="GLRptTitle" />
-      <PropertyRef Name="SubSubRptTitle" />
-    </Key>
-    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
-    <Property Name="BranchRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="DivisionCode" Type="char" MaxLength="3" Nullable="false" />
-    <Property Name="DivisionRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
-    <Property Name="GLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="ControlCode" Type="char" MaxLength="2" />
-    <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="GeneralCode" Type="char" MaxLength="4" />
-    <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubSidiaryCode" Type="char" MaxLength="8" />
-    <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubsubCode" Type="char" MaxLength="12" />
-    <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="OpeningBalance" Type="numeric" Precision="38" Scale="5" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.TempTransDetailCF' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="TempTransDetailCF">
-    <Key>
-      <PropertyRef Name="BranchCode" />
-      <PropertyRef Name="DivisionCode" />
-      <PropertyRef Name="GLCode" />
-      <PropertyRef Name="GLRptTitle" />
-      <PropertyRef Name="NatureCode" />
-      <PropertyRef Name="NatureRptTitle" />
-      <PropertyRef Name="VoucherDate" />
-      <PropertyRef Name="VoucherNo" />
-      <PropertyRef Name="RecordNo" />
-      <PropertyRef Name="SubSubRptTitle" />
-      <PropertyRef Name="ApplyGrouping" />
-      <PropertyRef Name="DetailRecordNo" />
-    </Key>
-    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
-    <Property Name="BranchRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="DivisionCode" Type="char" MaxLength="3" Nullable="false" />
-    <Property Name="DivisionRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
-    <Property Name="GLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="NatureCode" Type="char" MaxLength="2" Nullable="false" />
-    <Property Name="NatureRptTitle" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="VoucherDate" Type="datetime" Nullable="false" />
-    <Property Name="VoucherNo" Type="char" MaxLength="10" Nullable="false" />
-    <Property Name="OldRef" Type="char" MaxLength="12" />
-    <Property Name="Narration" Type="varchar" MaxLength="100" />
-    <Property Name="NarrationMain" Type="varchar" MaxLength="250" />
-    <Property Name="RecordNo" Type="bigint" Nullable="false" />
-    <Property Name="Reference" Type="varchar" MaxLength="100" />
-    <Property Name="Debit" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="Credit" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="ControlCode" Type="char" MaxLength="2" />
-    <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="GeneralCode" Type="char" MaxLength="4" />
-    <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubSidiaryCode" Type="char" MaxLength="8" />
-    <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubsubCode" Type="char" MaxLength="12" />
-    <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="ApplyGrouping" Type="varchar" MaxLength="1" Nullable="false" />
-    <Property Name="Posted" Type="bit" />
-    <Property Name="Locked" Type="bit" />
-    <Property Name="DetailRecordNo" Type="bigint" Nullable="false" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.TempTransDetailLedger' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="TempTransDetailLedger">
-    <Key>
-      <PropertyRef Name="BranchCode" />
-      <PropertyRef Name="DivisionCode" />
-      <PropertyRef Name="GLCode" />
-      <PropertyRef Name="GLRptTitle" />
-      <PropertyRef Name="NatureCode" />
-      <PropertyRef Name="NatureRptTitle" />
-      <PropertyRef Name="VoucherDate" />
-      <PropertyRef Name="VoucherNo" />
-      <PropertyRef Name="RecordNo" />
-      <PropertyRef Name="SubSubRptTitle" />
-      <PropertyRef Name="DetailRecordNo" />
-    </Key>
-    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
-    <Property Name="BranchRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="DivisionCode" Type="char" MaxLength="3" Nullable="false" />
-    <Property Name="DivisionRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
-    <Property Name="GLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="NatureCode" Type="char" MaxLength="2" Nullable="false" />
-    <Property Name="NatureRptTitle" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="VoucherDate" Type="datetime" Nullable="false" />
-    <Property Name="VoucherNo" Type="char" MaxLength="10" Nullable="false" />
-    <Property Name="OldRef" Type="char" MaxLength="12" />
-    <Property Name="Narration" Type="varchar" MaxLength="100" />
-    <Property Name="NarrationMain" Type="varchar" MaxLength="250" />
-    <Property Name="RecordNo" Type="bigint" Nullable="false" />
-    <Property Name="Reference" Type="varchar" MaxLength="100" />
-    <Property Name="Debit" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="Credit" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="ControlCode" Type="char" MaxLength="2" />
-    <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="GeneralCode" Type="char" MaxLength="4" />
-    <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubSidiaryCode" Type="char" MaxLength="8" />
-    <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubsubCode" Type="char" MaxLength="12" />
-    <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Posted" Type="bit" />
-    <Property Name="Locked" Type="bit" />
-    <Property Name="DetailRecordNo" Type="bigint" Nullable="false" />
-  </EntityType>
-  <!--Errors Found During Generation:
 warning 6002: The table/view 'TMS.dbo.TempTransDetailLedgerTrial' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TempTransDetailLedgerTrial">
     <Key>
@@ -816,51 +698,6 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailTrialFSF' does not have a p
     <Property Name="DebitBalance" Type="decimal" Precision="38" Scale="5" />
     <Property Name="CreditBalance" Type="decimal" Precision="38" Scale="5" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.TempTransDetailVBill' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="TempTransDetailVBill">
-    <Key>
-      <PropertyRef Name="MODE" />
-      <PropertyRef Name="TransactionNature" />
-      <PropertyRef Name="TransactionNo" />
-      <PropertyRef Name="TransactionDate" />
-      <PropertyRef Name="RecordNo" />
-      <PropertyRef Name="StationPointName" />
-      <PropertyRef Name="DestinationPointName" />
-    </Key>
-    <Property Name="MODE" Type="varchar" MaxLength="6" Nullable="false" />
-    <Property Name="TransactionNature" Type="char" MaxLength="3" Nullable="false" />
-    <Property Name="TransactionNo" Type="char" MaxLength="10" Nullable="false" />
-    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
-    <Property Name="RecordNo" Type="bigint" Nullable="false" />
-    <Property Name="CustomerReference" Type="char" MaxLength="20" />
-    <Property Name="VehicleCode" Type="char" MaxLength="10" />
-    <Property Name="StationPointCode" Type="char" MaxLength="3" />
-    <Property Name="DestinationPointCode" Type="char" MaxLength="3" />
-    <Property Name="ProductCode" Type="char" MaxLength="3" />
-    <Property Name="Quantity" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="Rate" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="Debit" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="Credit" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="Commission" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="ShortageQuantity" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="Shortage" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="QuantityValue" Type="decimal" Precision="20" Scale="5" />
-    <Property Name="OwnerCode" Type="char" MaxLength="5" />
-    <Property Name="OwnerName" Type="varchar" MaxLength="100" />
-    <Property Name="UrduOwnerName" Type="nvarchar" MaxLength="500" />
-    <Property Name="ProductUrdu" Type="nvarchar" MaxLength="200" />
-    <Property Name="StationPointName" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="StationPointUrdu" Type="nvarchar" MaxLength="200" />
-    <Property Name="DestinationPointName" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="DestinationPointUrdu" Type="nvarchar" MaxLength="200" />
-    <Property Name="GLCode" Type="char" MaxLength="12" />
-    <Property Name="GLDescription" Type="varchar" MaxLength="100" />
-    <Property Name="GLDescriptionINV" Type="nvarchar" MaxLength="2000" />
-    <Property Name="CustomerCode" Type="char" MaxLength="5" />
-    <Property Name="CustomerName" Type="varchar" MaxLength="100" />
-    <Property Name="UrduCustomerName" Type="nvarchar" MaxLength="200" />
-  </EntityType>
   <EntityType Name="TransactionActivities">
     <Key>
       <PropertyRef Name="GUID" />
@@ -894,31 +731,6 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailVBill' does not have a prim
     <Property Name="UrduTitle" Type="nvarchar" MaxLength="200" />
     <Property Name="DefinitionDate" Type="datetime" />
     <Property Name="Nature" Type="char" MaxLength="2" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.ttt' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="ttt">
-    <Key>
-      <PropertyRef Name="BranchCode" />
-      <PropertyRef Name="VoucherNature" />
-      <PropertyRef Name="VoucherNo" />
-      <PropertyRef Name="VoucherDate" />
-      <PropertyRef Name="RecordNo" />
-      <PropertyRef Name="GUID" />
-    </Key>
-    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
-    <Property Name="VoucherNature" Type="char" MaxLength="2" Nullable="false" />
-    <Property Name="VoucherNo" Type="char" MaxLength="10" Nullable="false" />
-    <Property Name="VoucherDate" Type="datetime" Nullable="false" />
-    <Property Name="Description" Type="varchar" MaxLength="250" />
-    <Property Name="Locked" Type="bit" />
-    <Property Name="Posted" Type="bit" />
-    <Property Name="IsAutoGenerated" Type="bit" />
-    <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CreditDays" Type="bigint" />
-    <Property Name="OldRef" Type="char" MaxLength="12" />
-    <Property Name="UrduTitle" Type="nvarchar" MaxLength="2000" />
-    <Property Name="GUID" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1038,17 +850,14 @@ warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a pr
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="GUID" Type="bigint" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.VoucherDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VoucherDetails">
     <Key>
+      <PropertyRef Name="BranchCode" />
       <PropertyRef Name="VoucherNature" />
       <PropertyRef Name="VoucherNo" />
       <PropertyRef Name="GLCode" />
-      <PropertyRef Name="DivisionCode" />
-      <PropertyRef Name="RecordNo" />
     </Key>
-    <Property Name="BranchCode" Type="char" MaxLength="2" />
+    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="VoucherNature" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="VoucherNo" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="GLCode" Type="char" MaxLength="20" Nullable="false" />
@@ -1121,6 +930,7 @@ warning 6002: The table/view 'TMS.dbo.GL_GetCOACombineTransactionVW' does not ha
       <PropertyRef Name="GLCode" />
       <PropertyRef Name="GLDescription" />
     </Key>
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
     <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="GLDescription" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="FSFGLCode" Type="char" MaxLength="10" />
@@ -1135,24 +945,6 @@ warning 6002: The table/view 'TMS.dbo.GL_GetCOACombineVW' does not have a primar
     <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="GLDescription" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="SysFSFGLCode" Type="char" MaxLength="10" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.GL_GetFSFCombineLedTBRptVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="GL_GetFSFCombineLedTBRptVW">
-    <Key>
-      <PropertyRef Name="GLRptTitle" />
-      <PropertyRef Name="SubSubRptTitle" />
-    </Key>
-    <Property Name="GLCode" Type="varchar" MaxLength="21" />
-    <Property Name="GLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="ControlCode" Type="varchar" MaxLength="20" />
-    <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="GeneralCode" Type="varchar" MaxLength="40" />
-    <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubSidiaryCode" Type="varchar" MaxLength="42" />
-    <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubsubCode" Type="varchar" MaxLength="44" />
-    <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'TMS.dbo.GL_GetFSFCombineTransactionVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1189,55 +981,6 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Property Name="GLDescription" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Expr1" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="VoucherDate" Type="datetime" Nullable="false" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.VIEW1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="VIEW1">
-    <Key>
-      <PropertyRef Name="BranchCode" />
-      <PropertyRef Name="TransactionNo" />
-      <PropertyRef Name="VehicleCode" />
-    </Key>
-    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
-    <Property Name="TransactionNo" Type="char" MaxLength="10" Nullable="false" />
-    <Property Name="PartyCode" Type="char" MaxLength="5" />
-    <Property Name="VehicleCode" Type="char" MaxLength="8" Nullable="false" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.VIEW2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="VIEW2">
-    <Key>
-      <PropertyRef Name="GLCode" />
-    </Key>
-    <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
-    <Property Name="ControlDescription" Type="varchar" MaxLength="100" />
-    <Property Name="GeneralDescription" Type="varchar" MaxLength="100" />
-    <Property Name="SubsidiaryDescription" Type="varchar" MaxLength="100" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="VIEW3">
-    <Key>
-      <PropertyRef Name="VehicleCode" />
-      <PropertyRef Name="VehicleDescription" />
-      <PropertyRef Name="DefinitionDate" />
-      <PropertyRef Name="InstallmentGLCode" />
-      <PropertyRef Name="FreightGLCode" />
-      <PropertyRef Name="LoanGLCode" />
-    </Key>
-    <Property Name="VehicleCode" Type="char" MaxLength="8" Nullable="false" />
-    <Property Name="VehicleDescription" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
-    <Property Name="InstallmentGLCode" Type="char" MaxLength="12" Nullable="false" />
-    <Property Name="InstallmentGLDescription" Type="varchar" MaxLength="100" />
-    <Property Name="FreightGLCode" Type="char" MaxLength="12" Nullable="false" />
-    <Property Name="FreightGLDescription" Type="varchar" MaxLength="100" />
-    <Property Name="LoanGLCode" Type="char" MaxLength="12" Nullable="false" />
-    <Property Name="LoanGLDescription" Type="varchar" MaxLength="100" />
-    <Property Name="OwnerCode" Type="char" MaxLength="5" />
-    <Property Name="OwnerName" Type="varchar" MaxLength="100" />
-    <Property Name="CommissionGLCode" Type="char" MaxLength="12" />
-    <Property Name="CommissionGLDescription" Type="varchar" MaxLength="100" />
   </EntityType>
   <Association Name="Cities_Customers_FK1">
     <End Role="Cities" Type="Self.Cities" Multiplicity="1" />
@@ -1620,6 +1363,22 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
       </Principal>
       <Dependent Role="Vehicles ">
         <PropertyRef Name="OwnerCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VoucherDetails_Vouchers">
+    <End Role="Vouchers" Type="Self.Vouchers" Multiplicity="1" />
+    <End Role="VoucherDetails" Type="Self.VoucherDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vouchers">
+        <PropertyRef Name="BranchCode" />
+        <PropertyRef Name="VoucherNature" />
+        <PropertyRef Name="VoucherNo" />
+      </Principal>
+      <Dependent Role="VoucherDetails">
+        <PropertyRef Name="BranchCode" />
+        <PropertyRef Name="VoucherNature" />
+        <PropertyRef Name="VoucherNo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2964,6 +2723,7 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
     <EntitySet Name="VehicleAdjustments" EntityType="Self.VehicleAdjustments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VehicleOwners" EntityType="Self.VehicleOwners" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vehicles " EntityType="Self.Vehicles " Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VoucherDetails" EntityType="Self.VoucherDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vouchers" EntityType="Self.Vouchers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FSFControls" EntityType="Self.FSFControls" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -3142,90 +2902,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
     [SetupTables].[ss] AS [ss]
     FROM [dbo].[SetupTables] AS [SetupTables]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="TempCOAOpeningLedger" EntityType="Self.TempCOAOpeningLedger" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TempCOAOpeningLedger].[BranchCode] AS [BranchCode], 
-    [TempCOAOpeningLedger].[BranchRptTitle] AS [BranchRptTitle], 
-    [TempCOAOpeningLedger].[DivisionCode] AS [DivisionCode], 
-    [TempCOAOpeningLedger].[DivisionRptTitle] AS [DivisionRptTitle], 
-    [TempCOAOpeningLedger].[GLCode] AS [GLCode], 
-    [TempCOAOpeningLedger].[GLRptTitle] AS [GLRptTitle], 
-    [TempCOAOpeningLedger].[ControlCode] AS [ControlCode], 
-    [TempCOAOpeningLedger].[ControlRptTitle] AS [ControlRptTitle], 
-    [TempCOAOpeningLedger].[GeneralCode] AS [GeneralCode], 
-    [TempCOAOpeningLedger].[GeneralRptTitle] AS [GeneralRptTitle], 
-    [TempCOAOpeningLedger].[SubSidiaryCode] AS [SubSidiaryCode], 
-    [TempCOAOpeningLedger].[SubsidiaryRptTitle] AS [SubsidiaryRptTitle], 
-    [TempCOAOpeningLedger].[SubsubCode] AS [SubsubCode], 
-    [TempCOAOpeningLedger].[SubSubRptTitle] AS [SubSubRptTitle], 
-    [TempCOAOpeningLedger].[OpeningBalance] AS [OpeningBalance]
-    FROM [dbo].[TempCOAOpeningLedger] AS [TempCOAOpeningLedger]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TempTransDetailCF" EntityType="Self.TempTransDetailCF" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TempTransDetailCF].[BranchCode] AS [BranchCode], 
-    [TempTransDetailCF].[BranchRptTitle] AS [BranchRptTitle], 
-    [TempTransDetailCF].[DivisionCode] AS [DivisionCode], 
-    [TempTransDetailCF].[DivisionRptTitle] AS [DivisionRptTitle], 
-    [TempTransDetailCF].[GLCode] AS [GLCode], 
-    [TempTransDetailCF].[GLRptTitle] AS [GLRptTitle], 
-    [TempTransDetailCF].[NatureCode] AS [NatureCode], 
-    [TempTransDetailCF].[NatureRptTitle] AS [NatureRptTitle], 
-    [TempTransDetailCF].[VoucherDate] AS [VoucherDate], 
-    [TempTransDetailCF].[VoucherNo] AS [VoucherNo], 
-    [TempTransDetailCF].[OldRef] AS [OldRef], 
-    [TempTransDetailCF].[Narration] AS [Narration], 
-    [TempTransDetailCF].[NarrationMain] AS [NarrationMain], 
-    [TempTransDetailCF].[RecordNo] AS [RecordNo], 
-    [TempTransDetailCF].[Reference] AS [Reference], 
-    [TempTransDetailCF].[Debit] AS [Debit], 
-    [TempTransDetailCF].[Credit] AS [Credit], 
-    [TempTransDetailCF].[ControlCode] AS [ControlCode], 
-    [TempTransDetailCF].[ControlRptTitle] AS [ControlRptTitle], 
-    [TempTransDetailCF].[GeneralCode] AS [GeneralCode], 
-    [TempTransDetailCF].[GeneralRptTitle] AS [GeneralRptTitle], 
-    [TempTransDetailCF].[SubSidiaryCode] AS [SubSidiaryCode], 
-    [TempTransDetailCF].[SubsidiaryRptTitle] AS [SubsidiaryRptTitle], 
-    [TempTransDetailCF].[SubsubCode] AS [SubsubCode], 
-    [TempTransDetailCF].[SubSubRptTitle] AS [SubSubRptTitle], 
-    [TempTransDetailCF].[ApplyGrouping] AS [ApplyGrouping], 
-    [TempTransDetailCF].[Posted] AS [Posted], 
-    [TempTransDetailCF].[Locked] AS [Locked], 
-    [TempTransDetailCF].[DetailRecordNo] AS [DetailRecordNo]
-    FROM [dbo].[TempTransDetailCF] AS [TempTransDetailCF]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TempTransDetailLedger" EntityType="Self.TempTransDetailLedger" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TempTransDetailLedger].[BranchCode] AS [BranchCode], 
-    [TempTransDetailLedger].[BranchRptTitle] AS [BranchRptTitle], 
-    [TempTransDetailLedger].[DivisionCode] AS [DivisionCode], 
-    [TempTransDetailLedger].[DivisionRptTitle] AS [DivisionRptTitle], 
-    [TempTransDetailLedger].[GLCode] AS [GLCode], 
-    [TempTransDetailLedger].[GLRptTitle] AS [GLRptTitle], 
-    [TempTransDetailLedger].[NatureCode] AS [NatureCode], 
-    [TempTransDetailLedger].[NatureRptTitle] AS [NatureRptTitle], 
-    [TempTransDetailLedger].[VoucherDate] AS [VoucherDate], 
-    [TempTransDetailLedger].[VoucherNo] AS [VoucherNo], 
-    [TempTransDetailLedger].[OldRef] AS [OldRef], 
-    [TempTransDetailLedger].[Narration] AS [Narration], 
-    [TempTransDetailLedger].[NarrationMain] AS [NarrationMain], 
-    [TempTransDetailLedger].[RecordNo] AS [RecordNo], 
-    [TempTransDetailLedger].[Reference] AS [Reference], 
-    [TempTransDetailLedger].[Debit] AS [Debit], 
-    [TempTransDetailLedger].[Credit] AS [Credit], 
-    [TempTransDetailLedger].[ControlCode] AS [ControlCode], 
-    [TempTransDetailLedger].[ControlRptTitle] AS [ControlRptTitle], 
-    [TempTransDetailLedger].[GeneralCode] AS [GeneralCode], 
-    [TempTransDetailLedger].[GeneralRptTitle] AS [GeneralRptTitle], 
-    [TempTransDetailLedger].[SubSidiaryCode] AS [SubSidiaryCode], 
-    [TempTransDetailLedger].[SubsidiaryRptTitle] AS [SubsidiaryRptTitle], 
-    [TempTransDetailLedger].[SubsubCode] AS [SubsubCode], 
-    [TempTransDetailLedger].[SubSubRptTitle] AS [SubSubRptTitle], 
-    [TempTransDetailLedger].[Posted] AS [Posted], 
-    [TempTransDetailLedger].[Locked] AS [Locked], 
-    [TempTransDetailLedger].[DetailRecordNo] AS [DetailRecordNo]
-    FROM [dbo].[TempTransDetailLedger] AS [TempTransDetailLedger]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="TempTransDetailLedgerTrial" EntityType="Self.TempTransDetailLedgerTrial" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [TempTransDetailLedgerTrial].[BranchCode] AS [BranchCode], 
@@ -3278,59 +2954,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
     [TempTransDetailTrialFSF].[CreditBalance] AS [CreditBalance]
     FROM [dbo].[TempTransDetailTrialFSF] AS [TempTransDetailTrialFSF]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="TempTransDetailVBill" EntityType="Self.TempTransDetailVBill" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TempTransDetailVBill].[MODE] AS [MODE], 
-    [TempTransDetailVBill].[TransactionNature] AS [TransactionNature], 
-    [TempTransDetailVBill].[TransactionNo] AS [TransactionNo], 
-    [TempTransDetailVBill].[TransactionDate] AS [TransactionDate], 
-    [TempTransDetailVBill].[RecordNo] AS [RecordNo], 
-    [TempTransDetailVBill].[CustomerReference] AS [CustomerReference], 
-    [TempTransDetailVBill].[VehicleCode] AS [VehicleCode], 
-    [TempTransDetailVBill].[StationPointCode] AS [StationPointCode], 
-    [TempTransDetailVBill].[DestinationPointCode] AS [DestinationPointCode], 
-    [TempTransDetailVBill].[ProductCode] AS [ProductCode], 
-    [TempTransDetailVBill].[Quantity] AS [Quantity], 
-    [TempTransDetailVBill].[Rate] AS [Rate], 
-    [TempTransDetailVBill].[Debit] AS [Debit], 
-    [TempTransDetailVBill].[Credit] AS [Credit], 
-    [TempTransDetailVBill].[Commission] AS [Commission], 
-    [TempTransDetailVBill].[ShortageQuantity] AS [ShortageQuantity], 
-    [TempTransDetailVBill].[Shortage] AS [Shortage], 
-    [TempTransDetailVBill].[QuantityValue] AS [QuantityValue], 
-    [TempTransDetailVBill].[OwnerCode] AS [OwnerCode], 
-    [TempTransDetailVBill].[OwnerName] AS [OwnerName], 
-    [TempTransDetailVBill].[UrduOwnerName] AS [UrduOwnerName], 
-    [TempTransDetailVBill].[ProductUrdu] AS [ProductUrdu], 
-    [TempTransDetailVBill].[StationPointName] AS [StationPointName], 
-    [TempTransDetailVBill].[StationPointUrdu] AS [StationPointUrdu], 
-    [TempTransDetailVBill].[DestinationPointName] AS [DestinationPointName], 
-    [TempTransDetailVBill].[DestinationPointUrdu] AS [DestinationPointUrdu], 
-    [TempTransDetailVBill].[GLCode] AS [GLCode], 
-    [TempTransDetailVBill].[GLDescription] AS [GLDescription], 
-    [TempTransDetailVBill].[GLDescriptionINV] AS [GLDescriptionINV], 
-    [TempTransDetailVBill].[CustomerCode] AS [CustomerCode], 
-    [TempTransDetailVBill].[CustomerName] AS [CustomerName], 
-    [TempTransDetailVBill].[UrduCustomerName] AS [UrduCustomerName]
-    FROM [dbo].[TempTransDetailVBill] AS [TempTransDetailVBill]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="ttt" EntityType="Self.ttt" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ttt].[BranchCode] AS [BranchCode], 
-    [ttt].[VoucherNature] AS [VoucherNature], 
-    [ttt].[VoucherNo] AS [VoucherNo], 
-    [ttt].[VoucherDate] AS [VoucherDate], 
-    [ttt].[Description] AS [Description], 
-    [ttt].[Locked] AS [Locked], 
-    [ttt].[Posted] AS [Posted], 
-    [ttt].[IsAutoGenerated] AS [IsAutoGenerated], 
-    [ttt].[RecordNo] AS [RecordNo], 
-    [ttt].[CreditDays] AS [CreditDays], 
-    [ttt].[OldRef] AS [OldRef], 
-    [ttt].[UrduTitle] AS [UrduTitle], 
-    [ttt].[GUID] AS [GUID]
-    FROM [dbo].[ttt] AS [ttt]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="UsedTransactionsDetail" EntityType="Self.UsedTransactionsDetail" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [UsedTransactionsDetail].[RecordNo] AS [RecordNo], 
@@ -3346,20 +2969,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
     [UsedTransactionsDetail].[RefBillNo] AS [RefBillNo], 
     [UsedTransactionsDetail].[AmountUsed] AS [AmountUsed]
     FROM [dbo].[UsedTransactionsDetail] AS [UsedTransactionsDetail]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="VoucherDetails" EntityType="Self.VoucherDetails" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [VoucherDetails].[BranchCode] AS [BranchCode], 
-    [VoucherDetails].[VoucherNature] AS [VoucherNature], 
-    [VoucherDetails].[VoucherNo] AS [VoucherNo], 
-    [VoucherDetails].[GLCode] AS [GLCode], 
-    [VoucherDetails].[DivisionCode] AS [DivisionCode], 
-    [VoucherDetails].[Reference] AS [Reference], 
-    [VoucherDetails].[Debit] AS [Debit], 
-    [VoucherDetails].[Credit] AS [Credit], 
-    [VoucherDetails].[Narration] AS [Narration], 
-    [VoucherDetails].[RecordNo] AS [RecordNo]
-    FROM [dbo].[VoucherDetails] AS [VoucherDetails]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="CreditDebitNotEqual" EntityType="Self.CreditDebitNotEqual" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -3387,6 +2996,7 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
     </EntitySet>
     <EntitySet Name="GL_GetCOACombineTransactionVW" EntityType="Self.GL_GetCOACombineTransactionVW" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
+    [GL_GetCOACombineTransactionVW].[RefNo] AS [RefNo], 
     [GL_GetCOACombineTransactionVW].[GLCode] AS [GLCode], 
     [GL_GetCOACombineTransactionVW].[GLDescription] AS [GLDescription], 
     [GL_GetCOACombineTransactionVW].[FSFGLCode] AS [FSFGLCode]
@@ -3398,20 +3008,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
     [GL_GetCOACombineVW].[GLDescription] AS [GLDescription], 
     [GL_GetCOACombineVW].[SysFSFGLCode] AS [SysFSFGLCode]
     FROM [dbo].[GL_GetCOACombineVW] AS [GL_GetCOACombineVW]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="GL_GetFSFCombineLedTBRptVW" EntityType="Self.GL_GetFSFCombineLedTBRptVW" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [GL_GetFSFCombineLedTBRptVW].[GLCode] AS [GLCode], 
-    [GL_GetFSFCombineLedTBRptVW].[GLRptTitle] AS [GLRptTitle], 
-    [GL_GetFSFCombineLedTBRptVW].[ControlCode] AS [ControlCode], 
-    [GL_GetFSFCombineLedTBRptVW].[ControlRptTitle] AS [ControlRptTitle], 
-    [GL_GetFSFCombineLedTBRptVW].[GeneralCode] AS [GeneralCode], 
-    [GL_GetFSFCombineLedTBRptVW].[GeneralRptTitle] AS [GeneralRptTitle], 
-    [GL_GetFSFCombineLedTBRptVW].[SubSidiaryCode] AS [SubSidiaryCode], 
-    [GL_GetFSFCombineLedTBRptVW].[SubsidiaryRptTitle] AS [SubsidiaryRptTitle], 
-    [GL_GetFSFCombineLedTBRptVW].[SubsubCode] AS [SubsubCode], 
-    [GL_GetFSFCombineLedTBRptVW].[SubSubRptTitle] AS [SubSubRptTitle]
-    FROM [dbo].[GL_GetFSFCombineLedTBRptVW] AS [GL_GetFSFCombineLedTBRptVW]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="GL_GetFSFCombineTransactionVW" EntityType="Self.GL_GetFSFCombineTransactionVW" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -3435,39 +3031,6 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
     [QryOtherAmountExcInvoice].[Expr1] AS [Expr1], 
     [QryOtherAmountExcInvoice].[VoucherDate] AS [VoucherDate]
     FROM [dbo].[QryOtherAmountExcInvoice] AS [QryOtherAmountExcInvoice]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="VIEW1" EntityType="Self.VIEW1" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [VIEW1].[BranchCode] AS [BranchCode], 
-    [VIEW1].[TransactionNo] AS [TransactionNo], 
-    [VIEW1].[PartyCode] AS [PartyCode], 
-    [VIEW1].[VehicleCode] AS [VehicleCode]
-    FROM [dbo].[VIEW1] AS [VIEW1]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="VIEW2" EntityType="Self.VIEW2" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [VIEW2].[GLCode] AS [GLCode], 
-    [VIEW2].[ControlDescription] AS [ControlDescription], 
-    [VIEW2].[GeneralDescription] AS [GeneralDescription], 
-    [VIEW2].[SubsidiaryDescription] AS [SubsidiaryDescription]
-    FROM [dbo].[VIEW2] AS [VIEW2]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="VIEW3" EntityType="Self.VIEW3" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [VIEW3].[VehicleCode] AS [VehicleCode], 
-    [VIEW3].[VehicleDescription] AS [VehicleDescription], 
-    [VIEW3].[DefinitionDate] AS [DefinitionDate], 
-    [VIEW3].[InstallmentGLCode] AS [InstallmentGLCode], 
-    [VIEW3].[InstallmentGLDescription] AS [InstallmentGLDescription], 
-    [VIEW3].[FreightGLCode] AS [FreightGLCode], 
-    [VIEW3].[FreightGLDescription] AS [FreightGLDescription], 
-    [VIEW3].[LoanGLCode] AS [LoanGLCode], 
-    [VIEW3].[LoanGLDescription] AS [LoanGLDescription], 
-    [VIEW3].[OwnerCode] AS [OwnerCode], 
-    [VIEW3].[OwnerName] AS [OwnerName], 
-    [VIEW3].[CommissionGLCode] AS [CommissionGLCode], 
-    [VIEW3].[CommissionGLDescription] AS [CommissionGLDescription]
-    FROM [dbo].[VIEW3] AS [VIEW3]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="Cities_Customers_FK1" Association="Self.Cities_Customers_FK1">
       <End Role="Cities" EntitySet="Cities" />
@@ -3592,6 +3155,10 @@ warning 6002: The table/view 'TMS.dbo.VIEW3' does not have a primary key defined
     <AssociationSet Name="FK_Vehicles _VehicleOwners" Association="Self.FK_Vehicles _VehicleOwners">
       <End Role="VehicleOwners" EntitySet="VehicleOwners" />
       <End Role="Vehicles " EntitySet="Vehicles " />
+    </AssociationSet>
+    <AssociationSet Name="FK_VoucherDetails_Vouchers" Association="Self.FK_VoucherDetails_Vouchers">
+      <End Role="Vouchers" EntitySet="Vouchers" />
+      <End Role="VoucherDetails" EntitySet="VoucherDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_Vouchers_Branches" Association="Self.FK_Vouchers_Branches">
       <End Role="Branches" EntitySet="Branches" />

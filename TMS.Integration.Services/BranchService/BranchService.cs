@@ -11,21 +11,16 @@ namespace TMS.Integration.Services.BranchService
 {
     public class BranchPostService : PostServiceHandler<PostResponse>
     {
-        public BranchPostService()
-        {
-
-        }
-
-
+        
         public override async Task<PostResponse> AsyncSetter(string token)
         {
             using (var context = new Storage.TMSEntities())
             {
-                foreach (var coaLocal in context.Branches.ToList())
+                foreach (var local in context.Branches.ToList())
                 {
-                    await (string.IsNullOrEmpty(coaLocal.RefNo) ?
-                        Create(coaLocal) :
-                        Update(coaLocal.RefNo, coaLocal));
+                    await (string.IsNullOrEmpty(local.RefNo) ?
+                        Create(local) :
+                        Update(local.RefNo, local));
 
                     context.SaveChanges();
                 }
@@ -46,7 +41,6 @@ namespace TMS.Integration.Services.BranchService
                 {
                     desc = coaLocal.BranchDescription,
                     name = coaLocal.BranchDescription,
-                    parent = ""
                 }).Result;
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsAsync<BranchPostResponse>();
@@ -61,7 +55,6 @@ namespace TMS.Integration.Services.BranchService
                 {
                     desc = coaLocal.BranchDescription,
                     name = coaLocal.BranchDescription,
-                    parent = ""
                 }).Result;
             response.EnsureSuccessStatusCode();
             var contentResult = await response.Content.ReadAsAsync<BranchPostResponse>();

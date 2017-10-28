@@ -55,6 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Dto\Coa.cs" />
+    <Compile Include="VoucherService\VoucherService.cs" />
+    <Compile Include="VoucherService\Dto\VoucherPostRequestBody.cs" />
+    <Compile Include="VoucherService\Dto\VoucherPostResponse.cs" />
     <Compile Include="BranchService\BranchService.cs" />
     <Compile Include="BranchService\Dto\BranchPostRequestBody.cs" />
     <Compile Include="BranchService\Dto\BranchPostResponse.cs" />
@@ -86,5 +90,6 @@
       <Name>TMS.Integration.Storage</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

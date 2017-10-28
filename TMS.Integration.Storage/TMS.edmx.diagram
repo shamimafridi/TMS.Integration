@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4965c10a50134bbaa7cb69bdcdbc3258" Name="Diagram1">
+      <Diagram DiagramId="4965c10a50134bbaa7cb69bdcdbc3258" Name="Diagram1" ZoomLevel="86">
         <EntityTypeShape EntityType="TMSModel.Branch" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.City" Width="1.5" PointX="1.5" PointY="26.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.COAControl" Width="1.5" PointX="5.75" PointY="3.125" IsExpanded="true" />
@@ -28,7 +28,7 @@
         <EntityTypeShape EntityType="TMSModel.Region" Width="1.5" PointX="13.75" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.StationPoint" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.Supplier" Width="1.5" PointX="3.75" PointY="26" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.TransactionActivity" Width="1.5" PointX="13.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TMSModel.TransactionActivity" Width="1.5" PointX="13.75" PointY="15.625" IsExpanded="false" />
         <EntityTypeShape EntityType="TMSModel.TransactionNature" Width="1.5" PointX="6.75" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.TransactionType" Width="1.5" PointX="9" PointY="18.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.UserSecurity" Width="1.5" PointX="14.75" PointY="2.625" IsExpanded="true" />
@@ -40,33 +40,26 @@
         <EntityTypeShape EntityType="TMSModel.FSFControl" Width="1.5" PointX="15.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.FSFGeneral" Width="1.5" PointX="15.75" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.FSFSubsidiary" Width="1.5" PointX="15.75" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.FSFSubSubsidiary" Width="1.5" PointX="15.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TMSModel.FSFSubSubsidiary" Width="1.5" PointX="15.75" PointY="16.625" IsExpanded="false" />
         <EntityTypeShape EntityType="TMSModel.GeneratedReference" Width="1.5" PointX="16.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.GL_DetailPaymentVoucherTAB" Width="1.5" PointX="17.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.GL_MasterPaymentVoucherTAB" Width="1.5" PointX="17.75" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.OpeningBalance" Width="1.5" PointX="11.75" PointY="19.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.PaymentVoucherDetail" Width="1.5" PointX="17.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TMSModel.PaymentVoucherDetail" Width="1.5" PointX="17.75" PointY="17.625" IsExpanded="false" />
         <EntityTypeShape EntityType="TMSModel.PaymentVoucher" Width="1.5" PointX="13.75" PointY="20.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.ProjectNodesSetup" Width="1.5" PointX="18.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.SetupTable" Width="1.5" PointX="19.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.TempTransDetailCF" Width="1.5" PointX="19.75" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.TempTransDetailLedger" Width="1.5" PointX="19.75" PointY="17.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.TempTransDetailLedgerTrial" Width="1.5" PointX="5.75" PointY="22.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.TempTransDetailTrialFSF" Width="1.5" PointX="7.75" PointY="22.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.ttt" Width="1.5" PointX="21.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.UsedTransactionsDetail" Width="1.5" PointX="21.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.VoucherDetail" Width="1.5" PointX="9.75" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TMSModel.VoucherDetail" Width="1.5" PointX="5.625" PointY="29.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.CreditDebitNotEqual" Width="1.5" PointX="21.75" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.GL_GetCOACombineLedTBRptVW" Width="1.5" PointX="21.75" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.GL_GetCOACombineTransactionVW" Width="1.5" PointX="21.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TMSModel.GL_GetCOACombineLedTBRptVW" Width="1.5" PointX="21.75" PointY="15.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="TMSModel.GL_GetCOACombineTransactionVW" Width="1.875" PointX="14.25" PointY="18.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.GL_GetCOACombineVW" Width="1.5" PointX="21.75" PointY="22.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.GL_GetFSFCombineLedTBRptVW" Width="1.5" PointX="23.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.GL_GetFSFCombineTransactionVW" Width="1.5" PointX="23.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.GL_GetFSFCombineVW" Width="1.5" PointX="23.75" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.QryOtherAmountExcInvoice" Width="1.5" PointX="23.75" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.VIEW1" Width="1.5" PointX="23.75" PointY="16.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.VIEW2" Width="1.5" PointX="23.75" PointY="19.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.VIEW3" Width="1.5" PointX="17.75" PointY="25.625" IsExpanded="true" />
         <AssociationConnector Association="TMSModel.FK_Receipts_Branches" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_Receivables_Branches" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_VehicleAdjustments_Branches" ManuallyRouted="false" />
@@ -99,8 +92,7 @@
         <AssociationConnector Association="TMSModel.FK_VehicleAdjustmentDetails_VehicleAdjustments" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_VehicleAdjustments_Vehicles_" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_Vehicles__VehicleOwners" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="TMSModel.TempCOAOpeningLedger" Width="1.5" PointX="24.375" PointY="22.75" />
-        <EntityTypeShape EntityType="TMSModel.TempTransDetailVBill" Width="1.5" PointX="20.375" PointY="25.75" />
+        <AssociationConnector Association="TMSModel.FK_VoucherDetails_Vouchers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

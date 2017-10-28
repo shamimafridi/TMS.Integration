@@ -1,4 +1,7 @@
-﻿using TMS.Common.ServicePattren;
+﻿using System;
+using System.Collections.Generic;
+using TMS.Common.ServicePattren;
+using TMS.Integration.Storage;
 
 namespace TMS.Integration.Services.CoaGeneralService.Dto
 {
@@ -11,5 +14,4 @@ namespace TMS.Integration.Services.CoaGeneralService.Dto
 
     }
 
-    
 }

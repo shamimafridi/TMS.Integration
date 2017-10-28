@@ -12,6 +12,7 @@ using TMS.Integration.Services.CoaControlService;
 using TMS.Integration.Services.CoaGeneralService;
 using TMS.Integration.Services.CoaSubsidiaryService;
 using TMS.Integration.Services.CoaSubSubsidiaryService;
+using TMS.Integration.Services.VoucherService;
 
 namespace TMS.Integration.Api.Configs
 {
@@ -28,6 +29,8 @@ namespace TMS.Integration.Api.Configs
 
             container.RegisterType(typeof(CoaSubsidiaryPostService));
             container.RegisterType(typeof(CoaSubSubsidiaryPostService));
+            container.RegisterType(typeof(VoucherPostService));
+
 
             config.DependencyResolver = new UnityResolver(container);
 

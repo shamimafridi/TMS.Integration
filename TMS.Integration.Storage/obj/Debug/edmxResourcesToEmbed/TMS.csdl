@@ -542,6 +542,7 @@
     <NavigationProperty Name="Branch" Relationship="Self.FK_Vouchers_Branches" FromRole="Vouchers" ToRole="Branches" />
     <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="VoucherDetails" Relationship="TMSModel.FK_VoucherDetails_Vouchers" FromRole="Voucher" ToRole="VoucherDetail" />
   </EntityType>
   <EntityType Name="FSFControl">
     <Key>
@@ -817,94 +818,6 @@
     <Property Name="ShowTable" Type="Byte" />
     <Property Name="ss" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
-  <EntityType Name="TempTransDetailCF">
-    <Key>
-      <PropertyRef Name="BranchCode" />
-      <PropertyRef Name="DivisionCode" />
-      <PropertyRef Name="GLCode" />
-      <PropertyRef Name="GLRptTitle" />
-      <PropertyRef Name="NatureCode" />
-      <PropertyRef Name="NatureRptTitle" />
-      <PropertyRef Name="VoucherDate" />
-      <PropertyRef Name="VoucherNo" />
-      <PropertyRef Name="RecordNo" />
-      <PropertyRef Name="SubSubRptTitle" />
-      <PropertyRef Name="ApplyGrouping" />
-      <PropertyRef Name="DetailRecordNo" />
-    </Key>
-    <Property Name="BranchCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="BranchRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="DivisionCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="DivisionRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="GLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="GLRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="NatureCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="NatureRptTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="VoucherDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="VoucherNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="OldRef" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-    <Property Name="Narration" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="NarrationMain" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-    <Property Name="RecordNo" Type="Int64" Nullable="false" />
-    <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Debit" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="Credit" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="ControlCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-    <Property Name="ControlRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="GeneralCode" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
-    <Property Name="GeneralRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="SubSidiaryCode" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
-    <Property Name="SubsidiaryRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="SubsubCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-    <Property Name="SubSubRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ApplyGrouping" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Posted" Type="Boolean" />
-    <Property Name="Locked" Type="Boolean" />
-    <Property Name="DetailRecordNo" Type="Int64" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TempTransDetailLedger">
-    <Key>
-      <PropertyRef Name="BranchCode" />
-      <PropertyRef Name="DivisionCode" />
-      <PropertyRef Name="GLCode" />
-      <PropertyRef Name="GLRptTitle" />
-      <PropertyRef Name="NatureCode" />
-      <PropertyRef Name="NatureRptTitle" />
-      <PropertyRef Name="VoucherDate" />
-      <PropertyRef Name="VoucherNo" />
-      <PropertyRef Name="RecordNo" />
-      <PropertyRef Name="SubSubRptTitle" />
-      <PropertyRef Name="DetailRecordNo" />
-    </Key>
-    <Property Name="BranchCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="BranchRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="DivisionCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="DivisionRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="GLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="GLRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="NatureCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="NatureRptTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="VoucherDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="VoucherNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="OldRef" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-    <Property Name="Narration" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="NarrationMain" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-    <Property Name="RecordNo" Type="Int64" Nullable="false" />
-    <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Debit" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="Credit" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="ControlCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-    <Property Name="ControlRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="GeneralCode" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
-    <Property Name="GeneralRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="SubSidiaryCode" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
-    <Property Name="SubsidiaryRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="SubsubCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-    <Property Name="SubSubRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Posted" Type="Boolean" />
-    <Property Name="Locked" Type="Boolean" />
-    <Property Name="DetailRecordNo" Type="Int64" Nullable="false" />
-  </EntityType>
   <EntityType Name="TempTransDetailLedgerTrial">
     <Key>
       <PropertyRef Name="BranchCode" />
@@ -971,29 +884,6 @@
     <Property Name="DebitBalance" Type="Decimal" Precision="38" Scale="5" />
     <Property Name="CreditBalance" Type="Decimal" Precision="38" Scale="5" />
   </EntityType>
-  <EntityType Name="ttt">
-    <Key>
-      <PropertyRef Name="BranchCode" />
-      <PropertyRef Name="VoucherNature" />
-      <PropertyRef Name="VoucherNo" />
-      <PropertyRef Name="VoucherDate" />
-      <PropertyRef Name="RecordNo" />
-      <PropertyRef Name="GUID" />
-    </Key>
-    <Property Name="BranchCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="VoucherNature" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="VoucherNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="VoucherDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-    <Property Name="Locked" Type="Boolean" />
-    <Property Name="Posted" Type="Boolean" />
-    <Property Name="IsAutoGenerated" Type="Boolean" />
-    <Property Name="RecordNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CreditDays" Type="Int64" />
-    <Property Name="OldRef" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-    <Property Name="UrduTitle" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Name="GUID" Type="Int32" Nullable="false" />
-  </EntityType>
   <EntityType Name="UsedTransactionsDetail">
     <Key>
       <PropertyRef Name="RecordNo" />
@@ -1027,10 +917,9 @@
       <PropertyRef Name="VoucherNature" />
       <PropertyRef Name="VoucherNo" />
       <PropertyRef Name="GLCode" />
-      <PropertyRef Name="DivisionCode" />
-      <PropertyRef Name="RecordNo" />
+      <PropertyRef Name="BranchCode" />
     </Key>
-    <Property Name="BranchCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="BranchCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="VoucherNature" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="VoucherNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="GLCode" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
@@ -1040,6 +929,7 @@
     <Property Name="Credit" Type="Decimal" Precision="20" Scale="5" />
     <Property Name="Narration" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="RecordNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Voucher" Relationship="TMSModel.FK_VoucherDetails_Vouchers" FromRole="VoucherDetail" ToRole="Voucher" />
   </EntityType>
   <EntityType Name="CreditDebitNotEqual">
     <Key>
@@ -1078,6 +968,7 @@
     <Property Name="GLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="GLDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="FSFGLCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="GL_GetCOACombineVW">
     <Key>
@@ -1087,22 +978,6 @@
     <Property Name="GLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="GLDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="SysFSFGLCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-  </EntityType>
-  <EntityType Name="GL_GetFSFCombineLedTBRptVW">
-    <Key>
-      <PropertyRef Name="GLRptTitle" />
-      <PropertyRef Name="SubSubRptTitle" />
-    </Key>
-    <Property Name="GLCode" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
-    <Property Name="GLRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ControlCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="ControlRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="GeneralCode" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="GeneralRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="SubSidiaryCode" Type="String" MaxLength="42" FixedLength="false" Unicode="false" />
-    <Property Name="SubsidiaryRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="SubsubCode" Type="String" MaxLength="44" FixedLength="false" Unicode="false" />
-    <Property Name="SubSubRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="GL_GetFSFCombineTransactionVW">
     <Key>
@@ -1133,49 +1008,6 @@
     <Property Name="GLDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Expr1" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="VoucherDate" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="VIEW1">
-    <Key>
-      <PropertyRef Name="BranchCode" />
-      <PropertyRef Name="TransactionNo" />
-      <PropertyRef Name="VehicleCode" />
-    </Key>
-    <Property Name="BranchCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="TransactionNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="PartyCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-    <Property Name="VehicleCode" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
-  </EntityType>
-  <EntityType Name="VIEW2">
-    <Key>
-      <PropertyRef Name="GLCode" />
-    </Key>
-    <Property Name="GLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="ControlDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="GeneralDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="SubsidiaryDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="VIEW3">
-    <Key>
-      <PropertyRef Name="VehicleCode" />
-      <PropertyRef Name="VehicleDescription" />
-      <PropertyRef Name="DefinitionDate" />
-      <PropertyRef Name="InstallmentGLCode" />
-      <PropertyRef Name="FreightGLCode" />
-      <PropertyRef Name="LoanGLCode" />
-    </Key>
-    <Property Name="VehicleCode" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="VehicleDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="DefinitionDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="InstallmentGLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="InstallmentGLDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="FreightGLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="FreightGLDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="LoanGLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="LoanGLDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="OwnerCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-    <Property Name="OwnerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="CommissionGLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-    <Property Name="CommissionGLDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK_Receipts_Branches">
     <End Role="Branches" Type="Self.Branch" Multiplicity="1" />
@@ -1618,24 +1450,17 @@
     <EntitySet Name="PaymentVouchers" EntityType="Self.PaymentVoucher" />
     <EntitySet Name="ProjectNodesSetups" EntityType="Self.ProjectNodesSetup" />
     <EntitySet Name="SetupTables" EntityType="Self.SetupTable" />
-    <EntitySet Name="TempTransDetailCFs" EntityType="Self.TempTransDetailCF" />
-    <EntitySet Name="TempTransDetailLedgers" EntityType="Self.TempTransDetailLedger" />
     <EntitySet Name="TempTransDetailLedgerTrials" EntityType="Self.TempTransDetailLedgerTrial" />
     <EntitySet Name="TempTransDetailTrialFSFs" EntityType="Self.TempTransDetailTrialFSF" />
-    <EntitySet Name="ttts" EntityType="Self.ttt" />
     <EntitySet Name="UsedTransactionsDetails" EntityType="Self.UsedTransactionsDetail" />
     <EntitySet Name="VoucherDetails" EntityType="Self.VoucherDetail" />
     <EntitySet Name="CreditDebitNotEquals" EntityType="Self.CreditDebitNotEqual" />
     <EntitySet Name="GL_GetCOACombineLedTBRptVW" EntityType="Self.GL_GetCOACombineLedTBRptVW" />
     <EntitySet Name="GL_GetCOACombineTransactionVW" EntityType="Self.GL_GetCOACombineTransactionVW" />
     <EntitySet Name="GL_GetCOACombineVW" EntityType="Self.GL_GetCOACombineVW" />
-    <EntitySet Name="GL_GetFSFCombineLedTBRptVW" EntityType="Self.GL_GetFSFCombineLedTBRptVW" />
     <EntitySet Name="GL_GetFSFCombineTransactionVW" EntityType="Self.GL_GetFSFCombineTransactionVW" />
     <EntitySet Name="GL_GetFSFCombineVW" EntityType="Self.GL_GetFSFCombineVW" />
     <EntitySet Name="QryOtherAmountExcInvoices" EntityType="Self.QryOtherAmountExcInvoice" />
-    <EntitySet Name="VIEW1" EntityType="Self.VIEW1" />
-    <EntitySet Name="VIEW2" EntityType="Self.VIEW2" />
-    <EntitySet Name="VIEW3" EntityType="Self.VIEW3" />
     <AssociationSet Name="FK_Receipts_Branches" Association="Self.FK_Receipts_Branches">
       <End Role="Branches" EntitySet="Branches" />
       <End Role="Receipts" EntitySet="Receipts" />
@@ -3038,8 +2863,10 @@
       <Parameter Name="Reference" Mode="In" Type="String" />
       <Parameter Name="NewRecord" Mode="In" Type="Int64" />
     </FunctionImport>
-    <EntitySet Name="TempCOAOpeningLedgers" EntityType="TMSModel.TempCOAOpeningLedger" />
-    <EntitySet Name="TempTransDetailVBills" EntityType="TMSModel.TempTransDetailVBill" />
+    <AssociationSet Name="FK_VoucherDetails_Vouchers" Association="TMSModel.FK_VoucherDetails_Vouchers">
+      <End Role="Voucher" EntitySet="Vouchers" />
+      <End Role="VoucherDetail" EntitySet="VoucherDetails" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="dt_getpropertiesbyid_Result">
     <Property Type="String" Name="property" Nullable="false" MaxLength="64" />
@@ -3580,71 +3407,20 @@
     <Property Type="String" Name="DivisionCode" Nullable="false" MaxLength="3" />
     <Property Type="String" Name="Division" Nullable="true" MaxLength="100" />
   </ComplexType>
-  <EntityType Name="TempCOAOpeningLedger">
-    <Key>
-      <PropertyRef Name="BranchCode" />
-      <PropertyRef Name="DivisionCode" />
-      <PropertyRef Name="GLCode" />
-      <PropertyRef Name="GLRptTitle" />
-      <PropertyRef Name="SubSubRptTitle" />
-    </Key>
-    <Property Name="BranchCode" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
-    <Property Name="BranchRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="DivisionCode" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="DivisionRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="GLCode" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
-    <Property Name="GLRptTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="ControlCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-    <Property Name="ControlRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="GeneralCode" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
-    <Property Name="GeneralRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="SubSidiaryCode" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
-    <Property Name="SubsidiaryRptTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="SubsubCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-    <Property Name="SubSubRptTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="OpeningBalance" Type="Decimal" Precision="38" Scale="5" />
-  </EntityType>
-  <EntityType Name="TempTransDetailVBill">
-    <Key>
-      <PropertyRef Name="MODE" />
-      <PropertyRef Name="TransactionNature" />
-      <PropertyRef Name="TransactionNo" />
-      <PropertyRef Name="TransactionDate" />
-      <PropertyRef Name="RecordNo" />
-      <PropertyRef Name="StationPointName" />
-      <PropertyRef Name="DestinationPointName" />
-    </Key>
-    <Property Name="MODE" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
-    <Property Name="TransactionNature" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="TransactionNo" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="RecordNo" Type="Int64" Nullable="false" />
-    <Property Name="CustomerReference" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-    <Property Name="VehicleCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="StationPointCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="DestinationPointCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="ProductCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="Quantity" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="Rate" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="Debit" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="Credit" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="Commission" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="ShortageQuantity" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="Shortage" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="QuantityValue" Type="Decimal" Precision="20" Scale="5" />
-    <Property Name="OwnerCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-    <Property Name="OwnerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="UrduOwnerName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="ProductUrdu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="StationPointName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="StationPointUrdu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="DestinationPointName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="DestinationPointUrdu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="GLCode" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-    <Property Name="GLDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="GLDescriptionINV" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Name="CustomerCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-    <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="UrduCustomerName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-  </EntityType>
+  <Association Name="FK_VoucherDetails_Vouchers">
+    <End Type="TMSModel.Voucher" Role="Voucher" Multiplicity="1" />
+    <End Type="TMSModel.VoucherDetail" Role="VoucherDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voucher">
+        <PropertyRef Name="BranchCode" />
+        <PropertyRef Name="VoucherNature" />
+        <PropertyRef Name="VoucherNo" />
+      </Principal>
+      <Dependent Role="VoucherDetail">
+        <PropertyRef Name="BranchCode" />
+        <PropertyRef Name="VoucherNature" />
+        <PropertyRef Name="VoucherNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

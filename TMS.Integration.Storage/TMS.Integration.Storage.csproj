@@ -124,9 +124,6 @@
     <Compile Include="GL_GetCOACombineVW.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="GL_GetFSFCombineLedTBRptVW.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="GL_GetFSFCombineTransactionVW.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
@@ -314,22 +311,10 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="TempCOAOpeningLedger.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TempTransDetailCF.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TempTransDetailLedger.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="TempTransDetailLedgerTrial.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="TempTransDetailTrialFSF.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TempTransDetailVBill.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="TMS.Context.cs">
@@ -356,9 +341,6 @@
     <Compile Include="TransactionType.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="ttt.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="UsedTransactionsDetail.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
@@ -375,15 +357,6 @@
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Vehicles_.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VIEW1.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VIEW2.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VIEW3.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Voucher.cs">

@@ -17,5 +17,6 @@ namespace TMS.Integration.Storage
         public string GLCode { get; set; }
         public string GLDescription { get; set; }
         public string FSFGLCode { get; set; }
+        public string RefNo { get; set; }
     }
 }
