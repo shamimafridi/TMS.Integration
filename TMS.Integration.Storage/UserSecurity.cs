@@ -25,5 +25,8 @@ namespace TMS.Integration.Storage
         public string S_Account { get; set; }
         public string T_Order { get; set; }
         public Nullable<bool> R_RecVoucher { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

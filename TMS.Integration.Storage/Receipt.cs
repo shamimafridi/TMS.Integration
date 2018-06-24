@@ -29,6 +29,9 @@ namespace TMS.Integration.Storage
         public Nullable<byte> Locked { get; set; }
         public Nullable<byte> Posted { get; set; }
         public long RecordNo { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual Branch Branch { get; set; }
         public virtual CustomerBill CustomerBill { get; set; }

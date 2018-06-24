@@ -30,6 +30,7 @@ namespace TMS.Integration.Storage
         public Nullable<long> GUID { get; set; }
         public string RefNo { get; set; }
         public Nullable<System.DateTime> UpdatedOn { get; set; }
+        public string UpdatedBy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Receipt> Receipts { get; set; }

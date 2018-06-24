@@ -20,5 +20,8 @@ namespace TMS.Integration.Storage
         public decimal ItemValue { get; set; }
         public string GLCode { get; set; }
         public long GUID { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

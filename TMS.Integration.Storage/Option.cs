@@ -18,5 +18,8 @@ namespace TMS.Integration.Storage
         public string OptionName { get; set; }
         public string OptionValue { get; set; }
         public string OptionDescription { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

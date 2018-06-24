@@ -28,5 +28,8 @@ namespace TMS.Integration.Storage
         public Nullable<long> GLCode { get; set; }
         public Nullable<long> DivisionCode { get; set; }
         public string OldRef { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

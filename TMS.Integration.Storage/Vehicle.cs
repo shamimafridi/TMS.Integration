@@ -12,10 +12,10 @@ namespace TMS.Integration.Storage
     using System;
     using System.Collections.Generic;
     
-    public partial class Vehicles_
+    public partial class Vehicle
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Vehicles_()
+        public Vehicle()
         {
             this.Invoices = new HashSet<Invoice>();
             this.VehicleAdjustments = new HashSet<VehicleAdjustment>();
@@ -32,9 +32,15 @@ namespace TMS.Integration.Storage
         public string LoanGLCode { get; set; }
         public string CommissionGLCode { get; set; }
         public System.DateTime DefinitionDate { get; set; }
+        public Nullable<bool> IsThirdParty { get; set; }
+        public string DivisionCode { get; set; }
         public Nullable<long> GUID { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual Customer Customer { get; set; }
+        public virtual Division Division { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

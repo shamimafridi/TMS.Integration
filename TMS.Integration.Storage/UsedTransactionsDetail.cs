@@ -26,5 +26,8 @@ namespace TMS.Integration.Storage
         public System.DateTime RefVoucherDate { get; set; }
         public string RefBillNo { get; set; }
         public decimal AmountUsed { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

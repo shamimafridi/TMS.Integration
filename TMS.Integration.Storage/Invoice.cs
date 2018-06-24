@@ -18,6 +18,7 @@ namespace TMS.Integration.Storage
         public Invoice()
         {
             this.CustomerBillDetails = new HashSet<CustomerBillDetail>();
+            this.InvoiceExpences = new HashSet<InvoiceExpence>();
         }
     
         public string BranchCode { get; set; }
@@ -47,6 +48,11 @@ namespace TMS.Integration.Storage
         public int GUID { get; set; }
         public Nullable<bool> IsTripCanceled { get; set; }
         public Nullable<byte> IsBilled { get; set; }
+        public Nullable<byte> IsLocalTrip { get; set; }
+        public string LongTripRefNo { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual Branch Branch { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -56,6 +62,8 @@ namespace TMS.Integration.Storage
         public virtual StationPoint StationPoint { get; set; }
         public virtual StationPoint StationPoint1 { get; set; }
         public virtual Product Product { get; set; }
-        public virtual Vehicles_ Vehicles_ { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<InvoiceExpence> InvoiceExpences { get; set; }
+        public virtual Vehicle Vehicle { get; set; }
     }
 }

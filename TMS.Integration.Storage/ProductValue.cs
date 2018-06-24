@@ -17,6 +17,9 @@ namespace TMS.Integration.Storage
         public string ProductCode { get; set; }
         public System.DateTime EffectiveDate { get; set; }
         public Nullable<decimal> QuantityValue { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual Product Product { get; set; }
     }

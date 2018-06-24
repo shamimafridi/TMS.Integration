@@ -12,21 +12,24 @@ namespace TMS.Integration.Storage
     using System;
     using System.Collections.Generic;
     
-    public partial class GL_DetailPaymentVoucherTAB
+    public partial class PayableAccount
     {
         public long BranchCode { get; set; }
-        public string DocumentNo { get; set; }
         public long DocumentNature { get; set; }
-        public string APVNo { get; set; }
-        public long APVNatureCode { get; set; }
-        public int RecordNo { get; set; }
-        public string SupplierBillNo { get; set; }
-        public decimal APVAmount { get; set; }
-        public long PaymentTypeCode { get; set; }
-        public decimal TaxRate { get; set; }
-        public decimal TaxValue { get; set; }
-        public Nullable<long> GLCode { get; set; }
-        public Nullable<long> DivisionCode { get; set; }
+        public string DocumentNo { get; set; }
+        public System.DateTime DocumentDate { get; set; }
+        public long PartyCode { get; set; }
+        public string MiscPartyName { get; set; }
+        public string PartyReference { get; set; }
+        public Nullable<System.DateTime> PartyReferenceDate { get; set; }
+        public string InternalReference { get; set; }
+        public Nullable<System.DateTime> InternalReferenceDate { get; set; }
+        public string Description { get; set; }
+        public int CreditDays { get; set; }
+        public bool Locked { get; set; }
+        public bool Posted { get; set; }
+        public long RecordNo { get; set; }
+        public long GUID { get; set; }
         public string OldRef { get; set; }
         public string RefNo { get; set; }
         public string UpdatedBy { get; set; }

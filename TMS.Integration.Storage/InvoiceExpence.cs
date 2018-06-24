@@ -12,23 +12,25 @@ namespace TMS.Integration.Storage
     using System;
     using System.Collections.Generic;
     
-    public partial class Division
+    public partial class InvoiceExpence
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Division()
-        {
-            this.Vehicles = new HashSet<Vehicle>();
-        }
-    
+        public string BranchCode { get; set; }
+        public string TransactionNo { get; set; }
+        public string TransactionTypeCode { get; set; }
+        public System.DateTime Date { get; set; }
+        public Nullable<decimal> Amount { get; set; }
+        public string Description { get; set; }
+        public string UrduDescription { get; set; }
+        public string GLCode { get; set; }
         public string DivisionCode { get; set; }
-        public string Division1 { get; set; }
-        public System.DateTime DefinitionDate { get; set; }
-        public Nullable<long> GUID { get; set; }
+        public string InvoiceRefNo { get; set; }
+        public long RecordNo { get; set; }
         public string RefNo { get; set; }
         public string UpdatedBy { get; set; }
         public Nullable<System.DateTime> UpdatedOn { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vehicle> Vehicles { get; set; }
+        public virtual TransactionType TransactionType { get; set; }
+        public virtual Invoice Invoice { get; set; }
+        public virtual TransactionType TransactionType1 { get; set; }
     }
 }

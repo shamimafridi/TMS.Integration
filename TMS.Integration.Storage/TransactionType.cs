@@ -19,6 +19,8 @@ namespace TMS.Integration.Storage
         {
             this.VehicleAdjustmentDetails = new HashSet<VehicleAdjustmentDetail>();
             this.VehicleAdjustmentDetails1 = new HashSet<VehicleAdjustmentDetail>();
+            this.InvoiceExpences = new HashSet<InvoiceExpence>();
+            this.InvoiceExpences1 = new HashSet<InvoiceExpence>();
         }
     
         public string TransactionTypeCode { get; set; }
@@ -26,11 +28,20 @@ namespace TMS.Integration.Storage
         public string UrduTitle { get; set; }
         public Nullable<System.DateTime> DefinitionDate { get; set; }
         public string Nature { get; set; }
+        public string GLCode { get; set; }
+        public Nullable<byte> IsTripExpence { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual TransactionNature TransactionNature { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehicleAdjustmentDetail> VehicleAdjustmentDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehicleAdjustmentDetail> VehicleAdjustmentDetails1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<InvoiceExpence> InvoiceExpences { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<InvoiceExpence> InvoiceExpences1 { get; set; }
     }
 }

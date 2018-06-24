@@ -12,7 +12,7 @@ namespace TMS.Integration.Storage
     using System;
     using System.Collections.Generic;
     
-    public partial class TempTransDetailLedgerTrial
+    public partial class TempTransDetailLedger
     {
         public string BranchCode { get; set; }
         public string BranchRptTitle { get; set; }
@@ -20,6 +20,17 @@ namespace TMS.Integration.Storage
         public string DivisionRptTitle { get; set; }
         public string GLCode { get; set; }
         public string GLRptTitle { get; set; }
+        public string NatureCode { get; set; }
+        public string NatureRptTitle { get; set; }
+        public System.DateTime VoucherDate { get; set; }
+        public string VoucherNo { get; set; }
+        public string OldRef { get; set; }
+        public string Narration { get; set; }
+        public string NarrationMain { get; set; }
+        public long RecordNo { get; set; }
+        public string Reference { get; set; }
+        public Nullable<decimal> Debit { get; set; }
+        public Nullable<decimal> Credit { get; set; }
         public string ControlCode { get; set; }
         public string ControlRptTitle { get; set; }
         public string GeneralCode { get; set; }
@@ -28,9 +39,9 @@ namespace TMS.Integration.Storage
         public string SubsidiaryRptTitle { get; set; }
         public string SubsubCode { get; set; }
         public string SubSubRptTitle { get; set; }
-        public int OpeningBalance { get; set; }
-        public Nullable<decimal> DebitBalance { get; set; }
-        public Nullable<decimal> CreditBalance { get; set; }
+        public Nullable<bool> Posted { get; set; }
+        public Nullable<bool> Locked { get; set; }
+        public long DetailRecordNo { get; set; }
         public string RefNo { get; set; }
         public string UpdatedBy { get; set; }
         public Nullable<System.DateTime> UpdatedOn { get; set; }

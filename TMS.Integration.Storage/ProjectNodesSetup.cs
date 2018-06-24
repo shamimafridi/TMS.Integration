@@ -23,5 +23,8 @@ namespace TMS.Integration.Storage
         public int ImageIndex { get; set; }
         public Nullable<int> SortingOrder { get; set; }
         public string SystemType { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

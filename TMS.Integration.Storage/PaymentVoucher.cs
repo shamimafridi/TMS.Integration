@@ -36,5 +36,8 @@ namespace TMS.Integration.Storage
         public string OldRef { get; set; }
         public string RecordCreator { get; set; }
         public string RecordOwner { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

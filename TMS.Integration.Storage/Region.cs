@@ -19,5 +19,8 @@ namespace TMS.Integration.Storage
         public string UrduTitle { get; set; }
         public System.DateTime DefinitionDate { get; set; }
         public Nullable<long> GUID { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

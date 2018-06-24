@@ -25,6 +25,9 @@ namespace TMS.Integration.Storage
         public string CustomerCode { get; set; }
         public Nullable<System.DateTime> BillDate { get; set; }
         public Nullable<byte> IsReceipt { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CustomerBillDetail> CustomerBillDetails { get; set; }

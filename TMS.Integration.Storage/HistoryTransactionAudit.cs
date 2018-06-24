@@ -27,5 +27,8 @@ namespace TMS.Integration.Storage
         public decimal Quantity { get; set; }
         public decimal AvailableQuantity { get; set; }
         public decimal BalanceQuantity { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

@@ -16,7 +16,6 @@
         <EntityTypeShape EntityType="TMSModel.Customer" Width="1.5" PointX="1.5" PointY="20.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.DestinationPoint" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.Division" Width="1.5" PointX="7.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.dtproperty" Width="1.5" PointX="7.75" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.HistoryTransactionAudit" Width="1.5" PointX="9.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.Invoice" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.Item" Width="1.5" PointX="11.75" PointY="6.625" IsExpanded="true" />
@@ -35,7 +34,6 @@
         <EntityTypeShape EntityType="TMSModel.VehicleAdjustmentDetail" Width="1.5" PointX="11.25" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.VehicleAdjustment" Width="1.5" PointX="9" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.VehicleOwner" Width="1.5" PointX="1.5" PointY="37.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TMSModel.Vehicles_" Width="1.5" PointX="0.75" PointY="30.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.Voucher" Width="1.5" PointX="3" PointY="32.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.FSFControl" Width="1.5" PointX="15.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.FSFGeneral" Width="1.5" PointX="15.75" PointY="9.625" IsExpanded="true" />
@@ -55,7 +53,6 @@
         <EntityTypeShape EntityType="TMSModel.VoucherDetail" Width="1.5" PointX="5.625" PointY="29.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.CreditDebitNotEqual" Width="1.5" PointX="21.75" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.GL_GetCOACombineLedTBRptVW" Width="1.5" PointX="21.75" PointY="15.625" IsExpanded="false" />
-        <EntityTypeShape EntityType="TMSModel.GL_GetCOACombineTransactionVW" Width="1.875" PointX="14.25" PointY="18.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.GL_GetCOACombineVW" Width="1.5" PointX="21.75" PointY="22.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.GL_GetFSFCombineTransactionVW" Width="1.5" PointX="23.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TMSModel.GL_GetFSFCombineVW" Width="1.5" PointX="23.75" PointY="9.625" IsExpanded="true" />
@@ -76,13 +73,11 @@
         <AssociationConnector Association="TMSModel.FK_Receipts_CustomerBills" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_Receipts_Customers" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_Transactions_Customers" ManuallyRouted="false" />
-        <AssociationConnector Association="TMSModel.FK_Vehicles__Customers" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_Invoices_DestinationPoints" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_ProductRates_DestinationPoints" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_Invoices_StationPoints" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_Invoices_StationPoints1" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_Transactions_Products" ManuallyRouted="false" />
-        <AssociationConnector Association="TMSModel.FK_Transactions_Vehicles_" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_ProductRate_Products" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_ProductRates_StationPoints" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_ProductValues_Products" ManuallyRouted="false" />
@@ -90,9 +85,25 @@
         <AssociationConnector Association="TMSModel.FK_VehicleAdjustmentDetails_AdjustmentType" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_VehicleAdjustmentDetails_TransactionTypes" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_VehicleAdjustmentDetails_VehicleAdjustments" ManuallyRouted="false" />
-        <AssociationConnector Association="TMSModel.FK_VehicleAdjustments_Vehicles_" ManuallyRouted="false" />
-        <AssociationConnector Association="TMSModel.FK_Vehicles__VehicleOwners" ManuallyRouted="false" />
         <AssociationConnector Association="TMSModel.FK_VoucherDetails_Vouchers" />
+        <EntityTypeShape EntityType="TMSModel.InvoiceExpence" Width="1.5" PointX="17.25" PointY="18.875" />
+        <EntityTypeShape EntityType="TMSModel.Vehicle" Width="1.5" PointX="10" PointY="23.5" />
+        <AssociationConnector Association="TMSModel.FK_Vehicles__Customers1" />
+        <AssociationConnector Association="TMSModel.FK_Vehicles__Divisions" />
+        <AssociationConnector Association="TMSModel.FK_InvoiceExpences_AdjustmentType" />
+        <AssociationConnector Association="TMSModel.FK_InvoiceExpences_Invoices" />
+        <AssociationConnector Association="TMSModel.FK_InvoiceExpences_TransactionTypes" />
+        <AssociationConnector Association="TMSModel.FK_Transactions_Vehicles_1" />
+        <AssociationConnector Association="TMSModel.FK_VehicleAdjustments_Vehicles_1" />
+        <AssociationConnector Association="TMSModel.FK_Vehicles__VehicleOwners1" />
+        <EntityTypeShape EntityType="TMSModel.PayableAccount" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TMSModel.TempCOAOpening" Width="1.5" PointX="24.375" PointY="15.75" />
+        <EntityTypeShape EntityType="TMSModel.TempTransDetailCF" Width="1.5" PointX="16.375" PointY="24.75" />
+        <EntityTypeShape EntityType="TMSModel.TempTransDetailLedger" Width="1.5" PointX="18.375" PointY="24.75" />
+        <EntityTypeShape EntityType="TMSModel.TempTransDetailVBill" Width="1.5" PointX="24.375" PointY="23.75" />
+        <EntityTypeShape EntityType="TMSModel.vwTransDetail" Width="1.5" PointX="23.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TMSModel.vwTransDetailAll" Width="1.5" PointX="20.375" PointY="17.75" />
+        <EntityTypeShape EntityType="TMSModel.GL_GetCOACombineTransactionVW" Width="1.5" PointX="25.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -20,6 +20,9 @@ namespace TMS.Integration.Storage
         public long RecordNo { get; set; }
         public Nullable<decimal> Amount { get; set; }
         public Nullable<decimal> Shortage { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual CustomerBill CustomerBill { get; set; }
         public virtual Invoice Invoice { get; set; }

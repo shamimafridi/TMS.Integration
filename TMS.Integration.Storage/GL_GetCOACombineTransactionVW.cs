@@ -14,9 +14,9 @@ namespace TMS.Integration.Storage
     
     public partial class GL_GetCOACombineTransactionVW
     {
+        public string RefNo { get; set; }
         public string GLCode { get; set; }
         public string GLDescription { get; set; }
         public string FSFGLCode { get; set; }
-        public string RefNo { get; set; }
     }
 }

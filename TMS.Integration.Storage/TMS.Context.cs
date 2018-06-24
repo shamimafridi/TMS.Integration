@@ -38,7 +38,6 @@ namespace TMS.Integration.Storage
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<DestinationPoint> DestinationPoints { get; set; }
         public virtual DbSet<Division> Divisions { get; set; }
-        public virtual DbSet<dtproperty> dtproperties { get; set; }
         public virtual DbSet<HistoryTransactionAudit> HistoryTransactionAudits { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Item> Items { get; set; }
@@ -57,7 +56,6 @@ namespace TMS.Integration.Storage
         public virtual DbSet<VehicleAdjustmentDetail> VehicleAdjustmentDetails { get; set; }
         public virtual DbSet<VehicleAdjustment> VehicleAdjustments { get; set; }
         public virtual DbSet<VehicleOwner> VehicleOwners { get; set; }
-        public virtual DbSet<Vehicles_> Vehicles_ { get; set; }
         public virtual DbSet<Voucher> Vouchers { get; set; }
         public virtual DbSet<FSFControl> FSFControls { get; set; }
         public virtual DbSet<FSFGeneral> FSFGenerals { get; set; }
@@ -77,11 +75,20 @@ namespace TMS.Integration.Storage
         public virtual DbSet<VoucherDetail> VoucherDetails { get; set; }
         public virtual DbSet<CreditDebitNotEqual> CreditDebitNotEquals { get; set; }
         public virtual DbSet<GL_GetCOACombineLedTBRptVW> GL_GetCOACombineLedTBRptVW { get; set; }
-        public virtual DbSet<GL_GetCOACombineTransactionVW> GL_GetCOACombineTransactionVW { get; set; }
         public virtual DbSet<GL_GetCOACombineVW> GL_GetCOACombineVW { get; set; }
         public virtual DbSet<GL_GetFSFCombineTransactionVW> GL_GetFSFCombineTransactionVW { get; set; }
         public virtual DbSet<GL_GetFSFCombineVW> GL_GetFSFCombineVW { get; set; }
         public virtual DbSet<QryOtherAmountExcInvoice> QryOtherAmountExcInvoices { get; set; }
+        public virtual DbSet<InvoiceExpence> InvoiceExpences { get; set; }
+        public virtual DbSet<Vehicle> Vehicles { get; set; }
+        public virtual DbSet<PayableAccount> PayableAccounts { get; set; }
+        public virtual DbSet<TempCOAOpening> TempCOAOpenings { get; set; }
+        public virtual DbSet<TempTransDetailCF> TempTransDetailCFs { get; set; }
+        public virtual DbSet<TempTransDetailLedger> TempTransDetailLedgers { get; set; }
+        public virtual DbSet<TempTransDetailVBill> TempTransDetailVBills { get; set; }
+        public virtual DbSet<vwTransDetail> vwTransDetails { get; set; }
+        public virtual DbSet<vwTransDetailAll> vwTransDetailAlls { get; set; }
+        public virtual DbSet<GL_GetCOACombineTransactionVW> GL_GetCOACombineTransactionVW { get; set; }
     
         [DbFunction("TMSEntities", "GetTransactionNatures")]
         public virtual IQueryable<GetTransactionNatures_Result> GetTransactionNatures(string natureCode, string system)
@@ -1933,7 +1940,7 @@ namespace TMS.Integration.Storage
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectGeneratedReferences_Result>("SelectGeneratedReferences", genFromParameter, formNameParameter, transactionNatureParameter, transactionNoParameter, branchCodeParameter, documentNatureParameter, documentNoParameter, chequeNoParameter, bankCodeParameter, oPTIONParameter);
         }
     
-        public virtual ObjectResult<SelectInvoices_Result> SelectInvoices(string option, string branchCode, string transactionNo, string yearMonth, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string customerCode)
+        public virtual ObjectResult<SelectInvoices_Result> SelectInvoices(string option, string branchCode, string transactionNo, string yearMonth, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string customerCode, string vehicleNo)
         {
             var optionParameter = option != null ?
                 new ObjectParameter("Option", option) :
@@ -1963,7 +1970,11 @@ namespace TMS.Integration.Storage
                 new ObjectParameter("CustomerCode", customerCode) :
                 new ObjectParameter("CustomerCode", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectInvoices_Result>("SelectInvoices", optionParameter, branchCodeParameter, transactionNoParameter, yearMonthParameter, fromDateParameter, toDateParameter, customerCodeParameter);
+            var vehicleNoParameter = vehicleNo != null ?
+                new ObjectParameter("VehicleNo", vehicleNo) :
+                new ObjectParameter("VehicleNo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectInvoices_Result>("SelectInvoices", optionParameter, branchCodeParameter, transactionNoParameter, yearMonthParameter, fromDateParameter, toDateParameter, customerCodeParameter, vehicleNoParameter);
         }
     
         public virtual ObjectResult<SelectListReports_Result> SelectListReports(string fromCode, string toCode, Nullable<long> stationCode, string fromManufacturerCode, string toManufacturerCode, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string oPTION)
@@ -2003,7 +2014,7 @@ namespace TMS.Integration.Storage
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectListReports_Result>("SelectListReports", fromCodeParameter, toCodeParameter, stationCodeParameter, fromManufacturerCodeParameter, toManufacturerCodeParameter, fromDateParameter, toDateParameter, oPTIONParameter);
         }
     
-        public virtual ObjectResult<SelectOpeningBalances_Result> SelectOpeningBalances(string option, string branchCode, Nullable<System.DateTime> closingDate)
+        public virtual ObjectResult<SelectOpeningBalances_Result> SelectOpeningBalances(string option, string branchCode, Nullable<System.DateTime> closingDate, string glCode, string divisionCode)
         {
             var optionParameter = option != null ?
                 new ObjectParameter("Option", option) :
@@ -2017,7 +2028,15 @@ namespace TMS.Integration.Storage
                 new ObjectParameter("ClosingDate", closingDate) :
                 new ObjectParameter("ClosingDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectOpeningBalances_Result>("SelectOpeningBalances", optionParameter, branchCodeParameter, closingDateParameter);
+            var glCodeParameter = glCode != null ?
+                new ObjectParameter("GlCode", glCode) :
+                new ObjectParameter("GlCode", typeof(string));
+    
+            var divisionCodeParameter = divisionCode != null ?
+                new ObjectParameter("DivisionCode", divisionCode) :
+                new ObjectParameter("DivisionCode", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectOpeningBalances_Result>("SelectOpeningBalances", optionParameter, branchCodeParameter, closingDateParameter, glCodeParameter, divisionCodeParameter);
         }
     
         public virtual ObjectResult<Nullable<System.DateTime>> SelectPosting(Nullable<System.DateTime> postingDate, string debitors, string creditors, Nullable<int> nType)
@@ -2985,7 +3004,7 @@ namespace TMS.Integration.Storage
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCOAControls", controlCodeParameter, controlDescriptionParameter, definitionDateParameter, gUIDParameter, newRecordParameter);
         }
     
-        public virtual int UpdateCOAGenerals(string controlCode, string controlDescription, string generalCode, string generalDescription, Nullable<System.DateTime> definitionDate, string fSFGLCode, string fSFGLDescription, Nullable<long> gUID, string refNo, Nullable<System.DateTime> updatedOn, Nullable<long> newRecord)
+        public virtual int UpdateCOAGenerals(string controlCode, string controlDescription, string generalCode, string generalDescription, Nullable<System.DateTime> definitionDate, string fSFGLCode, string fSFGLDescription, Nullable<long> gUID, Nullable<long> newRecord)
         {
             var controlCodeParameter = controlCode != null ?
                 new ObjectParameter("ControlCode", controlCode) :
@@ -3019,19 +3038,11 @@ namespace TMS.Integration.Storage
                 new ObjectParameter("GUID", gUID) :
                 new ObjectParameter("GUID", typeof(long));
     
-            var refNoParameter = refNo != null ?
-                new ObjectParameter("RefNo", refNo) :
-                new ObjectParameter("RefNo", typeof(string));
-    
-            var updatedOnParameter = updatedOn.HasValue ?
-                new ObjectParameter("UpdatedOn", updatedOn) :
-                new ObjectParameter("UpdatedOn", typeof(System.DateTime));
-    
             var newRecordParameter = newRecord.HasValue ?
                 new ObjectParameter("NewRecord", newRecord) :
                 new ObjectParameter("NewRecord", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCOAGenerals", controlCodeParameter, controlDescriptionParameter, generalCodeParameter, generalDescriptionParameter, definitionDateParameter, fSFGLCodeParameter, fSFGLDescriptionParameter, gUIDParameter, refNoParameter, updatedOnParameter, newRecordParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCOAGenerals", controlCodeParameter, controlDescriptionParameter, generalCodeParameter, generalDescriptionParameter, definitionDateParameter, fSFGLCodeParameter, fSFGLDescriptionParameter, gUIDParameter, newRecordParameter);
         }
     
         public virtual int UpdateCOASubsidiaries(string controlCode, string generalCode, string generalDescription, string subsidiaryCode, string controlDescription, string subsidiaryDescription, string fSFGLCode, string fSFGLDescription, Nullable<System.DateTime> definitionDate, Nullable<long> gUID, Nullable<long> newRecord)
@@ -3652,7 +3663,7 @@ namespace TMS.Integration.Storage
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateGeneratedReferences", genFromParameter, formNameParameter, transactionNatureParameter, transactionNoParameter, branchCodeParameter, documentNatureParameter, documentNoParameter);
         }
     
-        public virtual ObjectResult<string> UpdateInvoices(string transactionNo, string branchCode, string branchName, string customerCode, string customerName, string customerReference, string vehicleCode, string vehicleDescription, string stationPointCode, string stationPointName, string destinationPointCode, string destinationPointName, string productCode, string productName, Nullable<System.DateTime> transactionDate, string supplierCode, string supplierName, string description, Nullable<decimal> rate, string tripAdvanceReference, Nullable<decimal> tripAdvance, Nullable<decimal> quantity, Nullable<decimal> amount, Nullable<decimal> commission, Nullable<decimal> commissionRate, Nullable<decimal> shortageQuantity, Nullable<decimal> quantityValue, Nullable<decimal> shortage, Nullable<long> recordNo, Nullable<long> gUID, Nullable<long> newRecord)
+        public virtual ObjectResult<string> UpdateInvoices(string transactionNo, string branchCode, string branchName, string customerCode, string customerName, string customerReference, string vehicleCode, string vehicleDescription, string stationPointCode, string stationPointName, string destinationPointCode, string destinationPointName, string productCode, string productName, Nullable<System.DateTime> transactionDate, string supplierCode, string supplierName, string description, Nullable<decimal> rate, string tripAdvanceReference, Nullable<decimal> tripAdvance, Nullable<decimal> quantity, Nullable<decimal> amount, Nullable<decimal> commission, Nullable<decimal> commissionRate, Nullable<decimal> shortageQuantity, Nullable<decimal> quantityValue, Nullable<decimal> shortage, Nullable<long> recordNo, Nullable<long> gUID, Nullable<long> newRecord, string longTripRefNo, Nullable<bool> isLocalTrip)
         {
             var transactionNoParameter = transactionNo != null ?
                 new ObjectParameter("TransactionNo", transactionNo) :
@@ -3778,7 +3789,15 @@ namespace TMS.Integration.Storage
                 new ObjectParameter("NewRecord", newRecord) :
                 new ObjectParameter("NewRecord", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("UpdateInvoices", transactionNoParameter, branchCodeParameter, branchNameParameter, customerCodeParameter, customerNameParameter, customerReferenceParameter, vehicleCodeParameter, vehicleDescriptionParameter, stationPointCodeParameter, stationPointNameParameter, destinationPointCodeParameter, destinationPointNameParameter, productCodeParameter, productNameParameter, transactionDateParameter, supplierCodeParameter, supplierNameParameter, descriptionParameter, rateParameter, tripAdvanceReferenceParameter, tripAdvanceParameter, quantityParameter, amountParameter, commissionParameter, commissionRateParameter, shortageQuantityParameter, quantityValueParameter, shortageParameter, recordNoParameter, gUIDParameter, newRecordParameter);
+            var longTripRefNoParameter = longTripRefNo != null ?
+                new ObjectParameter("LongTripRefNo", longTripRefNo) :
+                new ObjectParameter("LongTripRefNo", typeof(string));
+    
+            var isLocalTripParameter = isLocalTrip.HasValue ?
+                new ObjectParameter("IsLocalTrip", isLocalTrip) :
+                new ObjectParameter("IsLocalTrip", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("UpdateInvoices", transactionNoParameter, branchCodeParameter, branchNameParameter, customerCodeParameter, customerNameParameter, customerReferenceParameter, vehicleCodeParameter, vehicleDescriptionParameter, stationPointCodeParameter, stationPointNameParameter, destinationPointCodeParameter, destinationPointNameParameter, productCodeParameter, productNameParameter, transactionDateParameter, supplierCodeParameter, supplierNameParameter, descriptionParameter, rateParameter, tripAdvanceReferenceParameter, tripAdvanceParameter, quantityParameter, amountParameter, commissionParameter, commissionRateParameter, shortageQuantityParameter, quantityValueParameter, shortageParameter, recordNoParameter, gUIDParameter, newRecordParameter, longTripRefNoParameter, isLocalTripParameter);
         }
     
         public virtual int UpdateOrdersDetails(string orderNature, string orderNumber, string itemCode, string item, Nullable<decimal> quantity, Nullable<decimal> price, string amount, Nullable<long> newRecord)
@@ -4276,7 +4295,7 @@ namespace TMS.Integration.Storage
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateTransactionsDetails", branchCodeParameter, transactionNatureParameter, transactionNoParameter, gLCodeParameter, gLDescriptionParameter, divisionCodeParameter, divisionParameter, quantityParameter, rateParameter, amountParameter, newRecordParameter);
         }
     
-        public virtual int UpdateTransactionTypes(string transactionTypeCode, string transactionType, string natureCode, string nature, string urduTitle, Nullable<System.DateTime> definitionDate, Nullable<long> newRecord)
+        public virtual int UpdateTransactionTypes(string transactionTypeCode, string transactionType, string natureCode, string nature, string urduTitle, Nullable<System.DateTime> definitionDate, string gLCode, string gLDescription, Nullable<long> newRecord)
         {
             var transactionTypeCodeParameter = transactionTypeCode != null ?
                 new ObjectParameter("TransactionTypeCode", transactionTypeCode) :
@@ -4302,11 +4321,19 @@ namespace TMS.Integration.Storage
                 new ObjectParameter("DefinitionDate", definitionDate) :
                 new ObjectParameter("DefinitionDate", typeof(System.DateTime));
     
+            var gLCodeParameter = gLCode != null ?
+                new ObjectParameter("GLCode", gLCode) :
+                new ObjectParameter("GLCode", typeof(string));
+    
+            var gLDescriptionParameter = gLDescription != null ?
+                new ObjectParameter("GLDescription", gLDescription) :
+                new ObjectParameter("GLDescription", typeof(string));
+    
             var newRecordParameter = newRecord.HasValue ?
                 new ObjectParameter("NewRecord", newRecord) :
                 new ObjectParameter("NewRecord", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateTransactionTypes", transactionTypeCodeParameter, transactionTypeParameter, natureCodeParameter, natureParameter, urduTitleParameter, definitionDateParameter, newRecordParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateTransactionTypes", transactionTypeCodeParameter, transactionTypeParameter, natureCodeParameter, natureParameter, urduTitleParameter, definitionDateParameter, gLCodeParameter, gLDescriptionParameter, newRecordParameter);
         }
     
         public virtual int UpdateUserSecurities(string userID, string userName, string password, Nullable<bool> isAdministrator, Nullable<bool> isActive, Nullable<long> newRecord)
@@ -4403,7 +4430,7 @@ namespace TMS.Integration.Storage
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("UpdateVehicleAdjustments", branchCodeParameter, transactionNatureParameter, branchNameParameter, transactionNoParameter, vehicleCodeParameter, modeParameter, vehicleDescriptionParameter, chequeNoParameter, urduTitleParameter, transactionDateParameter, descriptionParameter, lockedParameter, postedParameter, gUIDParameter, newRecordParameter);
         }
     
-        public virtual int UpdateVehicleAdjustmentsDetails(string transactionNature, string branchCode, string transactionNo, string gLCode, string gLDescription, Nullable<decimal> amount, string typeCode, string type, string divisionCode, string division, string mode, string urduDescription, Nullable<long> newRecord)
+        public virtual int UpdateVehicleAdjustmentsDetails(string transactionNature, string branchCode, string transactionNo, string gLCode, string gLDescription, Nullable<decimal> amount, string typeCode, string type, string description, string divisionCode, string division, string mode, string urduDescription, Nullable<long> newRecord)
         {
             var transactionNatureParameter = transactionNature != null ?
                 new ObjectParameter("TransactionNature", transactionNature) :
@@ -4437,6 +4464,10 @@ namespace TMS.Integration.Storage
                 new ObjectParameter("Type", type) :
                 new ObjectParameter("Type", typeof(string));
     
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
             var divisionCodeParameter = divisionCode != null ?
                 new ObjectParameter("DivisionCode", divisionCode) :
                 new ObjectParameter("DivisionCode", typeof(string));
@@ -4457,7 +4488,7 @@ namespace TMS.Integration.Storage
                 new ObjectParameter("NewRecord", newRecord) :
                 new ObjectParameter("NewRecord", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateVehicleAdjustmentsDetails", transactionNatureParameter, branchCodeParameter, transactionNoParameter, gLCodeParameter, gLDescriptionParameter, amountParameter, typeCodeParameter, typeParameter, divisionCodeParameter, divisionParameter, modeParameter, urduDescriptionParameter, newRecordParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateVehicleAdjustmentsDetails", transactionNatureParameter, branchCodeParameter, transactionNoParameter, gLCodeParameter, gLDescriptionParameter, amountParameter, typeCodeParameter, typeParameter, descriptionParameter, divisionCodeParameter, divisionParameter, modeParameter, urduDescriptionParameter, newRecordParameter);
         }
     
         public virtual int UpdateVehicleOwners(string ownerCode, string ownerName, string urduTitle, string address, string nIC, string postalCode, string city, string cityCode, string email, string telePhone, string definitionDate, Nullable<long> gUID, Nullable<long> newRecord)
@@ -4517,7 +4548,7 @@ namespace TMS.Integration.Storage
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateVehicleOwners", ownerCodeParameter, ownerNameParameter, urduTitleParameter, addressParameter, nICParameter, postalCodeParameter, cityParameter, cityCodeParameter, emailParameter, telePhoneParameter, definitionDateParameter, gUIDParameter, newRecordParameter);
         }
     
-        public virtual int UpdateVehicles(string vehicleCode, string vehicleDescription, string ownerCode, string ownerName, string capacity, string installmentGLCode, string installmentGLDescription, string freightGLCode, string freightGLDescription, string loanGLCode, string customerCode, string customer, string loanGLDescription, string commissionGLCode, string commissionGLDescription, Nullable<System.DateTime> definitionDate, Nullable<long> newRecord)
+        public virtual int UpdateVehicles(string vehicleCode, string vehicleDescription, string ownerCode, Nullable<bool> isThirdParty, string ownerName, string capacity, string installmentGLCode, string installmentGLDescription, string freightGLCode, string freightGLDescription, string loanGLCode, string customerCode, string customer, string loanGLDescription, string commissionGLCode, string commissionGLDescription, Nullable<System.DateTime> definitionDate, Nullable<long> newRecord)
         {
             var vehicleCodeParameter = vehicleCode != null ?
                 new ObjectParameter("VehicleCode", vehicleCode) :
@@ -4530,6 +4561,10 @@ namespace TMS.Integration.Storage
             var ownerCodeParameter = ownerCode != null ?
                 new ObjectParameter("OwnerCode", ownerCode) :
                 new ObjectParameter("OwnerCode", typeof(string));
+    
+            var isThirdPartyParameter = isThirdParty.HasValue ?
+                new ObjectParameter("IsThirdParty", isThirdParty) :
+                new ObjectParameter("IsThirdParty", typeof(bool));
     
             var ownerNameParameter = ownerName != null ?
                 new ObjectParameter("OwnerName", ownerName) :
@@ -4587,7 +4622,7 @@ namespace TMS.Integration.Storage
                 new ObjectParameter("NewRecord", newRecord) :
                 new ObjectParameter("NewRecord", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateVehicles", vehicleCodeParameter, vehicleDescriptionParameter, ownerCodeParameter, ownerNameParameter, capacityParameter, installmentGLCodeParameter, installmentGLDescriptionParameter, freightGLCodeParameter, freightGLDescriptionParameter, loanGLCodeParameter, customerCodeParameter, customerParameter, loanGLDescriptionParameter, commissionGLCodeParameter, commissionGLDescriptionParameter, definitionDateParameter, newRecordParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateVehicles", vehicleCodeParameter, vehicleDescriptionParameter, ownerCodeParameter, isThirdPartyParameter, ownerNameParameter, capacityParameter, installmentGLCodeParameter, installmentGLDescriptionParameter, freightGLCodeParameter, freightGLDescriptionParameter, loanGLCodeParameter, customerCodeParameter, customerParameter, loanGLDescriptionParameter, commissionGLCodeParameter, commissionGLDescriptionParameter, definitionDateParameter, newRecordParameter);
         }
     
         public virtual ObjectResult<string> UpdateVouchers(string branchCode, string transactionNature, string branchName, string transactionNo, string urduTitle, Nullable<System.DateTime> transactionDate, string description, Nullable<byte> locked, Nullable<byte> isAutoGenerated, Nullable<byte> posted, Nullable<int> gUID, Nullable<long> newRecord)

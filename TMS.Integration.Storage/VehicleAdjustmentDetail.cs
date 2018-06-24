@@ -24,6 +24,10 @@ namespace TMS.Integration.Storage
         public string DivisionCode { get; set; }
         public string InvoiceRefNo { get; set; }
         public long RecordNo { get; set; }
+        public string Description { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual TransactionType TransactionType { get; set; }
         public virtual TransactionType TransactionType1 { get; set; }

@@ -49,8 +49,7 @@ namespace TMS.Integration.Services.BranchService
         }
         private async Task Update(string id, Branch coaLocal)
         {
-
-            var response = _client.PutAsJsonAsync("api/branch/" + id,
+            var response =  _client.PutAsJsonAsync("api/branch/" + id,
                 new BranchPostRequestBody
                 {
                     desc = coaLocal.BranchDescription,

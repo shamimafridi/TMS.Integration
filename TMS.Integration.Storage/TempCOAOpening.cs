@@ -12,7 +12,7 @@ namespace TMS.Integration.Storage
     using System;
     using System.Collections.Generic;
     
-    public partial class TempTransDetailLedgerTrial
+    public partial class TempCOAOpening
     {
         public string BranchCode { get; set; }
         public string BranchRptTitle { get; set; }
@@ -28,9 +28,17 @@ namespace TMS.Integration.Storage
         public string SubsidiaryRptTitle { get; set; }
         public string SubsubCode { get; set; }
         public string SubSubRptTitle { get; set; }
-        public int OpeningBalance { get; set; }
-        public Nullable<decimal> DebitBalance { get; set; }
-        public Nullable<decimal> CreditBalance { get; set; }
+        public string FSFGLCode { get; set; }
+        public string FSFGLRptTitle { get; set; }
+        public string FSFControlCode { get; set; }
+        public string FSFControlRptTitle { get; set; }
+        public string FSFGeneralCode { get; set; }
+        public string FSFGeneralRptTitle { get; set; }
+        public string FSFSubSidiaryCode { get; set; }
+        public string FSFSubsidiaryRptTitle { get; set; }
+        public string FSFSubsubCode { get; set; }
+        public string FSFSubSubRptTitle { get; set; }
+        public Nullable<decimal> OpeningBalance { get; set; }
         public string RefNo { get; set; }
         public string UpdatedBy { get; set; }
         public Nullable<System.DateTime> UpdatedOn { get; set; }

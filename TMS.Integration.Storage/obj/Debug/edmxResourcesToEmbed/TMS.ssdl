@@ -7,10 +7,11 @@
     <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="BranchDescription" Type="varchar" MaxLength="100" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
-    <Property Name="RefNo" Type="varchar" MaxLength="50" />
-    <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="GLCode" Type="char" MaxLength="14" />
     <Property Name="GUID" Type="bigint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Cities">
     <Key>
@@ -21,6 +22,9 @@
     <Property Name="UrduTitle" Type="nvarchar" MaxLength="200" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="GUID" Type="bigint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="COAControls">
     <Key>
@@ -31,7 +35,8 @@
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
     <Property Name="FSFGLCode" Type="char" MaxLength="10" />
-    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
     <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="COAGenerals">
@@ -43,10 +48,11 @@
     <Property Name="GeneralCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="GeneralDescription" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
-    <Property Name="RefNo" Type="varchar" MaxLength="50" />
-    <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
     <Property Name="FSFGLCode" Type="char" MaxLength="10" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="COASubsidiaries">
     <Key>
@@ -59,10 +65,11 @@
     <Property Name="SubsidiaryCode" Type="char" MaxLength="4" Nullable="false" />
     <Property Name="SubsidiaryDescription" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
-    <Property Name="RefNo" Type="varchar" MaxLength="50" />
-    <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
     <Property Name="FSFGLCode" Type="char" MaxLength="10" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="COASubSubsidiaries">
     <Key>
@@ -71,17 +78,17 @@
       <PropertyRef Name="SubsidiaryCode" />
       <PropertyRef Name="SubSubsidiaryCode" />
     </Key>
-    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ControlCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="GeneralCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="SubsidiaryCode" Type="char" MaxLength="4" Nullable="false" />
     <Property Name="SubSubsidiaryCode" Type="char" MaxLength="4" Nullable="false" />
     <Property Name="SubSubsidiaryDescription" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
-    <Property Name="RefNo" Type="varchar" MaxLength="50" />
-    <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
     <Property Name="FSFGLCode" Type="char" MaxLength="10" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="CustomerBillDetails">
     <Key>
@@ -95,6 +102,9 @@
     <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Amount" Type="decimal" Precision="20" Scale="5" />
     <Property Name="Shortage" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="CustomerBills">
     <Key>
@@ -104,6 +114,9 @@
     <Property Name="CustomerCode" Type="char" MaxLength="5" />
     <Property Name="BillDate" Type="datetime" />
     <Property Name="IsReceipt" Type="tinyint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Customers">
     <Key>
@@ -126,6 +139,9 @@
     <Property Name="NationalTaxNumber" Type="varchar" MaxLength="20" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="DestinationPoints">
     <Key>
@@ -137,31 +153,24 @@
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="PointNo" Type="numeric" Precision="18" Scale="0" />
     <Property Name="GUID" Type="bigint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Divisions">
     <Key>
       <PropertyRef Name="DivisionCode" />
     </Key>
-    <Property Name="DivisionCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="DivisionCode" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="Division" Type="varchar" MaxLength="100" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="GUID" Type="bigint" />
-  </EntityType>
-  <EntityType Name="dtproperties">
-    <Key>
-      <PropertyRef Name="id" />
-      <PropertyRef Name="property" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="objectid" Type="int" />
-    <Property Name="property" Type="varchar" MaxLength="64" Nullable="false" />
-    <Property Name="value" Type="varchar" MaxLength="255" />
-    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
-    <Property Name="lvalue" Type="image" />
-    <Property Name="version" Type="int" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.FSFControls' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.FSFControls' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="FSFControls">
     <Key>
       <PropertyRef Name="ControlCode" />
@@ -174,9 +183,12 @@ warning 6002: The table/view 'TMS.dbo.FSFControls' does not have a primary key d
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="ReportTitle" Type="varchar" MaxLength="100" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.FSFGenerals' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.FSFGenerals' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="FSFGenerals">
     <Key>
       <PropertyRef Name="ControlCode" />
@@ -191,9 +203,12 @@ warning 6002: The table/view 'TMS.dbo.FSFGenerals' does not have a primary key d
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="ReportTitle" Type="varchar" MaxLength="100" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.FSFSubsidiaries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.FSFSubsidiaries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="FSFSubsidiaries">
     <Key>
       <PropertyRef Name="GeneralCode" />
@@ -209,9 +224,12 @@ warning 6002: The table/view 'TMS.dbo.FSFSubsidiaries' does not have a primary k
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="ReportTitle" Type="varchar" MaxLength="100" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.FSFSubSubsidiaries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.FSFSubSubsidiaries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="FSFSubSubsidiaries">
     <Key>
       <PropertyRef Name="SubsidiaryCode" />
@@ -228,9 +246,12 @@ warning 6002: The table/view 'TMS.dbo.FSFSubSubsidiaries' does not have a primar
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="ReportTitle" Type="varchar" MaxLength="100" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.GeneratedReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.GeneratedReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="GeneratedReferences">
     <Key>
       <PropertyRef Name="RecordNo" />
@@ -251,9 +272,12 @@ warning 6002: The table/view 'TMS.dbo.GeneratedReferences' does not have a prima
     <Property Name="BranchCode" Type="char" MaxLength="3" Nullable="false" />
     <Property Name="DocumentNature" Type="char" MaxLength="3" Nullable="false" />
     <Property Name="DocumentNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.GL_DetailPaymentVoucherTAB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.GL_DetailPaymentVoucherTAB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="GL_DetailPaymentVoucherTAB">
     <Key>
       <PropertyRef Name="BranchCode" />
@@ -282,9 +306,12 @@ warning 6002: The table/view 'TMS.dbo.GL_DetailPaymentVoucherTAB' does not have 
     <Property Name="GLCode" Type="bigint" />
     <Property Name="DivisionCode" Type="bigint" />
     <Property Name="OldRef" Type="varchar" MaxLength="50" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.GL_MasterPaymentVoucherTAB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.GL_MasterPaymentVoucherTAB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="GL_MasterPaymentVoucherTAB">
     <Key>
       <PropertyRef Name="BranchCode" />
@@ -326,6 +353,9 @@ warning 6002: The table/view 'TMS.dbo.GL_MasterPaymentVoucherTAB' does not have 
     <Property Name="OldRef" Type="varchar" MaxLength="50" />
     <Property Name="RecordCreator" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="RecordOwner" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="HistoryTransactionAudit">
     <Key>
@@ -344,6 +374,31 @@ warning 6002: The table/view 'TMS.dbo.GL_MasterPaymentVoucherTAB' does not have 
     <Property Name="Quantity" Type="decimal" Precision="20" Scale="5" Nullable="false" />
     <Property Name="AvailableQuantity" Type="decimal" Precision="20" Scale="5" Nullable="false" />
     <Property Name="BalanceQuantity" Type="decimal" Precision="20" Scale="5" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InvoiceExpences">
+    <Key>
+      <PropertyRef Name="BranchCode" />
+      <PropertyRef Name="TransactionNo" />
+      <PropertyRef Name="TransactionTypeCode" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="TransactionNo" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TransactionTypeCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="UrduDescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="GLCode" Type="char" MaxLength="50" />
+    <Property Name="DivisionCode" Type="char" MaxLength="3" />
+    <Property Name="InvoiceRefNo" Type="char" MaxLength="10" />
+    <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Invoices">
     <Key>
@@ -376,7 +431,12 @@ warning 6002: The table/view 'TMS.dbo.GL_MasterPaymentVoucherTAB' does not have 
     <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GUID" Type="int" Nullable="false" />
     <Property Name="IsTripCanceled" Type="bit" />
+    <Property Name="IsLocalTrip" Type="tinyint" />
     <Property Name="IsBilled" Type="tinyint" />
+    <Property Name="LongTripRefNo" Type="nchar" MaxLength="10" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Items">
     <Key>
@@ -388,9 +448,12 @@ warning 6002: The table/view 'TMS.dbo.GL_MasterPaymentVoucherTAB' does not have 
     <Property Name="ItemValue" Type="decimal" Precision="20" Scale="5" Nullable="false" />
     <Property Name="GLCode" Type="varchar" MaxLength="12" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.OpeningBalances' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.OpeningBalances' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="OpeningBalances">
     <Key>
       <PropertyRef Name="ClosingDate" />
@@ -408,6 +471,9 @@ warning 6002: The table/view 'TMS.dbo.OpeningBalances' does not have a primary k
     <Property Name="DebitBalance" Type="numeric" Precision="20" Scale="5" Nullable="false" />
     <Property Name="CreditBalance" Type="numeric" Precision="20" Scale="5" Nullable="false" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Options">
     <Key>
@@ -417,9 +483,39 @@ warning 6002: The table/view 'TMS.dbo.OpeningBalances' does not have a primary k
     <Property Name="OptionName" Type="varchar" MaxLength="100" />
     <Property Name="OptionValue" Type="varchar" MaxLength="50" />
     <Property Name="OptionDescription" Type="varchar" MaxLength="200" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PayableAccounts">
+    <Key>
+      <PropertyRef Name="BranchCode" />
+      <PropertyRef Name="DocumentNature" />
+      <PropertyRef Name="DocumentNo" />
+    </Key>
+    <Property Name="BranchCode" Type="bigint" Nullable="false" />
+    <Property Name="DocumentNature" Type="bigint" Nullable="false" />
+    <Property Name="DocumentNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PartyCode" Type="bigint" Nullable="false" />
+    <Property Name="MiscPartyName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PartyReference" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PartyReferenceDate" Type="datetime" />
+    <Property Name="InternalReference" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="InternalReferenceDate" Type="datetime" />
+    <Property Name="Description" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreditDays" Type="int" Nullable="false" />
+    <Property Name="Locked" Type="bit" Nullable="false" />
+    <Property Name="Posted" Type="bit" Nullable="false" />
+    <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GUID" Type="bigint" Nullable="false" />
+    <Property Name="OldRef" Type="varchar" MaxLength="50" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.PaymentVoucherDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.PaymentVoucherDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="PaymentVoucherDetails">
     <Key>
       <PropertyRef Name="BranchCode" />
@@ -448,9 +544,12 @@ warning 6002: The table/view 'TMS.dbo.PaymentVoucherDetails' does not have a pri
     <Property Name="GLCode" Type="bigint" />
     <Property Name="DivisionCode" Type="bigint" />
     <Property Name="OldRef" Type="varchar" MaxLength="50" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.PaymentVouchers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.PaymentVouchers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="PaymentVouchers">
     <Key>
       <PropertyRef Name="BranchCode" />
@@ -492,6 +591,9 @@ warning 6002: The table/view 'TMS.dbo.PaymentVouchers' does not have a primary k
     <Property Name="OldRef" Type="varchar" MaxLength="50" />
     <Property Name="RecordCreator" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="RecordOwner" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="ProductRates">
     <Key>
@@ -507,6 +609,9 @@ warning 6002: The table/view 'TMS.dbo.PaymentVouchers' does not have a primary k
     <Property Name="TripAdvanceAmount" Type="decimal" Precision="20" Scale="5" />
     <Property Name="Rate" Type="decimal" Precision="20" Scale="5" />
     <Property Name="GUID" Type="bigint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Products">
     <Key>
@@ -518,6 +623,9 @@ warning 6002: The table/view 'TMS.dbo.PaymentVouchers' does not have a primary k
     <Property Name="Rate" Type="decimal" Precision="20" Scale="5" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="GUID" Type="bigint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="ProductValues">
     <Key>
@@ -527,9 +635,12 @@ warning 6002: The table/view 'TMS.dbo.PaymentVouchers' does not have a primary k
     <Property Name="ProductCode" Type="char" MaxLength="3" Nullable="false" />
     <Property Name="EffectiveDate" Type="datetime" Nullable="false" />
     <Property Name="QuantityValue" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.ProjectNodesSetup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.ProjectNodesSetup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="ProjectNodesSetup">
     <Key>
       <PropertyRef Name="RecordNo" />
@@ -550,6 +661,9 @@ warning 6002: The table/view 'TMS.dbo.ProjectNodesSetup' does not have a primary
     <Property Name="ImageIndex" Type="int" Nullable="false" />
     <Property Name="SortingOrder" Type="int" />
     <Property Name="SystemType" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Receipts">
     <Key>
@@ -572,6 +686,9 @@ warning 6002: The table/view 'TMS.dbo.ProjectNodesSetup' does not have a primary
     <Property Name="Locked" Type="tinyint" />
     <Property Name="Posted" Type="tinyint" />
     <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Regions">
     <Key>
@@ -582,9 +699,12 @@ warning 6002: The table/view 'TMS.dbo.ProjectNodesSetup' does not have a primary
     <Property Name="UrduTitle" Type="nvarchar" MaxLength="200" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="GUID" Type="bigint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.SetupTables' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.SetupTables' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="SetupTables">
     <Key>
       <PropertyRef Name="ss" />
@@ -595,6 +715,9 @@ warning 6002: The table/view 'TMS.dbo.SetupTables' does not have a primary key d
     <Property Name="TableType" Type="char" MaxLength="10" />
     <Property Name="ShowTable" Type="tinyint" />
     <Property Name="ss" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="StationPoints">
     <Key>
@@ -606,6 +729,9 @@ warning 6002: The table/view 'TMS.dbo.SetupTables' does not have a primary key d
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="PointNo" Type="numeric" Precision="18" Scale="0" />
     <Property Name="GUID" Type="bigint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Suppliers">
     <Key>
@@ -627,9 +753,151 @@ warning 6002: The table/view 'TMS.dbo.SetupTables' does not have a primary key d
     <Property Name="TaxZone" Type="varchar" MaxLength="100" />
     <Property Name="DefinitionDate" Type="datetime" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.TempTransDetailLedgerTrial' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.TempCOAOpening' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TempCOAOpening">
+    <Key>
+      <PropertyRef Name="BranchCode" />
+      <PropertyRef Name="DivisionCode" />
+      <PropertyRef Name="GLCode" />
+      <PropertyRef Name="GLRptTitle" />
+      <PropertyRef Name="SubSubRptTitle" />
+      <PropertyRef Name="FSFGLRptTitle" />
+      <PropertyRef Name="FSFSubSubRptTitle" />
+    </Key>
+    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="BranchRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="DivisionCode" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="DivisionRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="GLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ControlCode" Type="char" MaxLength="2" />
+    <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="GeneralCode" Type="char" MaxLength="4" />
+    <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="SubSidiaryCode" Type="varchar" MaxLength="8" />
+    <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="SubsubCode" Type="varchar" MaxLength="12" />
+    <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FSFGLCode" Type="varchar" MaxLength="21" />
+    <Property Name="FSFGLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FSFControlCode" Type="varchar" MaxLength="20" />
+    <Property Name="FSFControlRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="FSFGeneralCode" Type="varchar" MaxLength="40" />
+    <Property Name="FSFGeneralRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="FSFSubSidiaryCode" Type="varchar" MaxLength="42" />
+    <Property Name="FSFSubsidiaryRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="FSFSubsubCode" Type="varchar" MaxLength="44" />
+    <Property Name="FSFSubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="OpeningBalance" Type="numeric" Precision="38" Scale="5" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TMS_ALI.dbo.TempTransDetailCF' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TempTransDetailCF">
+    <Key>
+      <PropertyRef Name="BranchCode" />
+      <PropertyRef Name="DivisionCode" />
+      <PropertyRef Name="GLCode" />
+      <PropertyRef Name="GLRptTitle" />
+      <PropertyRef Name="NatureCode" />
+      <PropertyRef Name="NatureRptTitle" />
+      <PropertyRef Name="VoucherDate" />
+      <PropertyRef Name="VoucherNo" />
+      <PropertyRef Name="RecordNo" />
+      <PropertyRef Name="SubSubRptTitle" />
+      <PropertyRef Name="ApplyGrouping" />
+      <PropertyRef Name="DetailRecordNo" />
+    </Key>
+    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="BranchRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="DivisionCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="DivisionRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="GLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NatureCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="NatureRptTitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VoucherDate" Type="datetime" Nullable="false" />
+    <Property Name="VoucherNo" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="OldRef" Type="char" MaxLength="12" />
+    <Property Name="Narration" Type="varchar" MaxLength="100" />
+    <Property Name="NarrationMain" Type="varchar" MaxLength="250" />
+    <Property Name="RecordNo" Type="bigint" Nullable="false" />
+    <Property Name="Reference" Type="varchar" MaxLength="100" />
+    <Property Name="Debit" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="Credit" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="ControlCode" Type="char" MaxLength="2" />
+    <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="GeneralCode" Type="char" MaxLength="4" />
+    <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="SubSidiaryCode" Type="char" MaxLength="8" />
+    <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="SubsubCode" Type="char" MaxLength="12" />
+    <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ApplyGrouping" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Posted" Type="bit" />
+    <Property Name="Locked" Type="bit" />
+    <Property Name="DetailRecordNo" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TMS_ALI.dbo.TempTransDetailLedger' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TempTransDetailLedger">
+    <Key>
+      <PropertyRef Name="BranchCode" />
+      <PropertyRef Name="DivisionCode" />
+      <PropertyRef Name="GLCode" />
+      <PropertyRef Name="GLRptTitle" />
+      <PropertyRef Name="NatureCode" />
+      <PropertyRef Name="NatureRptTitle" />
+      <PropertyRef Name="VoucherDate" />
+      <PropertyRef Name="VoucherNo" />
+      <PropertyRef Name="RecordNo" />
+      <PropertyRef Name="SubSubRptTitle" />
+      <PropertyRef Name="DetailRecordNo" />
+    </Key>
+    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="BranchRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="DivisionCode" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="DivisionRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="GLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NatureCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="NatureRptTitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VoucherDate" Type="datetime" Nullable="false" />
+    <Property Name="VoucherNo" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="OldRef" Type="char" MaxLength="12" />
+    <Property Name="Narration" Type="varchar" MaxLength="100" />
+    <Property Name="NarrationMain" Type="varchar" MaxLength="250" />
+    <Property Name="RecordNo" Type="bigint" Nullable="false" />
+    <Property Name="Reference" Type="varchar" MaxLength="100" />
+    <Property Name="Debit" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="Credit" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="ControlCode" Type="char" MaxLength="2" />
+    <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="GeneralCode" Type="char" MaxLength="4" />
+    <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="SubSidiaryCode" Type="varchar" MaxLength="8" />
+    <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
+    <Property Name="SubsubCode" Type="varchar" MaxLength="12" />
+    <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Posted" Type="bit" />
+    <Property Name="Locked" Type="bit" />
+    <Property Name="DetailRecordNo" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TMS_ALI.dbo.TempTransDetailLedgerTrial' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TempTransDetailLedgerTrial">
     <Key>
       <PropertyRef Name="BranchCode" />
@@ -641,7 +909,7 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailLedgerTrial' does not have 
     </Key>
     <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="BranchRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="DivisionCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="DivisionCode" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="DivisionRptTitle" Type="varchar" MaxLength="100" />
     <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="GLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
@@ -649,16 +917,19 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailLedgerTrial' does not have 
     <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
     <Property Name="GeneralCode" Type="char" MaxLength="4" />
     <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubSidiaryCode" Type="char" MaxLength="8" />
+    <Property Name="SubSidiaryCode" Type="varchar" MaxLength="8" />
     <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubsubCode" Type="char" MaxLength="12" />
+    <Property Name="SubsubCode" Type="varchar" MaxLength="12" />
     <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="OpeningBalance" Type="int" Nullable="false" />
     <Property Name="DebitBalance" Type="decimal" Precision="38" Scale="5" />
     <Property Name="CreditBalance" Type="decimal" Precision="38" Scale="5" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.TempTransDetailTrialFSF' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.TempTransDetailTrialFSF' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TempTransDetailTrialFSF">
     <Key>
       <PropertyRef Name="BranchCode" />
@@ -672,7 +943,7 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailTrialFSF' does not have a p
     </Key>
     <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="BranchRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="DivisionCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="DivisionCode" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="DivisionRptTitle" Type="varchar" MaxLength="100" />
     <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="GLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
@@ -680,9 +951,9 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailTrialFSF' does not have a p
     <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
     <Property Name="GeneralCode" Type="char" MaxLength="4" />
     <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubSidiaryCode" Type="char" MaxLength="8" />
+    <Property Name="SubSidiaryCode" Type="varchar" MaxLength="8" />
     <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubsubCode" Type="char" MaxLength="12" />
+    <Property Name="SubsubCode" Type="varchar" MaxLength="12" />
     <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="FSFGLCode" Type="varchar" MaxLength="21" />
     <Property Name="FSFGLRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
@@ -697,6 +968,57 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailTrialFSF' does not have a p
     <Property Name="OpeningBalance" Type="int" Nullable="false" />
     <Property Name="DebitBalance" Type="decimal" Precision="38" Scale="5" />
     <Property Name="CreditBalance" Type="decimal" Precision="38" Scale="5" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TMS_ALI.dbo.TempTransDetailVBill' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TempTransDetailVBill">
+    <Key>
+      <PropertyRef Name="MODE" />
+      <PropertyRef Name="TransactionNo" />
+      <PropertyRef Name="TransactionDate" />
+      <PropertyRef Name="RecordNo" />
+      <PropertyRef Name="StationPointName" />
+      <PropertyRef Name="DestinationPointName" />
+    </Key>
+    <Property Name="MODE" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="TransactionNo" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="RecordNo" Type="bigint" Nullable="false" />
+    <Property Name="CustomerReference" Type="varchar" MaxLength="20" />
+    <Property Name="VehicleCode" Type="char" MaxLength="10" />
+    <Property Name="StationPointCode" Type="varchar" MaxLength="3" />
+    <Property Name="DestinationPointCode" Type="varchar" MaxLength="3" />
+    <Property Name="ProductCode" Type="varchar" MaxLength="3" />
+    <Property Name="Quantity" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="Rate" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="Debit" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="Credit" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="Commission" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="ShortageQuantity" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="Shortage" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="QuantityValue" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="OwnerCode" Type="char" MaxLength="5" />
+    <Property Name="OwnerName" Type="varchar" MaxLength="100" />
+    <Property Name="UrduOwnerName" Type="nvarchar" MaxLength="500" />
+    <Property Name="ProductUrdu" Type="nvarchar" MaxLength="200" />
+    <Property Name="StationPointName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="StationPointUrdu" Type="nvarchar" MaxLength="200" />
+    <Property Name="DestinationPointName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DestinationPointUrdu" Type="nvarchar" MaxLength="200" />
+    <Property Name="GLCode" Type="varchar" MaxLength="12" />
+    <Property Name="GLDescription" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CustomerCode" Type="char" MaxLength="5" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="100" />
+    <Property Name="UrduCustomerName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Capacity" Type="varchar" MaxLength="50" />
+    <Property Name="Narration" Type="varchar" MaxLength="100" />
+    <Property Name="TripAdvance" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="TransactionActivities">
     <Key>
@@ -711,6 +1033,9 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailTrialFSF' does not have a p
     <Property Name="ComputerID" Type="varchar" MaxLength="50" />
     <Property Name="ActionPerformed" Type="varchar" MaxLength="1" />
     <Property Name="ReferenceText" Type="varchar" MaxLength="100" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="TransactionNatures">
     <Key>
@@ -721,6 +1046,9 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailTrialFSF' does not have a p
     <Property Name="Term" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="System" Type="char" MaxLength="10" />
     <Property Name="IsPaymentVoucher" Type="tinyint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="TransactionTypes">
     <Key>
@@ -731,9 +1059,14 @@ warning 6002: The table/view 'TMS.dbo.TempTransDetailTrialFSF' does not have a p
     <Property Name="UrduTitle" Type="nvarchar" MaxLength="200" />
     <Property Name="DefinitionDate" Type="datetime" />
     <Property Name="Nature" Type="char" MaxLength="2" />
+    <Property Name="GLCode" Type="char" MaxLength="12" />
+    <Property Name="IsTripExpence" Type="tinyint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.UsedTransactionsDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="UsedTransactionsDetail">
     <Key>
       <PropertyRef Name="RecordNo" />
@@ -761,6 +1094,9 @@ warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a pr
     <Property Name="RefVoucherDate" Type="datetime" Nullable="false" />
     <Property Name="RefBillNo" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="AmountUsed" Type="numeric" Precision="20" Scale="5" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="UserSecurities">
     <Key>
@@ -777,7 +1113,12 @@ warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a pr
     <Property Name="S_Account" Type="varchar" MaxLength="3" />
     <Property Name="T_Order" Type="varchar" MaxLength="3" />
     <Property Name="R_RecVoucher" Type="bit" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TMS_ALI.dbo.VehicleAdjustmentDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VehicleAdjustmentDetails">
     <Key>
       <PropertyRef Name="BranchCode" />
@@ -790,11 +1131,15 @@ warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a pr
     <Property Name="VehicleAdjustmentNo" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="TransactionTypeCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="Amount" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="UrduDescription" Type="nvarchar" MaxLength="200" />
     <Property Name="GLCode" Type="char" MaxLength="50" />
     <Property Name="DivisionCode" Type="char" MaxLength="3" />
     <Property Name="InvoiceRefNo" Type="char" MaxLength="10" />
     <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="VehicleAdjustments">
     <Key>
@@ -807,6 +1152,7 @@ warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a pr
     <Property Name="VehicleAdjustmentNo" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="VehicleAdjustmentDate" Type="datetime" Nullable="false" />
     <Property Name="VehicleCode" Type="char" MaxLength="10" />
+    <Property Name="InvoiceRefNo" Type="nchar" MaxLength="10" />
     <Property Name="Description" Type="varchar" MaxLength="250" />
     <Property Name="Mode" Type="varchar" MaxLength="20" />
     <Property Name="ChequeNo" Type="char" MaxLength="15" />
@@ -817,6 +1163,9 @@ warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a pr
     <Property Name="OldRef" Type="char" MaxLength="12" />
     <Property Name="UrduTitle" Type="nvarchar" MaxLength="2000" />
     <Property Name="GUID" Type="int" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="VehicleOwners">
     <Key>
@@ -832,8 +1181,11 @@ warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a pr
     <Property Name="eMail" Type="varchar" MaxLength="50" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
     <Property Name="GUID" Type="bigint" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
-  <EntityType Name="Vehicles ">
+  <EntityType Name="Vehicles">
     <Key>
       <PropertyRef Name="VehicleCode" />
     </Key>
@@ -848,25 +1200,35 @@ warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a pr
     <Property Name="LoanGLCode" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="CommissionGLCode" Type="char" MaxLength="12" />
     <Property Name="DefinitionDate" Type="datetime" Nullable="false" />
+    <Property Name="IsThirdParty" Type="bit" />
+    <Property Name="DivisionCode" Type="char" MaxLength="10" />
     <Property Name="GUID" Type="bigint" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TMS_ALI.dbo.VoucherDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VoucherDetails">
     <Key>
-      <PropertyRef Name="BranchCode" />
       <PropertyRef Name="VoucherNature" />
       <PropertyRef Name="VoucherNo" />
       <PropertyRef Name="GLCode" />
+      <PropertyRef Name="BranchCode" />
     </Key>
     <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="VoucherNature" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="VoucherNo" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="GLCode" Type="char" MaxLength="20" Nullable="false" />
-    <Property Name="DivisionCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="DivisionCode" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="Reference" Type="varchar" MaxLength="100" />
     <Property Name="Debit" Type="decimal" Precision="20" Scale="5" />
     <Property Name="Credit" Type="decimal" Precision="20" Scale="5" />
     <Property Name="Narration" Type="varchar" MaxLength="100" />
     <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <EntityType Name="Vouchers">
     <Key>
@@ -885,13 +1247,14 @@ warning 6002: The table/view 'TMS.dbo.UsedTransactionsDetail' does not have a pr
     <Property Name="RecordNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CreditDays" Type="bigint" />
     <Property Name="OldRef" Type="char" MaxLength="12" />
-    <Property Name="RefNo" Type="varchar" MaxLength="50" />
-    <Property Name="UpdatedOn" Type="datetime" />
     <Property Name="UrduTitle" Type="nvarchar" MaxLength="2000" />
     <Property Name="GUID" Type="int" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="UpdatedOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.CreditDebitNotEqual' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.CreditDebitNotEqual' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="CreditDebitNotEqual">
     <Key>
       <PropertyRef Name="VoucherNature" />
@@ -904,7 +1267,7 @@ warning 6002: The table/view 'TMS.dbo.CreditDebitNotEqual' does not have a prima
     <Property Name="Credit" Type="decimal" Precision="38" Scale="5" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.GL_GetCOACombineLedTBRptVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.GL_GetCOACombineLedTBRptVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="GL_GetCOACombineLedTBRptVW">
     <Key>
       <PropertyRef Name="GLCode" />
@@ -917,26 +1280,26 @@ warning 6002: The table/view 'TMS.dbo.GL_GetCOACombineLedTBRptVW' does not have 
     <Property Name="ControlRptTitle" Type="varchar" MaxLength="100" />
     <Property Name="GeneralCode" Type="char" MaxLength="4" />
     <Property Name="GeneralRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubSidiaryCode" Type="char" MaxLength="8" />
+    <Property Name="SubSidiaryCode" Type="varchar" MaxLength="8" />
     <Property Name="SubsidiaryRptTitle" Type="varchar" MaxLength="100" />
-    <Property Name="SubsubCode" Type="char" MaxLength="12" />
+    <Property Name="SubsubCode" Type="varchar" MaxLength="12" />
     <Property Name="SubSubRptTitle" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="SysFSFGLCode" Type="char" MaxLength="10" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.GL_GetCOACombineTransactionVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.GL_GetCOACombineTransactionVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="GL_GetCOACombineTransactionVW">
     <Key>
       <PropertyRef Name="GLCode" />
       <PropertyRef Name="GLDescription" />
     </Key>
-    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="200" />
     <Property Name="GLCode" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="GLDescription" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="FSFGLCode" Type="char" MaxLength="10" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.GL_GetCOACombineVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.GL_GetCOACombineVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="GL_GetCOACombineVW">
     <Key>
       <PropertyRef Name="GLCode" />
@@ -947,7 +1310,7 @@ warning 6002: The table/view 'TMS.dbo.GL_GetCOACombineVW' does not have a primar
     <Property Name="SysFSFGLCode" Type="char" MaxLength="10" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.GL_GetFSFCombineTransactionVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.GL_GetFSFCombineTransactionVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="GL_GetFSFCombineTransactionVW">
     <Key>
       <PropertyRef Name="GLDescription" />
@@ -956,7 +1319,7 @@ warning 6002: The table/view 'TMS.dbo.GL_GetFSFCombineTransactionVW' does not ha
     <Property Name="GLDescription" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.GL_GetFSFCombineVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.GL_GetFSFCombineVW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="GL_GetFSFCombineVW">
     <Key>
       <PropertyRef Name="GLDescription" />
@@ -965,7 +1328,7 @@ warning 6002: The table/view 'TMS.dbo.GL_GetFSFCombineVW' does not have a primar
     <Property Name="GLDescription" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'TMS_ALI.dbo.QryOtherAmountExcInvoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="QryOtherAmountExcInvoice">
     <Key>
       <PropertyRef Name="VoucherNature" />
@@ -981,6 +1344,62 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Property Name="GLDescription" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Expr1" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="VoucherDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TMS_ALI.dbo.vwTransDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwTransDetail">
+    <Key>
+      <PropertyRef Name="TYPE" />
+      <PropertyRef Name="BranchCode" />
+      <PropertyRef Name="TransactionNature" />
+      <PropertyRef Name="TransactionNo" />
+      <PropertyRef Name="TransactionDate" />
+      <PropertyRef Name="ExpenceDate" />
+      <PropertyRef Name="TransactionTypeCode" />
+      <PropertyRef Name="RecordNo" />
+    </Key>
+    <Property Name="ProductName" Type="varchar" MaxLength="100" />
+    <Property Name="StationPointName" Type="varchar" MaxLength="100" />
+    <Property Name="DestinationPointName" Type="varchar" MaxLength="100" />
+    <Property Name="TokenNo" Type="varchar" MaxLength="20" />
+    <Property Name="LongTripRefNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="IsLocalTrip" Type="int" />
+    <Property Name="InvoiceRefNo" Type="varchar" MaxLength="10" />
+    <Property Name="TYPE" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="BranchCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="TransactionNature" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="TransactionNo" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="ExpenceDate" Type="datetime" Nullable="false" />
+    <Property Name="TransactionTypeCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="AmountReceived" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="AmountPaid" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="RecordNo" Type="bigint" Nullable="false" />
+    <Property Name="VehicleCode" Type="char" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TMS_ALI.dbo.vwTransDetailAll' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwTransDetailAll">
+    <Key>
+      <PropertyRef Name="TYPE" />
+      <PropertyRef Name="TransactionNature" />
+      <PropertyRef Name="TransactionTypeCode" />
+      <PropertyRef Name="VehicleCode" />
+    </Key>
+    <Property Name="TYPE" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="IsLocalTrip" Type="int" />
+    <Property Name="InvoiceRefNo" Type="varchar" MaxLength="10" />
+    <Property Name="BranchCode" Type="char" MaxLength="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="TransactionNature" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="TransactionNo" Type="char" MaxLength="10" />
+    <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="TransactionTypeCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="AmountReceived" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="AmountPaid" Type="decimal" Precision="20" Scale="5" />
+    <Property Name="RecordNo" Type="bigint" />
+    <Property Name="VehicleCode" Type="char" MaxLength="10" Nullable="false" />
   </EntityType>
   <Association Name="Cities_Customers_FK1">
     <End Role="Cities" Type="Self.Cities" Multiplicity="1" />
@@ -1095,6 +1514,44 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
       </Principal>
       <Dependent Role="CustomerBills">
         <PropertyRef Name="CustomerCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceExpences_AdjustmentType">
+    <End Role="TransactionTypes" Type="Self.TransactionTypes" Multiplicity="1" />
+    <End Role="InvoiceExpences" Type="Self.InvoiceExpences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransactionTypes">
+        <PropertyRef Name="TransactionTypeCode" />
+      </Principal>
+      <Dependent Role="InvoiceExpences">
+        <PropertyRef Name="TransactionTypeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceExpences_Invoices">
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="1" />
+    <End Role="InvoiceExpences" Type="Self.InvoiceExpences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoices">
+        <PropertyRef Name="BranchCode" />
+        <PropertyRef Name="TransactionNo" />
+      </Principal>
+      <Dependent Role="InvoiceExpences">
+        <PropertyRef Name="BranchCode" />
+        <PropertyRef Name="TransactionNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceExpences_TransactionTypes">
+    <End Role="TransactionTypes" Type="Self.TransactionTypes" Multiplicity="1" />
+    <End Role="InvoiceExpences" Type="Self.InvoiceExpences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransactionTypes">
+        <PropertyRef Name="TransactionTypeCode" />
+      </Principal>
+      <Dependent Role="InvoiceExpences">
+        <PropertyRef Name="TransactionTypeCode" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1255,10 +1712,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Transactions_Vehicles ">
-    <End Role="Vehicles " Type="Self.Vehicles " Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="1" />
     <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Vehicles ">
+      <Principal Role="Vehicles">
         <PropertyRef Name="VehicleCode" />
       </Principal>
       <Dependent Role="Invoices">
@@ -1319,10 +1776,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_VehicleAdjustments_Vehicles ">
-    <End Role="Vehicles " Type="Self.Vehicles " Multiplicity="0..1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="0..1" />
     <End Role="VehicleAdjustments" Type="Self.VehicleAdjustments" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Vehicles ">
+      <Principal Role="Vehicles">
         <PropertyRef Name="VehicleCode" />
       </Principal>
       <Dependent Role="VehicleAdjustments">
@@ -1344,41 +1801,37 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
   </Association>
   <Association Name="FK_Vehicles _Customers">
     <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
-    <End Role="Vehicles " Type="Self.Vehicles " Multiplicity="*" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Customers">
         <PropertyRef Name="CustomerCode" />
       </Principal>
-      <Dependent Role="Vehicles ">
+      <Dependent Role="Vehicles">
         <PropertyRef Name="CustomerCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicles _Divisions">
+    <End Role="Divisions" Type="Self.Divisions" Multiplicity="0..1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisions">
+        <PropertyRef Name="DivisionCode" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="DivisionCode" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Vehicles _VehicleOwners">
     <End Role="VehicleOwners" Type="Self.VehicleOwners" Multiplicity="1" />
-    <End Role="Vehicles " Type="Self.Vehicles " Multiplicity="*" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="VehicleOwners">
         <PropertyRef Name="OwnerCode" />
       </Principal>
-      <Dependent Role="Vehicles ">
+      <Dependent Role="Vehicles">
         <PropertyRef Name="OwnerCode" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_VoucherDetails_Vouchers">
-    <End Role="Vouchers" Type="Self.Vouchers" Multiplicity="1" />
-    <End Role="VoucherDetails" Type="Self.VoucherDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Vouchers">
-        <PropertyRef Name="BranchCode" />
-        <PropertyRef Name="VoucherNature" />
-        <PropertyRef Name="VoucherNo" />
-      </Principal>
-      <Dependent Role="VoucherDetails">
-        <PropertyRef Name="BranchCode" />
-        <PropertyRef Name="VoucherNature" />
-        <PropertyRef Name="VoucherNo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1583,156 +2036,6 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Parameter Name="TransactionNo" Type="varchar" Mode="In" />
     <Parameter Name="BranchCode" Type="varchar" Mode="In" />
     <Parameter Name="TransactionNature" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="dt_addtosourcecontrol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="vchSourceSafeINI" Type="varchar" Mode="In" />
-    <Parameter Name="vchProjectName" Type="varchar" Mode="In" />
-    <Parameter Name="vchComment" Type="varchar" Mode="In" />
-    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="dt_addtosourcecontrol_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="vchSourceSafeINI" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchProjectName" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchComment" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="dt_adduserobject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="dt_adduserobject_vcs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="vchProperty" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="dt_checkinobject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="chObjectType" Type="char" Mode="In" />
-    <Parameter Name="vchObjectName" Type="varchar" Mode="In" />
-    <Parameter Name="vchComment" Type="varchar" Mode="In" />
-    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
-    <Parameter Name="iVCSFlags" Type="int" Mode="In" />
-    <Parameter Name="iActionFlag" Type="int" Mode="In" />
-    <Parameter Name="txStream1" Type="text" Mode="In" />
-    <Parameter Name="txStream2" Type="text" Mode="In" />
-    <Parameter Name="txStream3" Type="text" Mode="In" />
-  </Function>
-  <Function Name="dt_checkinobject_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="chObjectType" Type="char" Mode="In" />
-    <Parameter Name="vchObjectName" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchComment" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
-    <Parameter Name="iVCSFlags" Type="int" Mode="In" />
-    <Parameter Name="iActionFlag" Type="int" Mode="In" />
-    <Parameter Name="txStream1" Type="text" Mode="In" />
-    <Parameter Name="txStream2" Type="text" Mode="In" />
-    <Parameter Name="txStream3" Type="text" Mode="In" />
-  </Function>
-  <Function Name="dt_checkoutobject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="chObjectType" Type="char" Mode="In" />
-    <Parameter Name="vchObjectName" Type="varchar" Mode="In" />
-    <Parameter Name="vchComment" Type="varchar" Mode="In" />
-    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
-    <Parameter Name="iVCSFlags" Type="int" Mode="In" />
-    <Parameter Name="iActionFlag" Type="int" Mode="In" />
-  </Function>
-  <Function Name="dt_checkoutobject_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="chObjectType" Type="char" Mode="In" />
-    <Parameter Name="vchObjectName" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchComment" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
-    <Parameter Name="iVCSFlags" Type="int" Mode="In" />
-    <Parameter Name="iActionFlag" Type="int" Mode="In" />
-  </Function>
-  <Function Name="dt_displayoaerror" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="iObject" Type="int" Mode="In" />
-    <Parameter Name="iresult" Type="int" Mode="In" />
-  </Function>
-  <Function Name="dt_displayoaerror_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="iObject" Type="int" Mode="In" />
-    <Parameter Name="iresult" Type="int" Mode="In" />
-  </Function>
-  <Function Name="dt_droppropertiesbyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="int" Mode="In" />
-    <Parameter Name="property" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="dt_dropuserobjectbyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="dt_generateansiname" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="name" Type="varchar" Mode="InOut" />
-  </Function>
-  <Function Name="dt_getobjwithprop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="property" Type="varchar" Mode="In" />
-    <Parameter Name="value" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="dt_getobjwithprop_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="property" Type="varchar" Mode="In" />
-    <Parameter Name="uvalue" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="dt_getpropertiesbyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="int" Mode="In" />
-    <Parameter Name="property" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="dt_getpropertiesbyid_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="int" Mode="In" />
-    <Parameter Name="property" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="dt_getpropertiesbyid_vcs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="int" Mode="In" />
-    <Parameter Name="property" Type="varchar" Mode="In" />
-    <Parameter Name="value" Type="varchar" Mode="InOut" />
-  </Function>
-  <Function Name="dt_getpropertiesbyid_vcs_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="int" Mode="In" />
-    <Parameter Name="property" Type="varchar" Mode="In" />
-    <Parameter Name="value" Type="nvarchar" Mode="InOut" />
-  </Function>
-  <Function Name="dt_isundersourcecontrol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
-    <Parameter Name="iWhoToo" Type="int" Mode="In" />
-  </Function>
-  <Function Name="dt_isundersourcecontrol_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
-    <Parameter Name="iWhoToo" Type="int" Mode="In" />
-  </Function>
-  <Function Name="dt_removefromsourcecontrol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="dt_setpropertybyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="int" Mode="In" />
-    <Parameter Name="property" Type="varchar" Mode="In" />
-    <Parameter Name="value" Type="varchar" Mode="In" />
-    <Parameter Name="lvalue" Type="image" Mode="In" />
-  </Function>
-  <Function Name="dt_setpropertybyid_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id" Type="int" Mode="In" />
-    <Parameter Name="property" Type="varchar" Mode="In" />
-    <Parameter Name="uvalue" Type="nvarchar" Mode="In" />
-    <Parameter Name="lvalue" Type="image" Mode="In" />
-  </Function>
-  <Function Name="dt_validateloginparams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="dt_validateloginparams_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="dt_vcsenabled" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="dt_verstamp006" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="dt_verstamp007" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="dt_whocheckedout" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="chObjectType" Type="char" Mode="In" />
-    <Parameter Name="vchObjectName" Type="varchar" Mode="In" />
-    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="dt_whocheckedout_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="chObjectType" Type="char" Mode="In" />
-    <Parameter Name="vchObjectName" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
-    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="GetCOAValidation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="tinyint">
     <Parameter Name="COACode" Type="varchar" Mode="In" />
@@ -1958,6 +2261,7 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Parameter Name="FromDate" Type="datetime" Mode="In" />
     <Parameter Name="ToDate" Type="datetime" Mode="In" />
     <Parameter Name="CustomerCode" Type="char" Mode="In" />
+    <Parameter Name="VehicleNo" Type="char" Mode="In" />
   </Function>
   <Function Name="SelectListReports" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="FromCode" Type="varchar" Mode="In" />
@@ -1973,6 +2277,8 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Parameter Name="Option" Type="varchar" Mode="In" />
     <Parameter Name="BranchCode" Type="varchar" Mode="In" />
     <Parameter Name="ClosingDate" Type="datetime" Mode="In" />
+    <Parameter Name="GlCode" Type="varchar" Mode="In" />
+    <Parameter Name="DivisionCode" Type="varchar" Mode="In" />
   </Function>
   <Function Name="SelectPosting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PostingDate" Type="datetime" Mode="In" />
@@ -2148,25 +2454,6 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Parameter Name="OPTION" Type="varchar" Mode="In" />
     <Parameter Name="nType" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="SelectVehicleLedgerReports" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FromBranchCode" Type="varchar" Mode="In" />
-    <Parameter Name="ToBranchCode" Type="varchar" Mode="In" />
-    <Parameter Name="FromDivisionCode" Type="varchar" Mode="In" />
-    <Parameter Name="ToDivisionCode" Type="varchar" Mode="In" />
-    <Parameter Name="FromOwnerCode" Type="char" Mode="In" />
-    <Parameter Name="ToOwnerCode" Type="char" Mode="In" />
-    <Parameter Name="FromGLCode" Type="varchar" Mode="In" />
-    <Parameter Name="FromVehicleCode" Type="char" Mode="In" />
-    <Parameter Name="ToVehicleCode" Type="char" Mode="In" />
-    <Parameter Name="ToGLCode" Type="varchar" Mode="In" />
-    <Parameter Name="FromDate" Type="datetime" Mode="In" />
-    <Parameter Name="ToDate" Type="datetime" Mode="In" />
-    <Parameter Name="nType" Type="bigint" Mode="In" />
-    <Parameter Name="VoucherNatureCode" Type="varchar" Mode="In" />
-    <Parameter Name="ReportSD" Type="varchar" Mode="In" />
-    <Parameter Name="Posted" Type="bit" Mode="In" />
-    <Parameter Name="PostedED" Type="bit" Mode="In" />
-  </Function>
   <Function Name="SelectVehicleOwners" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Option" Type="varchar" Mode="In" />
     <Parameter Name="OwnerCode" Type="varchar" Mode="In" />
@@ -2246,8 +2533,6 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Parameter Name="FSFGLCode" Type="char" Mode="In" />
     <Parameter Name="FSFGLDescription" Type="char" Mode="In" />
     <Parameter Name="GUID" Type="bigint" Mode="In" />
-    <Parameter Name="RefNo" Type="varchar" Mode="In" />
-    <Parameter Name="UpdatedOn" Type="datetime" Mode="In" />
     <Parameter Name="NewRecord" Type="bigint" Mode="In" />
   </Function>
   <Function Name="UpdateCOASubsidiaries" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -2447,6 +2732,8 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Parameter Name="RecordNo" Type="bigint" Mode="In" />
     <Parameter Name="GUID" Type="bigint" Mode="In" />
     <Parameter Name="NewRecord" Type="bigint" Mode="In" />
+    <Parameter Name="LongTripRefNo" Type="nchar" Mode="In" />
+    <Parameter Name="IsLocalTrip" Type="bit" Mode="In" />
   </Function>
   <Function Name="UpdateOrdersDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="OrderNature" Type="nchar" Mode="In" />
@@ -2587,6 +2874,8 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Parameter Name="Nature" Type="varchar" Mode="In" />
     <Parameter Name="UrduTitle" Type="nvarchar" Mode="In" />
     <Parameter Name="DefinitionDate" Type="datetime" Mode="In" />
+    <Parameter Name="GLCode" Type="char" Mode="In" />
+    <Parameter Name="GLDescription" Type="char" Mode="In" />
     <Parameter Name="NewRecord" Type="bigint" Mode="In" />
   </Function>
   <Function Name="UpdateUserSecurities" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -2623,6 +2912,7 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Parameter Name="Amount" Type="decimal" Mode="In" />
     <Parameter Name="TypeCode" Type="char" Mode="In" />
     <Parameter Name="Type" Type="char" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
     <Parameter Name="DivisionCode" Type="char" Mode="In" />
     <Parameter Name="Division" Type="varchar" Mode="In" />
     <Parameter Name="Mode" Type="varchar" Mode="In" />
@@ -2648,6 +2938,7 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <Parameter Name="VehicleCode" Type="char" Mode="In" />
     <Parameter Name="VehicleDescription" Type="varchar" Mode="In" />
     <Parameter Name="OwnerCode" Type="varchar" Mode="In" />
+    <Parameter Name="IsThirdParty" Type="bit" Mode="In" />
     <Parameter Name="OwnerName" Type="varchar" Mode="In" />
     <Parameter Name="Capacity" Type="varchar" Mode="In" />
     <Parameter Name="InstallmentGLCode" Type="varchar" Mode="In" />
@@ -2703,11 +2994,12 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DestinationPoints" EntityType="Self.DestinationPoints" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Divisions" EntityType="Self.Divisions" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HistoryTransactionAudit" EntityType="Self.HistoryTransactionAudit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceExpences" EntityType="Self.InvoiceExpences" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Options" EntityType="Self.Options" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayableAccounts" EntityType="Self.PayableAccounts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductRates" EntityType="Self.ProductRates" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductValues" EntityType="Self.ProductValues" Schema="dbo" store:Type="Tables" />
@@ -2719,11 +3011,9 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <EntitySet Name="TransactionNatures" EntityType="Self.TransactionNatures" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TransactionTypes" EntityType="Self.TransactionTypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserSecurities" EntityType="Self.UserSecurities" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="VehicleAdjustmentDetails" EntityType="Self.VehicleAdjustmentDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VehicleAdjustments" EntityType="Self.VehicleAdjustments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VehicleOwners" EntityType="Self.VehicleOwners" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Vehicles " EntityType="Self.Vehicles " Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="VoucherDetails" EntityType="Self.VoucherDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vouchers" EntityType="Self.Vouchers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FSFControls" EntityType="Self.FSFControls" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -2731,7 +3021,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [FSFControls].[ControlDescription] AS [ControlDescription], 
     [FSFControls].[DefinitionDate] AS [DefinitionDate], 
     [FSFControls].[ReportTitle] AS [ReportTitle], 
-    [FSFControls].[GUID] AS [GUID]
+    [FSFControls].[GUID] AS [GUID], 
+    [FSFControls].[RefNo] AS [RefNo], 
+    [FSFControls].[UpdatedBy] AS [UpdatedBy], 
+    [FSFControls].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[FSFControls] AS [FSFControls]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="FSFGenerals" EntityType="Self.FSFGenerals" store:Type="Tables" store:Schema="dbo">
@@ -2741,7 +3034,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [FSFGenerals].[GeneralDescription] AS [GeneralDescription], 
     [FSFGenerals].[DefinitionDate] AS [DefinitionDate], 
     [FSFGenerals].[ReportTitle] AS [ReportTitle], 
-    [FSFGenerals].[GUID] AS [GUID]
+    [FSFGenerals].[GUID] AS [GUID], 
+    [FSFGenerals].[RefNo] AS [RefNo], 
+    [FSFGenerals].[UpdatedBy] AS [UpdatedBy], 
+    [FSFGenerals].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[FSFGenerals] AS [FSFGenerals]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="FSFSubsidiaries" EntityType="Self.FSFSubsidiaries" store:Type="Tables" store:Schema="dbo">
@@ -2752,7 +3048,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [FSFSubsidiaries].[SubsidiaryDescription] AS [SubsidiaryDescription], 
     [FSFSubsidiaries].[DefinitionDate] AS [DefinitionDate], 
     [FSFSubsidiaries].[ReportTitle] AS [ReportTitle], 
-    [FSFSubsidiaries].[GUID] AS [GUID]
+    [FSFSubsidiaries].[GUID] AS [GUID], 
+    [FSFSubsidiaries].[RefNo] AS [RefNo], 
+    [FSFSubsidiaries].[UpdatedBy] AS [UpdatedBy], 
+    [FSFSubsidiaries].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[FSFSubsidiaries] AS [FSFSubsidiaries]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="FSFSubSubsidiaries" EntityType="Self.FSFSubSubsidiaries" store:Type="Tables" store:Schema="dbo">
@@ -2764,7 +3063,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [FSFSubSubsidiaries].[SubSubsidiaryDescription] AS [SubSubsidiaryDescription], 
     [FSFSubSubsidiaries].[DefinitionDate] AS [DefinitionDate], 
     [FSFSubSubsidiaries].[ReportTitle] AS [ReportTitle], 
-    [FSFSubSubsidiaries].[GUID] AS [GUID]
+    [FSFSubSubsidiaries].[GUID] AS [GUID], 
+    [FSFSubSubsidiaries].[RefNo] AS [RefNo], 
+    [FSFSubSubsidiaries].[UpdatedBy] AS [UpdatedBy], 
+    [FSFSubSubsidiaries].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[FSFSubSubsidiaries] AS [FSFSubSubsidiaries]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="GeneratedReferences" EntityType="Self.GeneratedReferences" store:Type="Tables" store:Schema="dbo">
@@ -2777,7 +3079,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [GeneratedReferences].[TransactionNo] AS [TransactionNo], 
     [GeneratedReferences].[BranchCode] AS [BranchCode], 
     [GeneratedReferences].[DocumentNature] AS [DocumentNature], 
-    [GeneratedReferences].[DocumentNo] AS [DocumentNo]
+    [GeneratedReferences].[DocumentNo] AS [DocumentNo], 
+    [GeneratedReferences].[RefNo] AS [RefNo], 
+    [GeneratedReferences].[UpdatedBy] AS [UpdatedBy], 
+    [GeneratedReferences].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[GeneratedReferences] AS [GeneratedReferences]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="GL_DetailPaymentVoucherTAB" EntityType="Self.GL_DetailPaymentVoucherTAB" store:Type="Tables" store:Schema="dbo">
@@ -2795,7 +3100,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [GL_DetailPaymentVoucherTAB].[TaxValue] AS [TaxValue], 
     [GL_DetailPaymentVoucherTAB].[GLCode] AS [GLCode], 
     [GL_DetailPaymentVoucherTAB].[DivisionCode] AS [DivisionCode], 
-    [GL_DetailPaymentVoucherTAB].[OldRef] AS [OldRef]
+    [GL_DetailPaymentVoucherTAB].[OldRef] AS [OldRef], 
+    [GL_DetailPaymentVoucherTAB].[RefNo] AS [RefNo], 
+    [GL_DetailPaymentVoucherTAB].[UpdatedBy] AS [UpdatedBy], 
+    [GL_DetailPaymentVoucherTAB].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[GL_DetailPaymentVoucherTAB] AS [GL_DetailPaymentVoucherTAB]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="GL_MasterPaymentVoucherTAB" EntityType="Self.GL_MasterPaymentVoucherTAB" store:Type="Tables" store:Schema="dbo">
@@ -2821,7 +3129,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [GL_MasterPaymentVoucherTAB].[GUID] AS [GUID], 
     [GL_MasterPaymentVoucherTAB].[OldRef] AS [OldRef], 
     [GL_MasterPaymentVoucherTAB].[RecordCreator] AS [RecordCreator], 
-    [GL_MasterPaymentVoucherTAB].[RecordOwner] AS [RecordOwner]
+    [GL_MasterPaymentVoucherTAB].[RecordOwner] AS [RecordOwner], 
+    [GL_MasterPaymentVoucherTAB].[RefNo] AS [RefNo], 
+    [GL_MasterPaymentVoucherTAB].[UpdatedBy] AS [UpdatedBy], 
+    [GL_MasterPaymentVoucherTAB].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[GL_MasterPaymentVoucherTAB] AS [GL_MasterPaymentVoucherTAB]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="OpeningBalances" EntityType="Self.OpeningBalances" store:Type="Tables" store:Schema="dbo">
@@ -2832,7 +3143,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [OpeningBalances].[GLCode] AS [GLCode], 
     [OpeningBalances].[DebitBalance] AS [DebitBalance], 
     [OpeningBalances].[CreditBalance] AS [CreditBalance], 
-    [OpeningBalances].[GUID] AS [GUID]
+    [OpeningBalances].[GUID] AS [GUID], 
+    [OpeningBalances].[RefNo] AS [RefNo], 
+    [OpeningBalances].[UpdatedBy] AS [UpdatedBy], 
+    [OpeningBalances].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[OpeningBalances] AS [OpeningBalances]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="PaymentVoucherDetails" EntityType="Self.PaymentVoucherDetails" store:Type="Tables" store:Schema="dbo">
@@ -2850,7 +3164,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [PaymentVoucherDetails].[TaxValue] AS [TaxValue], 
     [PaymentVoucherDetails].[GLCode] AS [GLCode], 
     [PaymentVoucherDetails].[DivisionCode] AS [DivisionCode], 
-    [PaymentVoucherDetails].[OldRef] AS [OldRef]
+    [PaymentVoucherDetails].[OldRef] AS [OldRef], 
+    [PaymentVoucherDetails].[RefNo] AS [RefNo], 
+    [PaymentVoucherDetails].[UpdatedBy] AS [UpdatedBy], 
+    [PaymentVoucherDetails].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[PaymentVoucherDetails] AS [PaymentVoucherDetails]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="PaymentVouchers" EntityType="Self.PaymentVouchers" store:Type="Tables" store:Schema="dbo">
@@ -2876,7 +3193,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [PaymentVouchers].[GUID] AS [GUID], 
     [PaymentVouchers].[OldRef] AS [OldRef], 
     [PaymentVouchers].[RecordCreator] AS [RecordCreator], 
-    [PaymentVouchers].[RecordOwner] AS [RecordOwner]
+    [PaymentVouchers].[RecordOwner] AS [RecordOwner], 
+    [PaymentVouchers].[RefNo] AS [RefNo], 
+    [PaymentVouchers].[UpdatedBy] AS [UpdatedBy], 
+    [PaymentVouchers].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[PaymentVouchers] AS [PaymentVouchers]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="ProjectNodesSetup" EntityType="Self.ProjectNodesSetup" store:Type="Tables" store:Schema="dbo">
@@ -2889,7 +3209,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [ProjectNodesSetup].[ShowNode] AS [ShowNode], 
     [ProjectNodesSetup].[ImageIndex] AS [ImageIndex], 
     [ProjectNodesSetup].[SortingOrder] AS [SortingOrder], 
-    [ProjectNodesSetup].[SystemType] AS [SystemType]
+    [ProjectNodesSetup].[SystemType] AS [SystemType], 
+    [ProjectNodesSetup].[RefNo] AS [RefNo], 
+    [ProjectNodesSetup].[UpdatedBy] AS [UpdatedBy], 
+    [ProjectNodesSetup].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[ProjectNodesSetup] AS [ProjectNodesSetup]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="SetupTables" EntityType="Self.SetupTables" store:Type="Tables" store:Schema="dbo">
@@ -2899,8 +3222,114 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [SetupTables].[TableNature] AS [TableNature], 
     [SetupTables].[TableType] AS [TableType], 
     [SetupTables].[ShowTable] AS [ShowTable], 
-    [SetupTables].[ss] AS [ss]
+    [SetupTables].[ss] AS [ss], 
+    [SetupTables].[RefNo] AS [RefNo], 
+    [SetupTables].[UpdatedBy] AS [UpdatedBy], 
+    [SetupTables].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[SetupTables] AS [SetupTables]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TempCOAOpening" EntityType="Self.TempCOAOpening" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TempCOAOpening].[BranchCode] AS [BranchCode], 
+    [TempCOAOpening].[BranchRptTitle] AS [BranchRptTitle], 
+    [TempCOAOpening].[DivisionCode] AS [DivisionCode], 
+    [TempCOAOpening].[DivisionRptTitle] AS [DivisionRptTitle], 
+    [TempCOAOpening].[GLCode] AS [GLCode], 
+    [TempCOAOpening].[GLRptTitle] AS [GLRptTitle], 
+    [TempCOAOpening].[ControlCode] AS [ControlCode], 
+    [TempCOAOpening].[ControlRptTitle] AS [ControlRptTitle], 
+    [TempCOAOpening].[GeneralCode] AS [GeneralCode], 
+    [TempCOAOpening].[GeneralRptTitle] AS [GeneralRptTitle], 
+    [TempCOAOpening].[SubSidiaryCode] AS [SubSidiaryCode], 
+    [TempCOAOpening].[SubsidiaryRptTitle] AS [SubsidiaryRptTitle], 
+    [TempCOAOpening].[SubsubCode] AS [SubsubCode], 
+    [TempCOAOpening].[SubSubRptTitle] AS [SubSubRptTitle], 
+    [TempCOAOpening].[FSFGLCode] AS [FSFGLCode], 
+    [TempCOAOpening].[FSFGLRptTitle] AS [FSFGLRptTitle], 
+    [TempCOAOpening].[FSFControlCode] AS [FSFControlCode], 
+    [TempCOAOpening].[FSFControlRptTitle] AS [FSFControlRptTitle], 
+    [TempCOAOpening].[FSFGeneralCode] AS [FSFGeneralCode], 
+    [TempCOAOpening].[FSFGeneralRptTitle] AS [FSFGeneralRptTitle], 
+    [TempCOAOpening].[FSFSubSidiaryCode] AS [FSFSubSidiaryCode], 
+    [TempCOAOpening].[FSFSubsidiaryRptTitle] AS [FSFSubsidiaryRptTitle], 
+    [TempCOAOpening].[FSFSubsubCode] AS [FSFSubsubCode], 
+    [TempCOAOpening].[FSFSubSubRptTitle] AS [FSFSubSubRptTitle], 
+    [TempCOAOpening].[OpeningBalance] AS [OpeningBalance], 
+    [TempCOAOpening].[RefNo] AS [RefNo], 
+    [TempCOAOpening].[UpdatedBy] AS [UpdatedBy], 
+    [TempCOAOpening].[UpdatedOn] AS [UpdatedOn]
+    FROM [dbo].[TempCOAOpening] AS [TempCOAOpening]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TempTransDetailCF" EntityType="Self.TempTransDetailCF" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TempTransDetailCF].[BranchCode] AS [BranchCode], 
+    [TempTransDetailCF].[BranchRptTitle] AS [BranchRptTitle], 
+    [TempTransDetailCF].[DivisionCode] AS [DivisionCode], 
+    [TempTransDetailCF].[DivisionRptTitle] AS [DivisionRptTitle], 
+    [TempTransDetailCF].[GLCode] AS [GLCode], 
+    [TempTransDetailCF].[GLRptTitle] AS [GLRptTitle], 
+    [TempTransDetailCF].[NatureCode] AS [NatureCode], 
+    [TempTransDetailCF].[NatureRptTitle] AS [NatureRptTitle], 
+    [TempTransDetailCF].[VoucherDate] AS [VoucherDate], 
+    [TempTransDetailCF].[VoucherNo] AS [VoucherNo], 
+    [TempTransDetailCF].[OldRef] AS [OldRef], 
+    [TempTransDetailCF].[Narration] AS [Narration], 
+    [TempTransDetailCF].[NarrationMain] AS [NarrationMain], 
+    [TempTransDetailCF].[RecordNo] AS [RecordNo], 
+    [TempTransDetailCF].[Reference] AS [Reference], 
+    [TempTransDetailCF].[Debit] AS [Debit], 
+    [TempTransDetailCF].[Credit] AS [Credit], 
+    [TempTransDetailCF].[ControlCode] AS [ControlCode], 
+    [TempTransDetailCF].[ControlRptTitle] AS [ControlRptTitle], 
+    [TempTransDetailCF].[GeneralCode] AS [GeneralCode], 
+    [TempTransDetailCF].[GeneralRptTitle] AS [GeneralRptTitle], 
+    [TempTransDetailCF].[SubSidiaryCode] AS [SubSidiaryCode], 
+    [TempTransDetailCF].[SubsidiaryRptTitle] AS [SubsidiaryRptTitle], 
+    [TempTransDetailCF].[SubsubCode] AS [SubsubCode], 
+    [TempTransDetailCF].[SubSubRptTitle] AS [SubSubRptTitle], 
+    [TempTransDetailCF].[ApplyGrouping] AS [ApplyGrouping], 
+    [TempTransDetailCF].[Posted] AS [Posted], 
+    [TempTransDetailCF].[Locked] AS [Locked], 
+    [TempTransDetailCF].[DetailRecordNo] AS [DetailRecordNo], 
+    [TempTransDetailCF].[RefNo] AS [RefNo], 
+    [TempTransDetailCF].[UpdatedBy] AS [UpdatedBy], 
+    [TempTransDetailCF].[UpdatedOn] AS [UpdatedOn]
+    FROM [dbo].[TempTransDetailCF] AS [TempTransDetailCF]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TempTransDetailLedger" EntityType="Self.TempTransDetailLedger" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TempTransDetailLedger].[BranchCode] AS [BranchCode], 
+    [TempTransDetailLedger].[BranchRptTitle] AS [BranchRptTitle], 
+    [TempTransDetailLedger].[DivisionCode] AS [DivisionCode], 
+    [TempTransDetailLedger].[DivisionRptTitle] AS [DivisionRptTitle], 
+    [TempTransDetailLedger].[GLCode] AS [GLCode], 
+    [TempTransDetailLedger].[GLRptTitle] AS [GLRptTitle], 
+    [TempTransDetailLedger].[NatureCode] AS [NatureCode], 
+    [TempTransDetailLedger].[NatureRptTitle] AS [NatureRptTitle], 
+    [TempTransDetailLedger].[VoucherDate] AS [VoucherDate], 
+    [TempTransDetailLedger].[VoucherNo] AS [VoucherNo], 
+    [TempTransDetailLedger].[OldRef] AS [OldRef], 
+    [TempTransDetailLedger].[Narration] AS [Narration], 
+    [TempTransDetailLedger].[NarrationMain] AS [NarrationMain], 
+    [TempTransDetailLedger].[RecordNo] AS [RecordNo], 
+    [TempTransDetailLedger].[Reference] AS [Reference], 
+    [TempTransDetailLedger].[Debit] AS [Debit], 
+    [TempTransDetailLedger].[Credit] AS [Credit], 
+    [TempTransDetailLedger].[ControlCode] AS [ControlCode], 
+    [TempTransDetailLedger].[ControlRptTitle] AS [ControlRptTitle], 
+    [TempTransDetailLedger].[GeneralCode] AS [GeneralCode], 
+    [TempTransDetailLedger].[GeneralRptTitle] AS [GeneralRptTitle], 
+    [TempTransDetailLedger].[SubSidiaryCode] AS [SubSidiaryCode], 
+    [TempTransDetailLedger].[SubsidiaryRptTitle] AS [SubsidiaryRptTitle], 
+    [TempTransDetailLedger].[SubsubCode] AS [SubsubCode], 
+    [TempTransDetailLedger].[SubSubRptTitle] AS [SubSubRptTitle], 
+    [TempTransDetailLedger].[Posted] AS [Posted], 
+    [TempTransDetailLedger].[Locked] AS [Locked], 
+    [TempTransDetailLedger].[DetailRecordNo] AS [DetailRecordNo], 
+    [TempTransDetailLedger].[RefNo] AS [RefNo], 
+    [TempTransDetailLedger].[UpdatedBy] AS [UpdatedBy], 
+    [TempTransDetailLedger].[UpdatedOn] AS [UpdatedOn]
+    FROM [dbo].[TempTransDetailLedger] AS [TempTransDetailLedger]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="TempTransDetailLedgerTrial" EntityType="Self.TempTransDetailLedgerTrial" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -2920,7 +3349,10 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [TempTransDetailLedgerTrial].[SubSubRptTitle] AS [SubSubRptTitle], 
     [TempTransDetailLedgerTrial].[OpeningBalance] AS [OpeningBalance], 
     [TempTransDetailLedgerTrial].[DebitBalance] AS [DebitBalance], 
-    [TempTransDetailLedgerTrial].[CreditBalance] AS [CreditBalance]
+    [TempTransDetailLedgerTrial].[CreditBalance] AS [CreditBalance], 
+    [TempTransDetailLedgerTrial].[RefNo] AS [RefNo], 
+    [TempTransDetailLedgerTrial].[UpdatedBy] AS [UpdatedBy], 
+    [TempTransDetailLedgerTrial].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[TempTransDetailLedgerTrial] AS [TempTransDetailLedgerTrial]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="TempTransDetailTrialFSF" EntityType="Self.TempTransDetailTrialFSF" store:Type="Tables" store:Schema="dbo">
@@ -2951,8 +3383,51 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [TempTransDetailTrialFSF].[FSFSubSubRptTitle] AS [FSFSubSubRptTitle], 
     [TempTransDetailTrialFSF].[OpeningBalance] AS [OpeningBalance], 
     [TempTransDetailTrialFSF].[DebitBalance] AS [DebitBalance], 
-    [TempTransDetailTrialFSF].[CreditBalance] AS [CreditBalance]
+    [TempTransDetailTrialFSF].[CreditBalance] AS [CreditBalance], 
+    [TempTransDetailTrialFSF].[RefNo] AS [RefNo], 
+    [TempTransDetailTrialFSF].[UpdatedBy] AS [UpdatedBy], 
+    [TempTransDetailTrialFSF].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[TempTransDetailTrialFSF] AS [TempTransDetailTrialFSF]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TempTransDetailVBill" EntityType="Self.TempTransDetailVBill" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TempTransDetailVBill].[MODE] AS [MODE], 
+    [TempTransDetailVBill].[TransactionNo] AS [TransactionNo], 
+    [TempTransDetailVBill].[TransactionDate] AS [TransactionDate], 
+    [TempTransDetailVBill].[RecordNo] AS [RecordNo], 
+    [TempTransDetailVBill].[CustomerReference] AS [CustomerReference], 
+    [TempTransDetailVBill].[VehicleCode] AS [VehicleCode], 
+    [TempTransDetailVBill].[StationPointCode] AS [StationPointCode], 
+    [TempTransDetailVBill].[DestinationPointCode] AS [DestinationPointCode], 
+    [TempTransDetailVBill].[ProductCode] AS [ProductCode], 
+    [TempTransDetailVBill].[Quantity] AS [Quantity], 
+    [TempTransDetailVBill].[Rate] AS [Rate], 
+    [TempTransDetailVBill].[Debit] AS [Debit], 
+    [TempTransDetailVBill].[Credit] AS [Credit], 
+    [TempTransDetailVBill].[Commission] AS [Commission], 
+    [TempTransDetailVBill].[ShortageQuantity] AS [ShortageQuantity], 
+    [TempTransDetailVBill].[Shortage] AS [Shortage], 
+    [TempTransDetailVBill].[QuantityValue] AS [QuantityValue], 
+    [TempTransDetailVBill].[OwnerCode] AS [OwnerCode], 
+    [TempTransDetailVBill].[OwnerName] AS [OwnerName], 
+    [TempTransDetailVBill].[UrduOwnerName] AS [UrduOwnerName], 
+    [TempTransDetailVBill].[ProductUrdu] AS [ProductUrdu], 
+    [TempTransDetailVBill].[StationPointName] AS [StationPointName], 
+    [TempTransDetailVBill].[StationPointUrdu] AS [StationPointUrdu], 
+    [TempTransDetailVBill].[DestinationPointName] AS [DestinationPointName], 
+    [TempTransDetailVBill].[DestinationPointUrdu] AS [DestinationPointUrdu], 
+    [TempTransDetailVBill].[GLCode] AS [GLCode], 
+    [TempTransDetailVBill].[GLDescription] AS [GLDescription], 
+    [TempTransDetailVBill].[CustomerCode] AS [CustomerCode], 
+    [TempTransDetailVBill].[CustomerName] AS [CustomerName], 
+    [TempTransDetailVBill].[UrduCustomerName] AS [UrduCustomerName], 
+    [TempTransDetailVBill].[Capacity] AS [Capacity], 
+    [TempTransDetailVBill].[Narration] AS [Narration], 
+    [TempTransDetailVBill].[TripAdvance] AS [TripAdvance], 
+    [TempTransDetailVBill].[RefNo] AS [RefNo], 
+    [TempTransDetailVBill].[UpdatedBy] AS [UpdatedBy], 
+    [TempTransDetailVBill].[UpdatedOn] AS [UpdatedOn]
+    FROM [dbo].[TempTransDetailVBill] AS [TempTransDetailVBill]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="UsedTransactionsDetail" EntityType="Self.UsedTransactionsDetail" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -2967,8 +3442,46 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [UsedTransactionsDetail].[RefVoucherNo] AS [RefVoucherNo], 
     [UsedTransactionsDetail].[RefVoucherDate] AS [RefVoucherDate], 
     [UsedTransactionsDetail].[RefBillNo] AS [RefBillNo], 
-    [UsedTransactionsDetail].[AmountUsed] AS [AmountUsed]
+    [UsedTransactionsDetail].[AmountUsed] AS [AmountUsed], 
+    [UsedTransactionsDetail].[RefNo] AS [RefNo], 
+    [UsedTransactionsDetail].[UpdatedBy] AS [UpdatedBy], 
+    [UsedTransactionsDetail].[UpdatedOn] AS [UpdatedOn]
     FROM [dbo].[UsedTransactionsDetail] AS [UsedTransactionsDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VehicleAdjustmentDetails" EntityType="Self.VehicleAdjustmentDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VehicleAdjustmentDetails].[BranchCode] AS [BranchCode], 
+    [VehicleAdjustmentDetails].[VehicleAdjustmentNature] AS [VehicleAdjustmentNature], 
+    [VehicleAdjustmentDetails].[VehicleAdjustmentNo] AS [VehicleAdjustmentNo], 
+    [VehicleAdjustmentDetails].[TransactionTypeCode] AS [TransactionTypeCode], 
+    [VehicleAdjustmentDetails].[Amount] AS [Amount], 
+    [VehicleAdjustmentDetails].[Description] AS [Description], 
+    [VehicleAdjustmentDetails].[UrduDescription] AS [UrduDescription], 
+    [VehicleAdjustmentDetails].[GLCode] AS [GLCode], 
+    [VehicleAdjustmentDetails].[DivisionCode] AS [DivisionCode], 
+    [VehicleAdjustmentDetails].[InvoiceRefNo] AS [InvoiceRefNo], 
+    [VehicleAdjustmentDetails].[RecordNo] AS [RecordNo], 
+    [VehicleAdjustmentDetails].[RefNo] AS [RefNo], 
+    [VehicleAdjustmentDetails].[UpdatedBy] AS [UpdatedBy], 
+    [VehicleAdjustmentDetails].[UpdatedOn] AS [UpdatedOn]
+    FROM [dbo].[VehicleAdjustmentDetails] AS [VehicleAdjustmentDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VoucherDetails" EntityType="Self.VoucherDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VoucherDetails].[BranchCode] AS [BranchCode], 
+    [VoucherDetails].[VoucherNature] AS [VoucherNature], 
+    [VoucherDetails].[VoucherNo] AS [VoucherNo], 
+    [VoucherDetails].[GLCode] AS [GLCode], 
+    [VoucherDetails].[DivisionCode] AS [DivisionCode], 
+    [VoucherDetails].[Reference] AS [Reference], 
+    [VoucherDetails].[Debit] AS [Debit], 
+    [VoucherDetails].[Credit] AS [Credit], 
+    [VoucherDetails].[Narration] AS [Narration], 
+    [VoucherDetails].[RecordNo] AS [RecordNo], 
+    [VoucherDetails].[RefNo] AS [RefNo], 
+    [VoucherDetails].[UpdatedBy] AS [UpdatedBy], 
+    [VoucherDetails].[UpdatedOn] AS [UpdatedOn]
+    FROM [dbo].[VoucherDetails] AS [VoucherDetails]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="CreditDebitNotEqual" EntityType="Self.CreditDebitNotEqual" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -3032,6 +3545,46 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     [QryOtherAmountExcInvoice].[VoucherDate] AS [VoucherDate]
     FROM [dbo].[QryOtherAmountExcInvoice] AS [QryOtherAmountExcInvoice]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="vwTransDetail" EntityType="Self.vwTransDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwTransDetail].[ProductName] AS [ProductName], 
+    [vwTransDetail].[StationPointName] AS [StationPointName], 
+    [vwTransDetail].[DestinationPointName] AS [DestinationPointName], 
+    [vwTransDetail].[TokenNo] AS [TokenNo], 
+    [vwTransDetail].[LongTripRefNo] AS [LongTripRefNo], 
+    [vwTransDetail].[IsLocalTrip] AS [IsLocalTrip], 
+    [vwTransDetail].[InvoiceRefNo] AS [InvoiceRefNo], 
+    [vwTransDetail].[TYPE] AS [TYPE], 
+    [vwTransDetail].[BranchCode] AS [BranchCode], 
+    [vwTransDetail].[Description] AS [Description], 
+    [vwTransDetail].[TransactionNature] AS [TransactionNature], 
+    [vwTransDetail].[TransactionNo] AS [TransactionNo], 
+    [vwTransDetail].[TransactionDate] AS [TransactionDate], 
+    [vwTransDetail].[ExpenceDate] AS [ExpenceDate], 
+    [vwTransDetail].[TransactionTypeCode] AS [TransactionTypeCode], 
+    [vwTransDetail].[AmountReceived] AS [AmountReceived], 
+    [vwTransDetail].[AmountPaid] AS [AmountPaid], 
+    [vwTransDetail].[RecordNo] AS [RecordNo], 
+    [vwTransDetail].[VehicleCode] AS [VehicleCode]
+    FROM [dbo].[vwTransDetail] AS [vwTransDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwTransDetailAll" EntityType="Self.vwTransDetailAll" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwTransDetailAll].[TYPE] AS [TYPE], 
+    [vwTransDetailAll].[IsLocalTrip] AS [IsLocalTrip], 
+    [vwTransDetailAll].[InvoiceRefNo] AS [InvoiceRefNo], 
+    [vwTransDetailAll].[BranchCode] AS [BranchCode], 
+    [vwTransDetailAll].[Description] AS [Description], 
+    [vwTransDetailAll].[TransactionNature] AS [TransactionNature], 
+    [vwTransDetailAll].[TransactionNo] AS [TransactionNo], 
+    [vwTransDetailAll].[TransactionDate] AS [TransactionDate], 
+    [vwTransDetailAll].[TransactionTypeCode] AS [TransactionTypeCode], 
+    [vwTransDetailAll].[AmountReceived] AS [AmountReceived], 
+    [vwTransDetailAll].[AmountPaid] AS [AmountPaid], 
+    [vwTransDetailAll].[RecordNo] AS [RecordNo], 
+    [vwTransDetailAll].[VehicleCode] AS [VehicleCode]
+    FROM [dbo].[vwTransDetailAll] AS [vwTransDetailAll]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="Cities_Customers_FK1" Association="Self.Cities_Customers_FK1">
       <End Role="Cities" EntitySet="Cities" />
       <End Role="Customers" EntitySet="Customers" />
@@ -3067,6 +3620,18 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     <AssociationSet Name="FK_CustomerBills_Customers" Association="Self.FK_CustomerBills_Customers">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="CustomerBills" EntitySet="CustomerBills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceExpences_AdjustmentType" Association="Self.FK_InvoiceExpences_AdjustmentType">
+      <End Role="TransactionTypes" EntitySet="TransactionTypes" />
+      <End Role="InvoiceExpences" EntitySet="InvoiceExpences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceExpences_Invoices" Association="Self.FK_InvoiceExpences_Invoices">
+      <End Role="Invoices" EntitySet="Invoices" />
+      <End Role="InvoiceExpences" EntitySet="InvoiceExpences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceExpences_TransactionTypes" Association="Self.FK_InvoiceExpences_TransactionTypes">
+      <End Role="TransactionTypes" EntitySet="TransactionTypes" />
+      <End Role="InvoiceExpences" EntitySet="InvoiceExpences" />
     </AssociationSet>
     <AssociationSet Name="FK_Invoices_DestinationPoints" Association="Self.FK_Invoices_DestinationPoints">
       <End Role="DestinationPoints" EntitySet="DestinationPoints" />
@@ -3121,7 +3686,7 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
       <End Role="Invoices" EntitySet="Invoices" />
     </AssociationSet>
     <AssociationSet Name="FK_Transactions_Vehicles " Association="Self.FK_Transactions_Vehicles ">
-      <End Role="Vehicles " EntitySet="Vehicles " />
+      <End Role="Vehicles" EntitySet="Vehicles" />
       <End Role="Invoices" EntitySet="Invoices" />
     </AssociationSet>
     <AssociationSet Name="FK_VehicleAdjustmentDetails_AdjustmentType" Association="Self.FK_VehicleAdjustmentDetails_AdjustmentType">
@@ -3141,7 +3706,7 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
       <End Role="VehicleAdjustments" EntitySet="VehicleAdjustments" />
     </AssociationSet>
     <AssociationSet Name="FK_VehicleAdjustments_Vehicles " Association="Self.FK_VehicleAdjustments_Vehicles ">
-      <End Role="Vehicles " EntitySet="Vehicles " />
+      <End Role="Vehicles" EntitySet="Vehicles" />
       <End Role="VehicleAdjustments" EntitySet="VehicleAdjustments" />
     </AssociationSet>
     <AssociationSet Name="FK_VehicleOwners_Cities" Association="Self.FK_VehicleOwners_Cities">
@@ -3150,15 +3715,15 @@ warning 6002: The table/view 'TMS.dbo.QryOtherAmountExcInvoice' does not have a 
     </AssociationSet>
     <AssociationSet Name="FK_Vehicles _Customers" Association="Self.FK_Vehicles _Customers">
       <End Role="Customers" EntitySet="Customers" />
-      <End Role="Vehicles " EntitySet="Vehicles " />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicles _Divisions" Association="Self.FK_Vehicles _Divisions">
+      <End Role="Divisions" EntitySet="Divisions" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
     </AssociationSet>
     <AssociationSet Name="FK_Vehicles _VehicleOwners" Association="Self.FK_Vehicles _VehicleOwners">
       <End Role="VehicleOwners" EntitySet="VehicleOwners" />
-      <End Role="Vehicles " EntitySet="Vehicles " />
-    </AssociationSet>
-    <AssociationSet Name="FK_VoucherDetails_Vouchers" Association="Self.FK_VoucherDetails_Vouchers">
-      <End Role="Vouchers" EntitySet="Vouchers" />
-      <End Role="VoucherDetails" EntitySet="VoucherDetails" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
     </AssociationSet>
     <AssociationSet Name="FK_Vouchers_Branches" Association="Self.FK_Vouchers_Branches">
       <End Role="Branches" EntitySet="Branches" />

@@ -22,9 +22,7 @@ namespace TMS.Integration.Services.VoucherService
                 var coa = context.GL_GetCOACombineTransactionVW.ToList();
                 foreach (var voucher in context.Vouchers.ToList())
                 {
-
                     var detailVoucher = VoucherDetailBodyRequests(voucher, coa);
-
 
                     var body = new VoucherPostRequestBody
                     {
@@ -73,7 +71,7 @@ namespace TMS.Integration.Services.VoucherService
         private async Task Update(string id,  VoucherPostRequestBody body, Voucher voucher)
         {
 
-            var response = _client.PostAsJsonAsync("api/Voucher/" + id, body).Result;
+            var response = _client.PutAsJsonAsync("api/Voucher/" + id, body).Result;
             response.EnsureSuccessStatusCode();
             var contentResult = await response.Content.ReadAsAsync<VoucherPostResponse>();
             voucher.RefNo = contentResult._id;

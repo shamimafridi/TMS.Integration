@@ -12,19 +12,20 @@ namespace TMS.Integration.Storage
     using System;
     using System.Collections.Generic;
     
-    public partial class GeneratedReference
+    public partial class vwTransDetailAll
     {
-        public long RecordNo { get; set; }
-        public string GenFrom { get; set; }
-        public string FormName { get; set; }
-        public string FromBranchCode { get; set; }
+        public string TYPE { get; set; }
+        public Nullable<int> IsLocalTrip { get; set; }
+        public string InvoiceRefNo { get; set; }
+        public string BranchCode { get; set; }
+        public string Description { get; set; }
         public string TransactionNature { get; set; }
         public string TransactionNo { get; set; }
-        public string BranchCode { get; set; }
-        public string DocumentNature { get; set; }
-        public string DocumentNo { get; set; }
-        public string RefNo { get; set; }
-        public string UpdatedBy { get; set; }
-        public Nullable<System.DateTime> UpdatedOn { get; set; }
+        public Nullable<System.DateTime> TransactionDate { get; set; }
+        public string TransactionTypeCode { get; set; }
+        public Nullable<decimal> AmountReceived { get; set; }
+        public Nullable<decimal> AmountPaid { get; set; }
+        public Nullable<long> RecordNo { get; set; }
+        public string VehicleCode { get; set; }
     }
 }

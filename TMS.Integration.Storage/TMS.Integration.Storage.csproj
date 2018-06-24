@@ -85,9 +85,6 @@
     <Compile Include="Division.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="dtproperty.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="dt_getpropertiesbyid_Result.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
@@ -139,6 +136,9 @@
     <Compile Include="Invoice.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceExpence.cs">
+      <DependentUpon>TMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Item.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
@@ -146,6 +146,9 @@
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Option.cs">
+      <DependentUpon>TMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayableAccount.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="PaymentVoucher.cs">
@@ -311,10 +314,22 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="TempCOAOpening.cs">
+      <DependentUpon>TMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempTransDetailCF.cs">
+      <DependentUpon>TMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempTransDetailLedger.cs">
+      <DependentUpon>TMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="TempTransDetailLedgerTrial.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="TempTransDetailTrialFSF.cs">
+      <DependentUpon>TMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempTransDetailVBill.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="TMS.Context.cs">
@@ -347,6 +362,9 @@
     <Compile Include="UserSecurity.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Vehicle.cs">
+      <DependentUpon>TMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="VehicleAdjustment.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
@@ -356,13 +374,16 @@
     <Compile Include="VehicleOwner.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Vehicles_.cs">
-      <DependentUpon>TMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="Voucher.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
     <Compile Include="VoucherDetail.cs">
+      <DependentUpon>TMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwTransDetail.cs">
+      <DependentUpon>TMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwTransDetailAll.cs">
       <DependentUpon>TMS.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -373,7 +394,9 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="TMS.edmx.diagram">
       <DependentUpon>TMS.edmx</DependentUpon>

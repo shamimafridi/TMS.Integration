@@ -20,7 +20,7 @@ namespace TMS.Integration.Storage
             this.CustomerBills = new HashSet<CustomerBill>();
             this.Receipts = new HashSet<Receipt>();
             this.Invoices = new HashSet<Invoice>();
-            this.Vehicles_ = new HashSet<Vehicles_>();
+            this.Vehicles = new HashSet<Vehicle>();
         }
     
         public string CustomerCode { get; set; }
@@ -40,6 +40,9 @@ namespace TMS.Integration.Storage
         public string NationalTaxNumber { get; set; }
         public System.DateTime DefinitionDate { get; set; }
         public long GUID { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual City City { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -49,6 +52,6 @@ namespace TMS.Integration.Storage
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vehicles_> Vehicles_ { get; set; }
+        public virtual ICollection<Vehicle> Vehicles { get; set; }
     }
 }

@@ -23,5 +23,8 @@ namespace TMS.Integration.Storage
         public string ComputerID { get; set; }
         public string ActionPerformed { get; set; }
         public string ReferenceText { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

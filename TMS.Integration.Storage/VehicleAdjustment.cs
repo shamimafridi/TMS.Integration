@@ -35,10 +35,14 @@ namespace TMS.Integration.Storage
         public string OldRef { get; set; }
         public string UrduTitle { get; set; }
         public int GUID { get; set; }
+        public string InvoiceRefNo { get; set; }
+        public string RefNo { get; set; }
+        public string UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     
         public virtual Branch Branch { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehicleAdjustmentDetail> VehicleAdjustmentDetails { get; set; }
-        public virtual Vehicles_ Vehicles_ { get; set; }
+        public virtual Vehicle Vehicle { get; set; }
     }
 }
