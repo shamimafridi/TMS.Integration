@@ -15,13 +15,12 @@ namespace TMS.Integration.Services.CoaControlService
         {
 
         }
-
-
         public override async Task<PostResponse> AsyncSetter(string token)
         {
             using (var context = new Storage.TMSEntities())
             {
-                foreach (var coaLocal in context.COAControls.ToList())
+                var coaControls = context.COAControls.ToList();
+                foreach (var coaLocal in coaControls)
                 {
                     await (string.IsNullOrEmpty(coaLocal.RefNo) ?
                         Create(coaLocal) :

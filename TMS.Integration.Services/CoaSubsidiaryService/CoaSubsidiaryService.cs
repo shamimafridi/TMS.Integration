@@ -16,7 +16,8 @@ namespace TMS.Integration.Services.CoaSubsidiaryService
         {
             using (var context = new Storage.TMSEntities())
             {
-                foreach (var coaLocal in GetCoaSubsidiaries(context))
+                var localSubsidiarieses = GetCoaSubsidiaries(context);
+                foreach (var coaLocal in localSubsidiarieses)
                 {
                     await (string.IsNullOrEmpty(coaLocal.RefNo) ?
                         Create(coaLocal) :

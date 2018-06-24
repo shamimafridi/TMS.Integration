@@ -16,7 +16,8 @@ namespace TMS.Integration.Services.BranchService
         {
             using (var context = new Storage.TMSEntities())
             {
-                foreach (var local in context.Branches.ToList())
+                var branches = context.Branches.ToList();
+                foreach (var local in branches)
                 {
                     await (string.IsNullOrEmpty(local.RefNo) ?
                         Create(local) :

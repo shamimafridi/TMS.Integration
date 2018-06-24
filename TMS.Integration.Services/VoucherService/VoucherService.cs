@@ -20,7 +20,8 @@ namespace TMS.Integration.Services.VoucherService
             using (var context = new Storage.TMSEntities())
             {
                 var coa = context.GL_GetCOACombineTransactionVW.ToList();
-                foreach (var voucher in context.Vouchers.ToList())
+                var vouchers = context.Vouchers.ToList();
+                foreach (var voucher in vouchers)
                 {
                     var detailVoucher = VoucherDetailBodyRequests(voucher, coa);
 
